@@ -9,9 +9,9 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #2D6A4F; --primary-light: #40916C; --primary-dark: #1B4332;
-            --secondary: #F5E6CA; --accent: #E76F51; --accent-hover: #D4583A;
-            --bg-light: #F7F7F7; --bg-white: #FFFFFF;
+            --primary: #E91E63; --primary-light: #F06292; --primary-dark: #AD1457;
+            --secondary: #FCE4EC; --accent: #FF6F00; --accent-hover: #E65100;
+            --bg-light: #FFF5F8; --bg-white: #FFFFFF;
             --text-dark: #1A1A2E; --text-mid: #4A4A68; --text-light: #7B7B96;
             --border: #E0E0E0; --success: #2D9A6E; --warning: #F4A261;
             --star: #FFC107; --danger: #EF4444; --info: #3B82F6;
@@ -61,7 +61,7 @@
         .nav-bar::-webkit-scrollbar { display: none; }
         .nav-bar .container { display: flex; gap: 0; }
         .nav-item { padding: 12px 18px; font-size: 0.85rem; color: var(--text-mid); text-decoration: none; white-space: nowrap; transition: var(--transition); border-bottom: 2px solid transparent; cursor: pointer; }
-        .nav-item:hover, .nav-item.active { color: var(--primary); border-bottom-color: var(--primary); background: rgba(45,106,79,0.04); }
+        .nav-item:hover, .nav-item.active { color: var(--primary); border-bottom-color: var(--primary); background: rgba(233,30,99,0.04); }
         
         .hero-section { padding: 24px 0; }
         .hero-slider { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
@@ -86,8 +86,8 @@
         .feature-card { background: var(--bg-white); padding: 20px; border-radius: var(--radius); display: flex; align-items: center; gap: 14px; box-shadow: var(--shadow-sm); }
         .feature-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
         .feature-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
-        .feature-icon.green { background: rgba(45,106,79,0.1); color: var(--primary); }
-        .feature-icon.orange { background: rgba(231,111,81,0.1); color: var(--accent); }
+        .feature-icon.green { background: rgba(233,30,99,0.1); color: var(--primary); }
+        .feature-icon.orange { background: rgba(255,111,0,0.1); color: var(--accent); }
         .feature-icon.blue { background: rgba(59,130,246,0.1); color: #3B82F6; }
         .feature-icon.purple { background: rgba(139,92,246,0.1); color: #8B5CF6; }
         .feature-text h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 2px; }
@@ -120,7 +120,7 @@
         .sort-select { padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem; outline: none; background: var(--bg-light); cursor: pointer; font-family: inherit; }
         .view-btns { display: flex; gap: 4px; }
         .view-btn { width: 36px; height: 36px; border: 1px solid var(--border); background: var(--bg-white); border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: var(--transition); color: var(--text-light); }
-        .view-btn.active, .view-btn:hover { border-color: var(--primary); color: var(--primary); background: rgba(45,106,79,0.05); }
+        .view-btn.active, .view-btn:hover { border-color: var(--primary); color: var(--primary); background: rgba(233,30,99,0.05); }
         
         .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
         .products-grid.list-view { grid-template-columns: 1fr; }
@@ -158,7 +158,7 @@
         .product-add-cart:hover { background: var(--primary-dark); }
         
         .deals-section { padding: 30px 0; }
-        .deals-banner { background: linear-gradient(135deg, var(--accent) 0%, var(--warning) 100%); border-radius: var(--radius-lg); padding: 40px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; color: white; flex-wrap: wrap; gap: 20px; }
+        .deals-banner { background: linear-gradient(135deg, var(--accent) 0%, #FF8F00 100%); border-radius: var(--radius-lg); padding: 40px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; color: white; flex-wrap: wrap; gap: 20px; }
         .deals-banner h2 { font-size: 2rem; font-weight: 800; }
         .deals-banner p { font-size: 1rem; opacity: 0.9; margin-top: 4px; }
         .deals-timer { display: flex; gap: 12px; }
@@ -249,7 +249,7 @@
         .checkout-body { padding: 24px; }
         .payment-tabs { display: flex; gap: 8px; margin-bottom: 24px; }
         .payment-tab { flex: 1; padding: 12px; text-align: center; border: 2px solid var(--border); border-radius: var(--radius); cursor: pointer; font-weight: 600; font-size: 0.9rem; background: none; font-family: inherit; }
-        .payment-tab.active { border-color: var(--primary); background: rgba(45,106,79,0.05); color: var(--primary); }
+        .payment-tab.active { border-color: var(--primary); background: rgba(233,30,99,0.05); color: var(--primary); }
         .payment-tab i { font-size: 1.2rem; display: block; margin-bottom: 4px; }
         .payment-content { display: none; }
         .payment-content.active { display: block; }
@@ -268,7 +268,7 @@
         .order-summary h4 { font-size: 0.95rem; margin-bottom: 12px; }
         .order-line { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.85rem; }
         .order-line.total { border-top: 1px solid var(--border); padding-top: 12px; margin-top: 8px; font-weight: 700; font-size: 1.1rem; color: var(--primary); }
-        .pix-timer { background: rgba(231,111,81,0.1); color: var(--accent); padding: 10px 16px; border-radius: var(--radius); text-align: center; font-weight: 600; margin-bottom: 16px; }
+        .pix-timer { background: rgba(255,111,0,0.1); color: var(--accent); padding: 10px 16px; border-radius: var(--radius); text-align: center; font-weight: 600; margin-bottom: 16px; }
         .pix-success { display: none; text-align: center; padding: 40px 20px; }
         .pix-success i { font-size: 4rem; color: var(--success); margin-bottom: 16px; }
         .pix-success h3 { font-size: 1.3rem; margin-bottom: 8px; }
@@ -384,7 +384,7 @@
         .qa-list { display: flex; flex-direction: column; gap: 12px; }
         .qa-item { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
         .qa-question { padding: 14px 16px; background: var(--bg-light); display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
-        .qa-question:hover { background: rgba(45,106,79,0.05); }
+        .qa-question:hover { background: rgba(233,30,99,0.05); }
         .qa-answer { padding: 14px 16px; font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; }
         .qa-answer textarea { width: 100%; min-height: 60px; border: 1px solid var(--border); border-radius: 6px; padding: 8px; font-size: 0.85rem; font-family: inherit; resize: vertical; outline: none; }
         .qa-actions { display: flex; gap: 8px; margin-top: 8px; }
@@ -424,7 +424,7 @@
         
         .email-list { max-height: 400px; overflow-y: auto; }
         .email-item { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; }
-        .email-item.selected { border-color: var(--primary); background: rgba(45,106,79,0.05); }
+        .email-item.selected { border-color: var(--primary); background: rgba(233,30,99,0.05); }
         .email-item input[type="checkbox"] { accent-color: var(--primary); width: 18px; height: 18px; cursor: pointer; }
         .email-item .email-info { flex: 1; }
         .email-item .email-addr { font-size: 0.9rem; font-weight: 600; }
@@ -456,6 +456,33 @@
         .color-option label { font-weight: 600; font-size: 0.85rem; flex: 1; }
         .color-option code { font-size: 0.75rem; color: var(--text-light); }
         
+        .bot-name-editor { background: linear-gradient(135deg, var(--bg-light), var(--secondary)); padding: 24px; border-radius: var(--radius-lg); margin-bottom: 24px; border: 2px solid var(--primary); }
+        .bot-name-editor h4 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; color: var(--primary); display: flex; align-items: center; gap: 8px; }
+        .bot-name-editor .form-group { margin-bottom: 12px; }
+        .bot-name-editor .form-group input { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.95rem; outline: none; font-family: inherit; }
+        .bot-name-editor .form-group input:focus { border-color: var(--primary); box-shadow: 0 0 0 2px rgba(233,30,99,0.1); }
+        
+        .content-editor { background: var(--bg-light); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 16px; }
+        .content-editor h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 12px; color: var(--primary); }
+        .content-editor .form-group { margin-bottom: 12px; }
+        .content-editor .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--text-mid); }
+        .content-editor .form-group input, .content-editor .form-group textarea { width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9rem; outline: none; font-family: inherit; }
+        .content-editor .form-group textarea { min-height: 80px; resize: vertical; }
+        
+        .feature-edit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+        .feature-edit-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+        .feature-edit-card h5 { font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; color: var(--text-dark); }
+        .feature-edit-card .form-group { margin-bottom: 8px; }
+        .feature-edit-card .form-group label { font-size: 0.75rem; font-weight: 600; color: var(--text-mid); }
+        .feature-edit-card .form-group input { width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.85rem; outline: none; font-family: inherit; }
+        
+        .tab-nav { display: flex; gap: 4px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 4px; }
+        .tab-nav::-webkit-scrollbar { display: none; }
+        .tab-btn { padding: 10px 20px; border: none; background: var(--bg-light); border-radius: var(--radius); cursor: pointer; font-size: 0.85rem; font-weight: 600; white-space: nowrap; transition: var(--transition); font-family: inherit; color: var(--text-mid); }
+        .tab-btn.active { background: var(--primary); color: white; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
         @media (max-width: 1024px) {
             .main-content { grid-template-columns: 1fr; }
             .sidebar { display: none; position: fixed; inset: 0; background: var(--bg-white); z-index: 1500; padding: 20px; overflow-y: auto; }
@@ -485,6 +512,7 @@
             .footer-grid { grid-template-columns: 1fr; }
             .modal-body { grid-template-columns: 1fr; }
             .modal-image { min-height: 250px; }
+            .feature-edit-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 480px) {
             .products-grid { grid-template-columns: 1fr; }
@@ -515,7 +543,7 @@
     <div class="admin-login">
         <div class="login-card">
             <a href="#" class="logo" onclick="showStore(); event.preventDefault();">
-                <div class="logo-icon"><img class="site-avatar-img" src="" alt="Edu"></div>
+                <div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Edu"></div>
                 <div class="logo-text" id="loginLogoText"></div>
             </a>
             <h2>Painel Administrativo</h2>
@@ -536,13 +564,14 @@
         <aside class="admin-sidebar" id="adminSidebar">
             <div class="admin-sidebar-header">
                 <a href="#" class="logo" onclick="showStore(); event.preventDefault();">
-                    <div class="logo-icon"><img class="site-avatar-img" src="" alt="Edu"></div>
+                    <div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Edu"></div>
                     <div class="logo-text" id="adminLogoText"></div>
                 </a>
             </div>
             <nav class="admin-nav">
                 <div class="admin-nav-section">Principal</div>
                 <div class="admin-nav-item active" onclick="showSection('dashboard', this)"><i class="ri-dashboard-line"></i> Dashboard</div>
+                <div class="admin-nav-item" onclick="showSection('content', this)"><i class="ri-text"></i> Conteúdo do Site</div>
                 <div class="admin-nav-item" onclick="showSection('products', this)"><i class="ri-book-3-line"></i> Produtos</div>
                 <div class="admin-nav-item" onclick="showSection('categories', this)"><i class="ri-apps-line"></i> Categorias</div>
                 <div class="admin-nav-item" onclick="showSection('orders', this)"><i class="ri-shopping-bag-line"></i> Pedidos</div>
@@ -554,7 +583,7 @@
                 <div class="admin-nav-item" onclick="showSection('contacts', this)"><i class="ri-contacts-line"></i> Contatos</div>
                 <div class="admin-nav-item" onclick="showSection('emails', this)"><i class="ri-mail-line"></i> Emails</div>
                 <div class="admin-nav-item" onclick="showSection('qa', this)"><i class="ri-question-answer-line"></i> Perguntas</div>
-                <div class="admin-nav-item" onclick="showSection('avatar', this)"><i class="ri-user-smile-line"></i> Avatar</div>
+                <div class="admin-nav-item" onclick="showSection('avatar', this)"><i class="ri-user-smile-line"></i> Avatar & Bot</div>
                 <div class="admin-nav-item" onclick="showSection('theme', this)"><i class="ri-palette-line"></i> Temas</div>
                 <div class="admin-nav-item" onclick="showSection('settings', this)"><i class="ri-settings-3-line"></i> Configurações</div>
                 <div style="margin-top:20px;"></div>
@@ -571,7 +600,7 @@
                 <div class="admin-topbar-right">
                     <button class="btn btn-outline btn-sm" onclick="showStore()"><i class="ri-store-2-line"></i> Ver Loja</button>
                     <div class="admin-user">
-                        <div class="admin-avatar"><img class="site-avatar-img" src="" alt="Admin"></div>
+                        <div class="admin-avatar"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Admin"></div>
                         <div><div style="font-size:0.9rem;font-weight:600;">Admin</div><div style="font-size:0.75rem;color:var(--text-light);">admin@edumarket.com</div></div>
                     </div>
                 </div>
@@ -585,8 +614,160 @@
                     <div class="stat-card"><div class="stat-card-header"><span>Emails</span><i class="ri-mail-line" style="color:var(--primary)"></i></div><div class="value" id="emailCountStat">0</div></div>
                 </div>
                 <div style="display:grid;grid-template-columns:2fr 1fr;gap:24px;">
-                    <div class="admin-card"><div class="admin-card-header"><h3>Vendas 7 Dias</h3></div><div class="admin-card-body"><div style="height:250px;background:linear-gradient(135deg, rgba(45,106,79,0.05), rgba(45,106,79,0.15));border-radius:var(--radius);display:flex;align-items:flex-end;padding:0 20px;gap:8px;" id="salesChart"></div></div></div>
+                    <div class="admin-card"><div class="admin-card-header"><h3>Vendas 7 Dias</h3></div><div class="admin-card-body"><div style="height:250px;background:linear-gradient(135deg, rgba(233,30,99,0.05), rgba(233,30,99,0.15));border-radius:var(--radius);display:flex;align-items:flex-end;padding:0 20px;gap:8px;" id="salesChart"></div></div></div>
                     <div class="admin-card"><div class="admin-card-header"><h3>Categorias</h3></div><div class="admin-card-body" style="padding:0;"><table class="admin-table"><tr><td>Matemática</td><td style="text-align:right;font-weight:700;">32%</td></tr><tr><td>Português</td><td style="text-align:right;font-weight:700;">24%</td></tr><tr><td>Ciências</td><td style="text-align:right;font-weight:700;">18%</td></tr></table></div></div>
+                </div>
+            </div>
+
+            <!-- CONTEÚDO DO SITE - NOVA SEÇÃO -->
+            <div class="admin-section" id="section-content">
+                <div class="admin-card">
+                    <div class="admin-card-header"><h3><i class="ri-text"></i> Editar Conteúdo do Site</h3></div>
+                    <div class="admin-card-body">
+                        <div class="tab-nav">
+                            <button class="tab-btn active" onclick="showContentTab('tab-topbar', this)">Top Bar</button>
+                            <button class="tab-btn" onclick="showContentTab('tab-features', this)">Features</button>
+                            <button class="tab-btn" onclick="showContentTab('tab-newsletter', this)">Newsletter</button>
+                            <button class="tab-btn" onclick="showContentTab('tab-footer', this)">Footer</button>
+                            <button class="tab-btn" onclick="showContentTab('tab-info', this)">Páginas Info</button>
+                            <button class="tab-btn" onclick="showContentTab('tab-sections', this)">Títulos</button>
+                        </div>
+                        
+                        <!-- TOP BAR -->
+                        <div class="tab-content active" id="tab-topbar">
+                            <div class="content-editor">
+                                <h4>Barra Superior</h4>
+                                <div class="form-group"><label>Texto da Top Bar</label><input type="text" id="topBarText" value="📚 Bem-vindo ao Cantinho da Profª Ana Carolina M." onchange="updateContentPreview()"></div>
+                                <div class="form-group"><label>Link 1 Texto</label><input type="text" id="topBarLink1" value="Central de Ajuda"></div>
+                                <div class="form-group"><label>Link 2 Texto</label><input type="text" id="topBarLink2" value="Fale Conosco"></div>
+                                <div class="form-actions"><button class="btn btn-primary" onclick="saveSiteContent()"><i class="ri-save-line"></i> Salvar</button></div>
+                            </div>
+                        </div>
+                        
+                        <!-- FEATURES -->
+                        <div class="tab-content" id="tab-features">
+                            <div class="content-editor">
+                                <h4>Cards de Features</h4>
+                                <div class="feature-edit-grid">
+                                    <div class="feature-edit-card">
+                                        <h5>Card 1</h5>
+                                        <div class="form-group"><label>Ícone</label><input type="text" id="feat1Icon" value="ri-truck-line"></div>
+                                        <div class="form-group"><label>Título</label><input type="text" id="feat1Title" value="Frete Grátis"></div>
+                                        <div class="form-group"><label>Subtítulo</label><input type="text" id="feat1Subtitle" value="Acima de R$ 99"></div>
+                                    </div>
+                                    <div class="feature-edit-card">
+                                        <h5>Card 2</h5>
+                                        <div class="form-group"><label>Ícone</label><input type="text" id="feat2Icon" value="ri-shield-check-line"></div>
+                                        <div class="form-group"><label>Título</label><input type="text" id="feat2Title" value="Compra Segura"></div>
+                                        <div class="form-group"><label>Subtítulo</label><input type="text" id="feat2Subtitle" value="Proteção total"></div>
+                                    </div>
+                                    <div class="feature-edit-card">
+                                        <h5>Card 3</h5>
+                                        <div class="form-group"><label>Ícone</label><input type="text" id="feat3Icon" value="ri-refresh-line"></div>
+                                        <div class="form-group"><label>Título</label><input type="text" id="feat3Title" value="Troca Fácil"></div>
+                                        <div class="form-group"><label>Subtítulo</label><input type="text" id="feat3Subtitle" value="Até 30 dias"></div>
+                                    </div>
+                                    <div class="feature-edit-card">
+                                        <h5>Card 4</h5>
+                                        <div class="form-group"><label>Ícone</label><input type="text" id="feat4Icon" value="ri-customer-service-2-line"></div>
+                                        <div class="form-group"><label>Título</label><input type="text" id="feat4Title" value="Suporte 24h"></div>
+                                        <div class="form-group"><label>Subtítulo</label><input type="text" id="feat4Subtitle" value="Estamos aqui"></div>
+                                    </div>
+                                </div>
+                                <div class="form-actions"><button class="btn btn-primary" onclick="saveSiteContent()"><i class="ri-save-line"></i> Salvar</button></div>
+                            </div>
+                        </div>
+                        
+                        <!-- NEWSLETTER -->
+                        <div class="tab-content" id="tab-newsletter">
+                            <div class="content-editor">
+                                <h4>Newsletter</h4>
+                                <div class="form-group"><label>Título</label><input type="text" id="newsletterTitle" value="📬 Receba Novidades"></div>
+                                <div class="form-group"><label>Descrição</label><input type="text" id="newsletterDesc" value="Ganhe 10% OFF na primeira compra!"></div>
+                                <div class="form-group"><label>Placeholder Input</label><input type="text" id="newsletterPlaceholder" value="Seu e-mail"></div>
+                                <div class="form-group"><label>Texto Botão</label><input type="text" id="newsletterBtnText" value="Cadastrar"></div>
+                                <div class="form-actions"><button class="btn btn-primary" onclick="saveSiteContent()"><i class="ri-save-line"></i> Salvar</button></div>
+                            </div>
+                        </div>
+                        
+                        <!-- FOOTER -->
+                        <div class="tab-content" id="tab-footer">
+                            <div class="content-editor">
+                                <h4>Rodapé</h4>
+                                <div class="form-group"><label>Descrição da Loja</label><textarea id="footerDesc">O Cantinho da Profª Ana Carolina M. nasceu com o objetivo de democratizar o acesso a materiais educacionais de qualidade no Brasil.</textarea></div>
+                                <div class="form-group"><label>Copyright</label><input type="text" id="footerCopyright" value="© 2025 Cantinho da Profª Ana Carolina M. Todos os direitos reservados."></div>
+                                
+                                <h4 style="margin-top:20px;">Coluna Institucional</h4>
+                                <div class="form-group"><label>Título Coluna</label><input type="text" id="footerCol1Title" value="Institucional"></div>
+                                <div class="form-group"><label>Link 1</label><input type="text" id="footerCol1Link1" value="Sobre Nós"></div>
+                                <div class="form-group"><label>Link 2</label><input type="text" id="footerCol1Link2" value="Como Funciona"></div>
+                                <div class="form-group"><label>Link 3</label><input type="text" id="footerCol1Link3" value="Blog"></div>
+                                
+                                <h4 style="margin-top:20px;">Coluna Ajuda</h4>
+                                <div class="form-group"><label>Título Coluna</label><input type="text" id="footerCol2Title" value="Ajuda"></div>
+                                <div class="form-group"><label>Link 1</label><input type="text" id="footerCol2Link1" value="Central de Ajuda"></div>
+                                <div class="form-group"><label>Link 2</label><input type="text" id="footerCol2Link2" value="Como Comprar"></div>
+                                <div class="form-group"><label>Link 3</label><input type="text" id="footerCol2Link3" value="Trocas"></div>
+                                
+                                <h4 style="margin-top:20px;">Coluna Políticas</h4>
+                                <div class="form-group"><label>Título Coluna</label><input type="text" id="footerCol3Title" value="Políticas"></div>
+                                <div class="form-group"><label>Link 1</label><input type="text" id="footerCol3Link1" value="Termos"></div>
+                                <div class="form-group"><label>Link 2</label><input type="text" id="footerCol3Link2" value="Privacidade"></div>
+                                <div class="form-group"><label>Link 3</label><input type="text" id="footerCol3Link3" value="LGPD"></div>
+                                
+                                <div class="form-actions"><button class="btn btn-primary" onclick="saveSiteContent()"><i class="ri-save-line"></i> Salvar</button></div>
+                            </div>
+                        </div>
+                        
+                        <!-- PÁGINAS INFO -->
+                        <div class="tab-content" id="tab-info">
+                            <div class="content-editor">
+                                <h4>Página: Sobre Nós</h4>
+                                <div class="form-group"><label>Título</label><input type="text" id="infoAboutTitle" value="Sobre Nós"></div>
+                                <div class="form-group"><label>Subtítulo</label><input type="text" id="infoAboutSubtitle" value="Conheça nossa história"></div>
+                                <div class="form-group"><label>Card 1 Título</label><input type="text" id="infoAboutCard1Title" value="Nossa História"></div>
+                                <div class="form-group"><label>Card 1 Conteúdo</label><textarea id="infoAboutCard1Content">O Cantinho da Profª Ana Carolina M. nasceu com o objetivo de democratizar o acesso a materiais educacionais de qualidade no Brasil.</textarea></div>
+                                <div class="form-group"><label>Card 2 Título</label><input type="text" id="infoAboutCard2Title" value="Missão"></div>
+                                <div class="form-group"><label>Card 2 Conteúdo</label><textarea id="infoAboutCard2Content">Conectar educadores e alunos a materiais pedagógicos de alta qualidade com preços acessíveis.</textarea></div>
+                                
+                                <h4 style="margin-top:20px;">Página: Como Funciona</h4>
+                                <div class="form-group"><label>Título</label><input type="text" id="infoHowTitle" value="Como Funciona"></div>
+                                <div class="form-group"><label>Card Título</label><input type="text" id="infoHowCardTitle" value="Como Comprar"></div>
+                                <div class="form-group"><label>Passo 1</label><input type="text" id="infoHowStep1" value="1. Navegue pelos produtos"></div>
+                                <div class="form-group"><label>Passo 2</label><input type="text" id="infoHowStep2" value="2. Adicione ao carrinho"></div>
+                                <div class="form-group"><label>Passo 3</label><input type="text" id="infoHowStep3" value="3. Finalize o pagamento"></div>
+                                <div class="form-group"><label>Passo 4</label><input type="text" id="infoHowStep4" value="4. Receba em casa"></div>
+                                
+                                <h4 style="margin-top:20px;">Página: Blog</h4>
+                                <div class="form-group"><label>Título</label><input type="text" id="infoBlogTitle" value="Blog"></div>
+                                <div class="form-group"><label>Subtítulo</label><input type="text" id="infoBlogSubtitle" value="Novidades e conteúdos"></div>
+                                <div class="form-group"><label>Card Título</label><input type="text" id="infoBlogCardTitle" value="Últimas Publicações"></div>
+                                <div class="form-group"><label>Conteúdo</label><textarea id="infoBlogContent">Em breve conteúdo exclusivo!</textarea></div>
+                                
+                                <h4 style="margin-top:20px;">Página: Políticas</h4>
+                                <div class="form-group"><label>Título</label><input type="text" id="infoPolicyTitle" value="Políticas"></div>
+                                <div class="form-group"><label>Card 1 Título</label><input type="text" id="infoPolicyCard1Title" value="Termos"></div>
+                                <div class="form-group"><label>Card 1 Item 1</label><input type="text" id="infoPolicyItem1" value="Materiais para uso pessoal e educacional"></div>
+                                <div class="form-group"><label>Card 1 Item 2</label><input type="text" id="infoPolicyItem2" value="Proibida reprodução sem autorização"></div>
+                                <div class="form-group"><label>Card 2 Título</label><input type="text" id="infoPolicyCard2Title" value="Privacidade"></div>
+                                <div class="form-group"><label>Card 2 Conteúdo</label><textarea id="infoPolicyCard2Content">Dados protegidos conforme a LGPD.</textarea></div>
+                                
+                                <div class="form-actions"><button class="btn btn-primary" onclick="saveSiteContent()"><i class="ri-save-line"></i> Salvar</button></div>
+                            </div>
+                        </div>
+                        
+                        <!-- TÍTULOS DAS SEÇÕES -->
+                        <div class="tab-content" id="tab-sections">
+                            <div class="content-editor">
+                                <h4>Títulos das Seções</h4>
+                                <div class="form-group"><label>Título Categorias</label><input type="text" id="sectionCategoriesTitle" value="Categorias Populares"></div>
+                                <div class="form-group"><label>Título Ofertas</label><input type="text" id="sectionDealsTitle" value="Ofertas Relâmpago"></div>
+                                <div class="form-group"><label>Subtítulo Ofertas</label><input type="text" id="sectionDealsSubtitle" value="Descontos exclusivos!"></div>
+                                <div class="form-group"><label>Texto Botão CTA</label><input type="text" id="sectionCTAText" value="Ver Ofertas"></div>
+                                <div class="form-actions"><button class="btn btn-primary" onclick="saveSiteContent()"><i class="ri-save-line"></i> Salvar</button></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -635,7 +816,7 @@
                             <input type="hidden" id="editCategoryId">
                             <div class="form-group"><label>Nome</label><input type="text" id="categoryName" required></div>
                             <div class="form-group"><label>Emoji</label><input type="text" id="categoryEmoji" required></div>
-                            <div class="form-group"><label>Cor</label><input type="color" id="categoryColor" value="#2D6A4F"></div>
+                            <div class="form-group"><label>Cor</label><input type="color" id="categoryColor" value="#E91E63"></div>
                             <div class="form-actions"><button type="button" class="btn btn-outline" onclick="closeCategoryModal()">Cancelar</button><button type="submit" class="btn btn-primary"><i class="ri-save-line"></i> Salvar</button></div>
                         </form>
                     </div>
@@ -758,13 +939,9 @@
                     <div class="admin-card-header"><h3><i class="ri-question-answer-line"></i> Perguntas & Respostas</h3><button class="btn btn-primary" onclick="openQAModal()"><i class="ri-add-line"></i> Nova</button></div>
                     <div class="admin-card-body">
                         <div style="background:var(--bg-light);padding:20px;border-radius:var(--radius);margin-bottom:20px;display:flex;align-items:center;gap:16px;">
-                            <div class="edu-avatar-admin"><img class="bot-avatar-img" src="" alt="Edu"></div>
-                            <div><h4>Avatar do Assistente</h4><p style="font-size:0.85rem;color:var(--text-light);">Chat e ícone do site</p></div>
-                            <button class="btn btn-sm btn-primary" onclick="showSection('avatar', document.querySelector('.admin-nav-item:nth-child(13)'))" style="margin-left:auto;">Alterar</button>
-                        </div>
-                        <div style="margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:500px;">
-                            <div class="form-group"><label>Nome</label><input type="text" id="chatbotName" value="Edu" onchange="updateChatbotName()"></div>
-                            <div class="form-group"><label>Subtítulo</label><input type="text" id="chatbotSubtitle" value="Assistente" onchange="updateChatbotName()"></div>
+                            <div class="edu-avatar-admin"><img class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Edu"></div>
+                            <div><h4 id="qaBotDisplayName">Edu - Assistente</h4><p style="font-size:0.85rem;color:var(--text-light);">Chat e ícone do site</p></div>
+                            <button class="btn btn-sm btn-primary" onclick="showSection('avatar', document.querySelector('.admin-nav-item:nth-child(14)'))" style="margin-left:auto;">Alterar</button>
                         </div>
                         <div class="qa-list" id="qaList"></div>
                     </div>
@@ -773,31 +950,25 @@
 
             <div class="admin-section" id="section-avatar">
                 <div class="admin-card">
-                    <div class="admin-card-header"><h3><i class="ri-user-smile-line"></i> Avatar do Bot</h3></div>
+                    <div class="admin-card-header"><h3><i class="ri-user-smile-line"></i> Avatar & Nome do Bot</h3></div>
                     <div class="admin-card-body">
+                        <div class="bot-name-editor">
+                            <h4><i class="ri-user-edit-line"></i> Nome do Assistente Virtual</h4>
+                            <p style="font-size:0.85rem;color:var(--text-mid);margin-bottom:16px;">Altere o nome que aparece no chat e em toda a loja.</p>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                                <div class="form-group"><label>Nome do Bot</label><input type="text" id="chatbotName" value="Edu" placeholder="Ex: Ana, Edu, Maria" onchange="updateChatbotName()"></div>
+                                <div class="form-group"><label>Subtítulo</label><input type="text" id="chatbotSubtitle" value="Assistente" placeholder="Ex: Assistente, Atendente" onchange="updateChatbotName()"></div>
+                            </div>
+                            <div class="form-actions" style="justify-content:flex-start;"><button class="btn btn-primary" onclick="saveBotName()"><i class="ri-save-line"></i> Salvar Nome do Bot</button></div>
+                        </div>
+                        <h4 style="margin-bottom:16px;"><i class="ri-image-line"></i> Avatar do Bot</h4>
                         <div style="text-align:center;margin-bottom:30px;">
                             <h4>Avatar Atual</h4>
-                            <div class="edu-avatar-admin" style="width:120px;height:120px;margin:16px auto 0;">
-                                <img id="currentAvatarPreview" class="bot-avatar-img" src="" alt="Avatar">
-                            </div>
+                            <div class="edu-avatar-admin" style="width:120px;height:120px;margin:16px auto 0;"><img id="currentAvatarPreview" class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Avatar"></div>
                         </div>
-                        <div style="margin-bottom:30px;">
-                            <h4 style="margin-bottom:12px;">URL da Imagem</h4>
-                            <div style="display:flex;gap:12px;">
-                                <input type="text" id="avatarUrlInput" placeholder="https://..." style="flex:1;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.9rem;outline:none;font-family:inherit;">
-                                <button class="btn btn-primary" onclick="applyAvatarUrl()"><i class="ri-check-line"></i> Aplicar</button>
-                            </div>
-                        </div>
-                        <div style="margin-bottom:30px;">
-                            <h4 style="margin-bottom:12px;">Upload</h4>
-                            <div class="upload-area" onclick="document.getElementById('avatarFileInput').click()">
-                                <i class="ri-image-add-line"></i><p>Clique para selecionar</p>
-                            </div>
-                            <input type="file" id="avatarFileInput" accept="image/*" style="display:none;" onchange="handleAvatarUpload(event)">
-                        </div>
-                        <div class="form-actions" style="justify-content:center;">
-                            <button class="btn btn-primary btn-lg" onclick="saveAvatar()"><i class="ri-save-line"></i> Salvar Avatar</button>
-                        </div>
+                        <div style="margin-bottom:30px;"><h4 style="margin-bottom:12px;">URL da Imagem</h4><div style="display:flex;gap:12px;"><input type="text" id="avatarUrlInput" placeholder="https://..." style="flex:1;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.9rem;outline:none;font-family:inherit;"><button class="btn btn-primary" onclick="applyAvatarUrl()"><i class="ri-check-line"></i> Aplicar</button></div></div>
+                        <div style="margin-bottom:30px;"><h4 style="margin-bottom:12px;">Upload</h4><div class="upload-area" onclick="document.getElementById('avatarFileInput').click()"><i class="ri-image-add-line"></i><p>Clique para selecionar</p></div><input type="file" id="avatarFileInput" accept="image/*" style="display:none;" onchange="handleAvatarUpload(event)"></div>
+                        <div class="form-actions" style="justify-content:center;"><button class="btn btn-primary btn-lg" onclick="saveAvatar()"><i class="ri-save-line"></i> Salvar Avatar</button></div>
                     </div>
                 </div>
             </div>
@@ -824,95 +995,39 @@
                     <div class="admin-card-header"><h3><i class="ri-palette-line"></i> Temas e Cores</h3></div>
                     <div class="admin-card-body">
                         <h4 style="margin-bottom:16px;">🎨 Temas Prontos</h4>
-                        <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:16px;">Selecione um tema para aplicar:</p>
-                        
                         <div class="theme-presets" id="themePresets">
-                            <div class="theme-preset-card" onclick="applyPreset('natureza')">
-                                <div class="theme-preset-preview"><div style="background:#2D6A4F"></div><div style="background:#1B4332"></div><div style="background:#F5E6CA"></div><div style="background:#E76F51"></div></div>
-                                <div class="theme-preset-info"><div class="theme-preset-emoji"></div><h4>Natureza</h4><p>Verde clássico</p></div>
-                            </div>
-                            <div class="theme-preset-card" onclick="applyPreset('oceano')">
-                                <div class="theme-preset-preview"><div style="background:#1E40AF"></div><div style="background:#1E3A8A"></div><div style="background:#DBEAFE"></div><div style="background:#F59E0B"></div></div>
-                                <div class="theme-preset-info"><div class="theme-preset-emoji">🌊</div><h4>Oceano</h4><p>Azul profundo</p></div>
-                            </div>
-                            <div class="theme-preset-card" onclick="applyPreset('roxo')">
-                                <div class="theme-preset-preview"><div style="background:#6D28D9"></div><div style="background:#5B21B6"></div><div style="background:#EDE9FE"></div><div style="background:#EC4899"></div></div>
-                                <div class="theme-preset-info"><div class="theme-preset-emoji"></div><h4>Roxo</h4><p>Violeta elegante</p></div>
-                            </div>
-                            <div class="theme-preset-card" onclick="applyPreset('dark')">
-                                <div class="theme-preset-preview"><div style="background:#3B82F6"></div><div style="background:#1F2937"></div><div style="background:#111827"></div><div style="background:#F97316"></div></div>
-                                <div class="theme-preset-info"><div class="theme-preset-emoji">🌙</div><h4>Dark</h4><p>Tema escuro</p></div>
-                            </div>
-                            <div class="theme-preset-card" onclick="applyPreset('quente')">
-                                <div class="theme-preset-preview"><div style="background:#B45309"></div><div style="background:#92400E"></div><div style="background:#FEF3C7"></div><div style="background:#DC2626"></div></div>
-                                <div class="theme-preset-info"><div class="theme-preset-emoji">🔥</div><h4>Quente</h4><p>Tons outono</p></div>
-                            </div>
-                            <div class="theme-preset-card" onclick="applyPreset('pastel')">
-                                <div class="theme-preset-preview"><div style="background:#818CF8"></div><div style="background:#6366F1"></div><div style="background:#FDF2F8"></div><div style="background:#F472B6"></div></div>
-                                <div class="theme-preset-info"><div class="theme-preset-emoji">🌸</div><h4>Pastel</h4><p>Suave delicado</p></div>
-                            </div>
-                            <div class="theme-preset-card" onclick="applyPreset('rosa')">
-                                <div class="theme-preset-preview"><div style="background:#BE185D"></div><div style="background:#9D174D"></div><div style="background:#FCE7F3"></div><div style="background:#F59E0B"></div></div>
-                                <div class="theme-preset-info"><div class="theme-preset-emoji">🌺</div><h4>Rosa</h4><p>Romântico</p></div>
-                            </div>
-                            <div class="theme-preset-card" onclick="applyPreset('turquesa')">
-                                <div class="theme-preset-preview"><div style="background:#0D9488"></div><div style="background:#0F766E"></div><div style="background:#CCFBF1"></div><div style="background:#F97316"></div></div>
-                                <div class="theme-preset-info"><div class="theme-preset-emoji">🐚</div><h4>Turquesa</h4><p>Tropical</p></div>
-                            </div>
-                            <div class="theme-preset-card" onclick="applyPreset('lavanda')">
-                                <div class="theme-preset-preview"><div style="background:#7C3AED"></div><div style="background:#6D28D9"></div><div style="background:#F5F3FF"></div><div style="background:#10B981"></div></div>
-                                <div class="theme-preset-info"><div class="theme-preset-emoji"></div><h4>Lavanda</h4><p>Sofisticado</p></div>
-                            </div>
-                            <div class="theme-preset-card" onclick="applyPreset('laranja')">
-                                <div class="theme-preset-preview"><div style="background:#EA580C"></div><div style="background:#C2410C"></div><div style="background:#FFF7ED"></div><div style="background:#1D4ED8"></div></div>
-                                <div class="theme-preset-info"><div class="theme-preset-emoji">🍊</div><h4>Laranja</h4><p>Energético</p></div>
-                            </div>
+                            <div class="theme-preset-card" onclick="applyPreset('rosa')"><div class="theme-preset-preview"><div style="background:#E91E63"></div><div style="background:#AD1457"></div><div style="background:#FCE4EC"></div><div style="background:#FF6F00"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">🌸</div><h4>Rosa Pink</h4><p>Romântico</p></div></div>
+                            <div class="theme-preset-card" onclick="applyPreset('vermelho')"><div class="theme-preset-preview"><div style="background:#D32F2F"></div><div style="background:#B71C1C"></div><div style="background:#FFEBEE"></div><div style="background:#F9A825"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">❤️</div><h4>Vermelho</h4><p>Energia</p></div></div>
+                            <div class="theme-preset-card" onclick="applyPreset('natureza')"><div class="theme-preset-preview"><div style="background:#2D6A4F"></div><div style="background:#1B4332"></div><div style="background:#F5E6CA"></div><div style="background:#E76F51"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji"></div><h4>Natureza</h4><p>Verde</p></div></div>
+                            <div class="theme-preset-card" onclick="applyPreset('oceano')"><div class="theme-preset-preview"><div style="background:#1E40AF"></div><div style="background:#1E3A8A"></div><div style="background:#DBEAFE"></div><div style="background:#F59E0B"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">🌊</div><h4>Oceano</h4><p>Azul</p></div></div>
+                            <div class="theme-preset-card" onclick="applyPreset('roxo')"><div class="theme-preset-preview"><div style="background:#6D28D9"></div><div style="background:#5B21B6"></div><div style="background:#EDE9FE"></div><div style="background:#EC4899"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji"></div><h4>Roxo</h4><p>Elegante</p></div></div>
+                            <div class="theme-preset-card" onclick="applyPreset('dark')"><div class="theme-preset-preview"><div style="background:#3B82F6"></div><div style="background:#1F2937"></div><div style="background:#111827"></div><div style="background:#F97316"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">🌙</div><h4>Dark</h4><p>Escuro</p></div></div>
+                            <div class="theme-preset-card" onclick="applyPreset('quente')"><div class="theme-preset-preview"><div style="background:#B45309"></div><div style="background:#92400E"></div><div style="background:#FEF3C7"></div><div style="background:#DC2626"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">🔥</div><h4>Quente</h4><p>Outono</p></div></div>
+                            <div class="theme-preset-card" onclick="applyPreset('pastel')"><div class="theme-preset-preview"><div style="background:#818CF8"></div><div style="background:#6366F1"></div><div style="background:#FDF2F8"></div><div style="background:#F472B6"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">🌸</div><h4>Pastel</h4><p>Delicado</p></div></div>
+                            <div class="theme-preset-card" onclick="applyPreset('turquesa')"><div class="theme-preset-preview"><div style="background:#0D9488"></div><div style="background:#0F766E"></div><div style="background:#CCFBF1"></div><div style="background:#F97316"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">🐚</div><h4>Turquesa</h4><p>Tropical</p></div></div>
+                            <div class="theme-preset-card" onclick="applyPreset('lavanda')"><div class="theme-preset-preview"><div style="background:#7C3AED"></div><div style="background:#6D28D9"></div><div style="background:#F5F3FF"></div><div style="background:#10B981"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji"></div><h4>Lavanda</h4><p>Sofisticado</p></div></div>
+                            <div class="theme-preset-card" onclick="applyPreset('laranja')"><div class="theme-preset-preview"><div style="background:#EA580C"></div><div style="background:#C2410C"></div><div style="background:#FFF7ED"></div><div style="background:#1D4ED8"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji"></div><h4>Laranja</h4><p>Energético</p></div></div>
                         </div>
-
                         <h4 style="margin:32px 0 16px;"> Cores Personalizadas</h4>
                         <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-                            <div>
-                                <div style="display:flex;flex-direction:column;gap:10px;">
-                                    <div class="color-option"><input type="color" id="themePrimary" onchange="updateTheme()"><label>Principal</label><code id="codePrimary">#2D6A4F</code></div>
-                                    <div class="color-option"><input type="color" id="themePrimaryDark" onchange="updateTheme()"><label>Escura</label><code id="codePrimaryDark">#1B4332</code></div>
-                                    <div class="color-option"><input type="color" id="themePrimaryLight" onchange="updateTheme()"><label>Clara</label><code id="codePrimaryLight">#40916C</code></div>
-                                    <div class="color-option"><input type="color" id="themeSecondary" onchange="updateTheme()"><label>Secundária</label><code id="codeSecondary">#F5E6CA</code></div>
-                                    <div class="color-option"><input type="color" id="themeAccent" onchange="updateTheme()"><label>Destaque</label><code id="codeAccent">#E76F51</code></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div style="display:flex;flex-direction:column;gap:10px;">
-                                    <div class="color-option"><input type="color" id="themeBgLight" onchange="updateTheme()"><label>Fundo Claro</label><code id="codeBgLight">#F7F7F7</code></div>
-                                    <div class="color-option"><input type="color" id="themeBgWhite" onchange="updateTheme()"><label>Fundo Branco</label><code id="codeBgWhite">#FFFFFF</code></div>
-                                    <div class="color-option"><input type="color" id="themeTextDark" onchange="updateTheme()"><label>Texto Escuro</label><code id="codeTextDark">#1A1A2E</code></div>
-                                    <div class="color-option"><input type="color" id="themeTextMid" onchange="updateTheme()"><label>Texto Médio</label><code id="codeTextMid">#4A4A68</code></div>
-                                    <div class="color-option"><input type="color" id="themeBorder" onchange="updateTheme()"><label>Borda</label><code id="codeBorder">#E0E0E0</code></div>
-                                </div>
-                                <div style="margin-top:20px;display:flex;gap:8px;flex-wrap:wrap;">
-                                    <button class="btn btn-primary" onclick="applyTheme()"><i class="ri-check-line"></i> Aplicar Cores</button>
-                                </div>
-                            </div>
+                            <div><div style="display:flex;flex-direction:column;gap:10px;">
+                                <div class="color-option"><input type="color" id="themePrimary" onchange="updateTheme()"><label>Principal</label><code id="codePrimary">#E91E63</code></div>
+                                <div class="color-option"><input type="color" id="themePrimaryDark" onchange="updateTheme()"><label>Escura</label><code id="codePrimaryDark">#AD1457</code></div>
+                                <div class="color-option"><input type="color" id="themePrimaryLight" onchange="updateTheme()"><label>Clara</label><code id="codePrimaryLight">#F06292</code></div>
+                                <div class="color-option"><input type="color" id="themeSecondary" onchange="updateTheme()"><label>Secundária</label><code id="codeSecondary">#FCE4EC</code></div>
+                                <div class="color-option"><input type="color" id="themeAccent" onchange="updateTheme()"><label>Destaque</label><code id="codeAccent">#FF6F00</code></div>
+                            </div></div>
+                            <div><div style="display:flex;flex-direction:column;gap:10px;">
+                                <div class="color-option"><input type="color" id="themeBgLight" onchange="updateTheme()"><label>Fundo Claro</label><code id="codeBgLight">#FFF5F8</code></div>
+                                <div class="color-option"><input type="color" id="themeBgWhite" onchange="updateTheme()"><label>Fundo Branco</label><code id="codeBgWhite">#FFFFFF</code></div>
+                                <div class="color-option"><input type="color" id="themeTextDark" onchange="updateTheme()"><label>Texto Escuro</label><code id="codeTextDark">#1A1A2E</code></div>
+                                <div class="color-option"><input type="color" id="themeTextMid" onchange="updateTheme()"><label>Texto Médio</label><code id="codeTextMid">#4A4A68</code></div>
+                                <div class="color-option"><input type="color" id="themeBorder" onchange="updateTheme()"><label>Borda</label><code id="codeBorder">#E0E0E0</code></div>
+                            </div><div style="margin-top:20px;"><button class="btn btn-primary" onclick="applyTheme()"><i class="ri-check-line"></i> Aplicar Cores</button></div></div>
                         </div>
-
                         <div class="theme-preview" id="themePreview" style="margin-top:24px;">
-                            <div class="theme-preview-header" id="themePreviewHeader">
-                                <div style="width:24px;height:24px;border-radius:50%;overflow:hidden;"><img class="site-avatar-img" src="" style="width:100%;height:100%;object-fit:cover;"></div>
-                                <span style="font-weight:800;" id="themePreviewName">EduMarket</span>
-                                <span style="margin-left:auto;font-size:0.8rem;opacity:0.8;">Preview</span>
-                            </div>
-                            <div class="theme-preview-content" id="themePreviewContent">
-                                <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                                    <div style="background:var(--bg-white);padding:16px;border-radius:8px;flex:1;min-width:150px;border:1px solid var(--border);">
-                                        <div style="font-size:0.8rem;color:var(--primary);font-weight:600;margin-bottom:4px;">Produto</div>
-                                        <div style="height:60px;background:var(--bg-light);border-radius:4px;margin-bottom:8px;"></div>
-                                        <div style="font-weight:700;color:var(--primary);">R$ 49,90</div>
-                                    </div>
-                                </div>
-                                <div style="margin-top:16px;display:flex;gap:8px;">
-                                    <button class="btn btn-primary" style="font-size:0.85rem;padding:8px 16px;">Adicionar</button>
-                                    <button class="btn btn-accent" style="font-size:0.85rem;padding:8px 16px;">Comprar</button>
-                                </div>
-                            </div>
+                            <div class="theme-preview-header" id="themePreviewHeader"><div style="width:24px;height:24px;border-radius:50%;overflow:hidden;"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" style="width:100%;height:100%;object-fit:cover;"></div><span style="font-weight:800;" id="themePreviewName"></span><span style="margin-left:auto;font-size:0.8rem;opacity:0.8;">Preview</span></div>
+                            <div class="theme-preview-content" id="themePreviewContent"><div style="display:flex;gap:12px;flex-wrap:wrap;"><div style="background:var(--bg-white);padding:16px;border-radius:8px;flex:1;min-width:150px;border:1px solid var(--border);"><div style="font-size:0.8rem;color:var(--primary);font-weight:600;margin-bottom:4px;">Produto</div><div style="height:60px;background:var(--bg-light);border-radius:4px;margin-bottom:8px;"></div><div style="font-weight:700;color:var(--primary);">R$ 49,90</div></div></div><div style="margin-top:16px;display:flex;gap:8px;"><button class="btn btn-primary" style="font-size:0.85rem;padding:8px 16px;">Adicionar</button><button class="btn btn-accent" style="font-size:0.85rem;padding:8px 16px;">Comprar</button></div></div>
                         </div>
                     </div>
                 </div>
@@ -942,35 +1057,35 @@
 </div>
 
 <div class="info-page" id="infoInstitucional">
-    <div class="info-page-header"><div class="container"><h1><i class="ri-building-2-line"></i> Sobre Nós</h1><p>Conheça nossa história</p></div></div>
+    <div class="info-page-header"><div class="container"><h1 id="infoAboutTitleDisplay"></h1><p id="infoAboutSubtitleDisplay"></p></div></div>
     <div class="info-page-content">
-        <div class="info-card"><h3><i class="ri-book-open-line"></i> Nossa História</h3><p>O Cantinho da Profª Ana Carolina M. nasceu com o objetivo de democratizar o acesso a materiais educacionais de qualidade no Brasil.</p></div>
-        <div class="info-card"><h3><i class="ri-target-line"></i> Missão</h3><p>Conectar educadores e alunos a materiais pedagógicos de alta qualidade com preços acessíveis.</p></div>
+        <div class="info-card"><h3 id="infoAboutCard1TitleDisplay"></h3><p id="infoAboutCard1ContentDisplay"></p></div>
+        <div class="info-card"><h3 id="infoAboutCard2TitleDisplay"></h3><p id="infoAboutCard2ContentDisplay"></p></div>
         <button class="btn btn-primary back-btn" onclick="showStore()"><i class="ri-arrow-left-line"></i> Voltar</button>
     </div>
 </div>
 
 <div class="info-page" id="infoComoFunciona">
-    <div class="info-page-header"><div class="container"><h1><i class="ri-lightbulb-line"></i> Como Funciona</h1><p>Entenda nosso processo</p></div></div>
+    <div class="info-page-header"><div class="container"><h1 id="infoHowTitleDisplay"></h1></div></div>
     <div class="info-page-content">
-        <div class="info-card"><h3><i class="ri-shopping-cart-2-line"></i> Como Comprar</h3><ul><li>1. Navegue pelos produtos</li><li>2. Adicione ao carrinho</li><li>3. Finalize o pagamento</li><li>4. Receba em casa</li></ul></div>
+        <div class="info-card"><h3 id="infoHowCardTitleDisplay"></h3><ul><li id="infoHowStep1Display"></li><li id="infoHowStep2Display"></li><li id="infoHowStep3Display"></li><li id="infoHowStep4Display"></li></ul></div>
         <button class="btn btn-primary back-btn" onclick="showStore()"><i class="ri-arrow-left-line"></i> Voltar</button>
     </div>
 </div>
 
 <div class="info-page" id="infoBlog">
-    <div class="info-page-header"><div class="container"><h1><i class="ri-article-line"></i> Blog</h1><p>Novidades e conteúdos</p></div></div>
+    <div class="info-page-header"><div class="container"><h1 id="infoBlogTitleDisplay"></h1><p id="infoBlogSubtitleDisplay"></p></div></div>
     <div class="info-page-content">
-        <div class="info-card"><h3><i class="ri-lightbulb-flash-line"></i> Últimas Publicações</h3><p>Em breve conteúdo exclusivo!</p></div>
+        <div class="info-card"><h3 id="infoBlogCardTitleDisplay"></h3><p id="infoBlogContentDisplay"></p></div>
         <button class="btn btn-primary back-btn" onclick="showStore()"><i class="ri-arrow-left-line"></i> Voltar</button>
     </div>
 </div>
 
 <div class="info-page" id="infoPoliticas">
-    <div class="info-page-header"><div class="container"><h1><i class="ri-file-text-line"></i> Políticas</h1><p>Termos, privacidade e LGPD</p></div></div>
+    <div class="info-page-header"><div class="container"><h1 id="infoPolicyTitleDisplay"></h1></div></div>
     <div class="info-page-content">
-        <div class="info-card"><h3><i class="ri-file-list-3-line"></i> Termos</h3><ul><li>Materiais para uso pessoal e educacional</li><li>Proibida reprodução sem autorização</li></ul></div>
-        <div class="info-card"><h3><i class="ri-shield-check-line"></i> Privacidade</h3><p>Dados protegidos conforme a LGPD.</p></div>
+        <div class="info-card"><h3 id="infoPolicyCard1TitleDisplay"></h3><ul><li id="infoPolicyItem1Display"></li><li id="infoPolicyItem2Display"></li></ul></div>
+        <div class="info-card"><h3 id="infoPolicyCard2TitleDisplay"></h3><p id="infoPolicyCard2ContentDisplay"></p></div>
         <button class="btn btn-primary back-btn" onclick="showStore()"><i class="ri-arrow-left-line"></i> Voltar</button>
     </div>
 </div>
@@ -978,10 +1093,10 @@
 <div class="store-page" id="storePage">
     <div class="top-bar">
         <div class="container">
-            <span id="topBarText">📚 Bem-vindo</span>
+            <span id="topBarText"></span>
             <div>
-                <a href="#" onclick="event.preventDefault(); openChat();">Central de Ajuda</a>
-                <a href="#" onclick="event.preventDefault(); openChat();">Fale Conosco</a>
+                <a href="#" onclick="event.preventDefault(); openChat();" id="topBarLink1Text"></a>
+                <a href="#" onclick="event.preventDefault(); openChat();" id="topBarLink2Text"></a>
                 <a href="#" onclick="event.preventDefault(); showAdminLogin();" style="background:rgba(255,255,255,0.15);padding:4px 12px;border-radius:4px;"><i class="ri-admin-line"></i> Painel Admin</a>
             </div>
         </div>
@@ -990,7 +1105,7 @@
     <header class="header">
         <div class="container">
             <a href="#" class="logo" onclick="event.preventDefault(); showStore();">
-                <div class="logo-icon"><img class="site-avatar-img" src="" alt="Edu"></div>
+                <div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Edu"></div>
                 <div class="logo-text" id="storeLogoText"></div>
             </a>
             <div class="search-bar">
@@ -1019,18 +1134,13 @@
 
     <section class="features-bar">
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-card"><div class="feature-icon green"><i class="ri-truck-line"></i></div><div class="feature-text"><h4>Frete Grátis</h4><p>Acima de R$ 99</p></div></div>
-                <div class="feature-card"><div class="feature-icon orange"><i class="ri-shield-check-line"></i></div><div class="feature-text"><h4>Compra Segura</h4><p>Proteção total</p></div></div>
-                <div class="feature-card"><div class="feature-icon blue"><i class="ri-refresh-line"></i></div><div class="feature-text"><h4>Troca Fácil</h4><p>Até 30 dias</p></div></div>
-                <div class="feature-card"><div class="feature-icon purple"><i class="ri-customer-service-2-line"></i></div><div class="feature-text"><h4>Suporte 24h</h4><p>Estamos aqui</p></div></div>
-            </div>
+            <div class="features-grid" id="featuresGrid"></div>
         </div>
     </section>
 
     <section class="categories-section">
         <div class="container">
-            <div class="section-header"><h2>Categorias Populares</h2></div>
+            <div class="section-header"><h2 id="sectionCategoriesTitleDisplay">Categorias Populares</h2></div>
             <div class="categories-scroll" id="categoriesScroll"></div>
         </div>
     </section>
@@ -1038,7 +1148,7 @@
     <section class="deals-section">
         <div class="container">
             <div class="deals-banner">
-                <div><h2>⚡ Ofertas Relâmpago</h2><p>Descontos exclusivos!</p></div>
+                <div><h2 id="sectionDealsTitleDisplay">Ofertas Relâmpago</h2><p id="sectionDealsSubtitleDisplay">Descontos exclusivos!</p></div>
                 <div class="deals-timer">
                     <div class="timer-block"><span class="number" id="timerHours">08</span><span class="label">Horas</span></div>
                     <div class="timer-block"><span class="number" id="timerMinutes">45</span><span class="label">Min</span></div>
@@ -1071,9 +1181,9 @@
     <section class="newsletter">
         <div class="container">
             <div class="newsletter-box">
-                <h2>📬 Receba Novidades</h2>
-                <p>Ganhe 10% OFF na primeira compra!</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); registerEmail(this); this.reset();"><input type="email" placeholder="Seu e-mail" required><button type="submit">Cadastrar</button></form>
+                <h2 id="newsletterTitleDisplay"></h2>
+                <p id="newsletterDescDisplay"></p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); registerEmail(this); this.reset();"><input type="email" id="newsletterInput" placeholder="Seu e-mail" required><button type="submit" id="newsletterBtnDisplay"></button></form>
             </div>
         </div>
     </section>
@@ -1082,30 +1192,30 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo"><div class="logo-icon"><img class="site-avatar-img" src="" alt="Edu"></div><div class="logo-text" id="footerLogoText"></div></a>
-                    <p id="footerDescription"></p>
+                    <a href="#" class="logo"><div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Edu"></div><div class="logo-text" id="footerLogoText"></div></a>
+                    <p id="footerDescDisplay"></p>
                     <div class="footer-social" id="footerSocial"></div>
                 </div>
                 <div class="footer-col">
-                    <h4>Institucional</h4>
-                    <a onclick="showInfoPage('infoInstitucional')">Sobre Nós</a>
-                    <a onclick="showInfoPage('infoComoFunciona')">Como Funciona</a>
-                    <a onclick="showInfoPage('infoBlog')">Blog</a>
+                    <h4 id="footerCol1TitleDisplay"></h4>
+                    <a onclick="showInfoPage('infoInstitucional')" id="footerCol1Link1Display"></a>
+                    <a onclick="showInfoPage('infoComoFunciona')" id="footerCol1Link2Display"></a>
+                    <a onclick="showInfoPage('infoBlog')" id="footerCol1Link3Display"></a>
                 </div>
                 <div class="footer-col">
-                    <h4>Ajuda</h4>
-                    <a onclick="openChat()">Central de Ajuda</a>
-                    <a onclick="openChat()">Como Comprar</a>
-                    <a onclick="openChat()">Trocas</a>
+                    <h4 id="footerCol2TitleDisplay"></h4>
+                    <a onclick="openChat()" id="footerCol2Link1Display"></a>
+                    <a onclick="openChat()" id="footerCol2Link2Display"></a>
+                    <a onclick="openChat()" id="footerCol2Link3Display"></a>
                 </div>
                 <div class="footer-col">
-                    <h4>Políticas</h4>
-                    <a onclick="showInfoPage('infoPoliticas')">Termos</a>
-                    <a onclick="showInfoPage('infoPoliticas')">Privacidade</a>
-                    <a onclick="showInfoPage('infoPoliticas')">LGPD</a>
+                    <h4 id="footerCol3TitleDisplay"></h4>
+                    <a onclick="showInfoPage('infoPoliticas')" id="footerCol3Link1Display"></a>
+                    <a onclick="showInfoPage('infoPoliticas')" id="footerCol3Link2Display"></a>
+                    <a onclick="showInfoPage('infoPoliticas')" id="footerCol3Link3Display"></a>
                 </div>
             </div>
-            <div class="footer-bottom"><p id="footerCopyright">© 2025 Todos os direitos reservados.</p></div>
+            <div class="footer-bottom"><p id="footerCopyrightDisplay"></p></div>
         </div>
     </footer>
 </div>
@@ -1172,11 +1282,7 @@
                 </form>
             </div>
             <div class="payment-content" id="payment-boleto">
-                <div style="text-align:center;padding:20px;">
-                    <i class="ri-barcode-line" style="font-size:3rem;color:var(--text-mid);margin-bottom:16px;"></i>
-                    <h3 style="margin-bottom:8px;">Boleto Bancário</h3>
-                    <button class="btn btn-lg btn-accent" style="width:100%;justify-content:center;" onclick="showToast('Boleto gerado!')"><i class="ri-download-2-line"></i> Gerar Boleto</button>
-                </div>
+                <div style="text-align:center;padding:20px;"><i class="ri-barcode-line" style="font-size:3rem;color:var(--text-mid);margin-bottom:16px;"></i><h3 style="margin-bottom:8px;">Boleto Bancário</h3><button class="btn btn-lg btn-accent" style="width:100%;justify-content:center;" onclick="showToast('Boleto gerado!')"><i class="ri-download-2-line"></i> Gerar Boleto</button></div>
             </div>
         </div>
     </div>
@@ -1185,11 +1291,8 @@
 <div class="chat-widget">
     <div class="chat-box" id="chatBox">
         <div class="chat-header">
-            <div class="chat-avatar"><img class="bot-avatar-img" src="" alt="Edu"></div>
-            <div class="chat-header-info">
-                <h4 id="chatbotDisplayName">Edu - Assistente</h4>
-                <span>Online agora</span>
-            </div>
+            <div class="chat-avatar"><img class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Edu"></div>
+            <div class="chat-header-info"><h4 id="chatbotDisplayName">Edu - Assistente</h4><span>Online agora</span></div>
             <button class="chat-header-close" onclick="toggleChat()"><i class="ri-close-line"></i></button>
         </div>
         <div class="chat-messages" id="chatMessages"></div>
@@ -1200,7 +1303,7 @@
         </div>
     </div>
     <button class="chat-toggle" onclick="toggleChat()">
-        <img class="bot-avatar-img" src="" alt="Edu Bot">
+        <img class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Edu Bot">
         <span class="chat-notif" id="chatNotif">1</span>
     </button>
 </div>
@@ -1214,9 +1317,9 @@ const DEFAULT_DATA = {
     storeName: "Cantinho da Profª Ana Carolina M.",
     storeSlogan: "Materiais Acadêmicos e Pedagógicos",
     banners: [
-        { badge: '🔥 OFERTAS', title: 'Materiais Pedagógicos com até 40% OFF', desc: 'Apostilas, livros e materiais didáticos.', bg: 'linear-gradient(135deg, #2D6A4F 0%, #40916C 50%, #52B788 100%)', emoji: '📚' },
-        { badge: '✨ NOVIDADES', title: 'Nova Coleção 2025 — BNCC', desc: 'Materiais atualizados conforme a BNCC.', bg: 'linear-gradient(135deg, #E76F51 0%, #F4A261 50%, #F5E6CA 100%)', emoji: '🎓' },
-        { badge: '🚚 FRETE GRÁTIS', title: 'Frete Grátis para todo o Brasil', desc: 'Em compras acima de R$ 99,00.', bg: 'linear-gradient(135deg, #1B4332 0%, #2D6A4F 50%, #40916C 100%)', emoji: '📦' }
+        { badge: '🔥 OFERTAS', title: 'Materiais Pedagógicos com até 40% OFF', desc: 'Apostilas, livros e materiais didáticos.', bg: 'linear-gradient(135deg, #E91E63 0%, #F06292 50%, #FCE4EC 100%)', emoji: '📚' },
+        { badge: '✨ NOVIDADES', title: 'Nova Coleção 2025 — BNCC', desc: 'Materiais atualizados conforme a BNCC.', bg: 'linear-gradient(135deg, #FF6F00 0%, #F5E6CA 50%, #FFF5F8 100%)', emoji: '🎓' },
+        { badge: '🚚 FRETE GRÁTIS', title: 'Frete Grátis para todo o Brasil', desc: 'Em compras acima de R$ 99,00.', bg: 'linear-gradient(135deg, #AD1457 0%, #E91E63 50%, #F06292 100%)', emoji: '📦' }
     ],
     categories: [
         { id: 'matematica', name: 'Matemática', emoji: '📐', color: '#DBEAFE', gradient: 'linear-gradient(135deg,#DBEAFE,#93C5FD)' },
@@ -1224,7 +1327,7 @@ const DEFAULT_DATA = {
         { id: 'ciencias', name: 'Ciências', emoji: '🔬', color: '#EDE9FE', gradient: 'linear-gradient(135deg,#EDE9FE,#A78BFA)' },
         { id: 'historia', name: 'História', emoji: '📜', color: '#FEF3C7', gradient: 'linear-gradient(135deg,#FEF3C7,#F59E0B)' },
         { id: 'geografia', name: 'Geografia', emoji: '🌍', color: '#CCFBF1', gradient: 'linear-gradient(135deg,#CCFBF1,#2DD4BF)' },
-        { id: 'ingles', name: 'Inglês', emoji: '🇬', color: '#FEE2E2', gradient: 'linear-gradient(135deg,#FEE2E2,#F87171)' },
+        { id: 'ingles', name: 'Inglês', emoji: '🇬🇧', color: '#FEE2E2', gradient: 'linear-gradient(135deg,#FEE2E2,#F87171)' },
         { id: 'artes', name: 'Artes', emoji: '🎨', color: '#FCE7F3', gradient: 'linear-gradient(135deg,#FCE7F3,#F472B6)' },
         { id: 'pedagogia', name: 'Pedagogia', emoji: '🧠', color: '#E0E7FF', gradient: 'linear-gradient(135deg,#E0E7FF,#818CF8)' }
     ],
@@ -1255,23 +1358,50 @@ const DEFAULT_DATA = {
         { code: 'EDUMKT20', discount: 'R$ 20', type: 'Fixo', uses: '23/50', status: 'active' }
     ],
     avatar: DEFAULT_AVATAR,
-    theme: { primary: '#2D6A4F', primaryDark: '#1B4332', primaryLight: '#40916C', secondary: '#F5E6CA', accent: '#E76F51', accentHover: '#D4583A', bgLight: '#F7F7F7', bgWhite: '#FFFFFF', textDark: '#1A1A2E', textMid: '#4A4A68', border: '#E0E0E0' },
-    activeTheme: '',
+    theme: { primary: '#E91E63', primaryDark: '#AD1457', primaryLight: '#F06292', secondary: '#FCE4EC', accent: '#FF6F00', accentHover: '#E65100', bgLight: '#FFF5F8', bgWhite: '#FFFFFF', textDark: '#1A1A2E', textMid: '#4A4A68', border: '#E0E0E0' },
+    activeTheme: 'rosa',
     chatbot: { name: 'Edu', subtitle: 'Assistente' },
     contacts: { phone: '(11) 99999-9999', whatsapp: '(11) 98888-8888', email: 'contato@edumarket.com', address: 'Rua da Educação, 123 - SP', hours: 'Seg a Sex: 8h às 18h' },
     socials: { facebook: 'https://facebook.com/edumarket', instagram: 'https://instagram.com/edumarket', youtube: 'https://youtube.com/@edumarket', whatsapp: 'https://wa.me/5511988888888' },
     registeredEmails: [],
-    sentCoupons: []
+    sentCoupons: [],
+    siteContent: {
+        topBarText: '📚 Bem-vindo ao Cantinho da Profª Ana Carolina M.',
+        topBarLink1: 'Central de Ajuda',
+        topBarLink2: 'Fale Conosco',
+        features: [
+            { icon: 'ri-truck-line', title: 'Frete Grátis', subtitle: 'Acima de R$ 99' },
+            { icon: 'ri-shield-check-line', title: 'Compra Segura', subtitle: 'Proteção total' },
+            { icon: 'ri-refresh-line', title: 'Troca Fácil', subtitle: 'Até 30 dias' },
+            { icon: 'ri-customer-service-2-line', title: 'Suporte 24h', subtitle: 'Estamos aqui' }
+        ],
+        newsletter: { title: '📬 Receba Novidades', desc: 'Ganhe 10% OFF na primeira compra!', placeholder: 'Seu e-mail', btnText: 'Cadastrar' },
+        footer: {
+            desc: 'O Cantinho da Profª Ana Carolina M. nasceu com o objetivo de democratizar o acesso a materiais educacionais de qualidade no Brasil.',
+            copyright: '© 2025 Cantinho da Profª Ana Carolina M. Todos os direitos reservados.',
+            col1: { title: 'Institucional', links: ['Sobre Nós', 'Como Funciona', 'Blog'] },
+            col2: { title: 'Ajuda', links: ['Central de Ajuda', 'Como Comprar', 'Trocas'] },
+            col3: { title: 'Políticas', links: ['Termos', 'Privacidade', 'LGPD'] }
+        },
+        infoPages: {
+            about: { title: 'Sobre Nós', subtitle: 'Conheça nossa história', card1: { title: 'Nossa História', content: 'O Cantinho da Profª Ana Carolina M. nasceu com o objetivo de democratizar o acesso a materiais educacionais de qualidade no Brasil.' }, card2: { title: 'Missão', content: 'Conectar educadores e alunos a materiais pedagógicos de alta qualidade com preços acessíveis.' } },
+            how: { title: 'Como Funciona', cardTitle: 'Como Comprar', steps: ['1. Navegue pelos produtos', '2. Adicione ao carrinho', '3. Finalize o pagamento', '4. Receba em casa'] },
+            blog: { title: 'Blog', subtitle: 'Novidades e conteúdos', cardTitle: 'Últimas Publicações', content: 'Em breve conteúdo exclusivo!' },
+            policy: { title: 'Políticas', card1: { title: 'Termos', items: ['Materiais para uso pessoal e educacional', 'Proibida reprodução sem autorização'] }, card2: { title: 'Privacidade', content: 'Dados protegidos conforme a LGPD.' } }
+        },
+        sectionTitles: { categories: 'Categorias Populares', dealsTitle: 'Ofertas Relâmpago', dealsSubtitle: 'Descontos exclusivos!', ctaText: 'Ver Ofertas' }
+    }
 };
 
 const THEME_PRESETS = {
+    rosa: { primary: '#E91E63', primaryDark: '#AD1457', primaryLight: '#F06292', secondary: '#FCE4EC', accent: '#FF6F00', accentHover: '#E65100', bgLight: '#FFF5F8', bgWhite: '#FFFFFF', textDark: '#1A1A2E', textMid: '#4A4A68', border: '#E0E0E0' },
+    vermelho: { primary: '#D32F2F', primaryDark: '#B71C1C', primaryLight: '#EF5350', secondary: '#FFEBEE', accent: '#F9A825', accentHover: '#F57F17', bgLight: '#FFF5F5', bgWhite: '#FFFFFF', textDark: '#1A1A2E', textMid: '#4A4A68', border: '#E0E0E0' },
     natureza: { primary: '#2D6A4F', primaryDark: '#1B4332', primaryLight: '#40916C', secondary: '#F5E6CA', accent: '#E76F51', accentHover: '#D4583A', bgLight: '#F7F7F7', bgWhite: '#FFFFFF', textDark: '#1A1A2E', textMid: '#4A4A68', border: '#E0E0E0' },
     oceano: { primary: '#1E40AF', primaryDark: '#1E3A8A', primaryLight: '#3B82F6', secondary: '#DBEAFE', accent: '#F59E0B', accentHover: '#D97706', bgLight: '#F8FAFC', bgWhite: '#FFFFFF', textDark: '#0F172A', textMid: '#475569', border: '#E2E8F0' },
     roxo: { primary: '#6D28D9', primaryDark: '#5B21B6', primaryLight: '#8B5CF6', secondary: '#EDE9FE', accent: '#EC4899', accentHover: '#DB2777', bgLight: '#FAF5FF', bgWhite: '#FFFFFF', textDark: '#1E1B4B', textMid: '#5B21B6', border: '#E5E7EB' },
     dark: { primary: '#3B82F6', primaryDark: '#1F2937', primaryLight: '#60A5FA', secondary: '#374151', accent: '#F97316', accentHover: '#EA580C', bgLight: '#111827', bgWhite: '#1F2937', textDark: '#F9FAFB', textMid: '#D1D5DB', border: '#374151' },
     quente: { primary: '#B45309', primaryDark: '#92400E', primaryLight: '#D97706', secondary: '#FEF3C7', accent: '#DC2626', accentHover: '#B91C1C', bgLight: '#FFFBEB', bgWhite: '#FFFFFF', textDark: '#451A03', textMid: '#78350F', border: '#E5E7EB' },
     pastel: { primary: '#818CF8', primaryDark: '#6366F1', primaryLight: '#A5B4FC', secondary: '#FCE7F3', accent: '#F472B6', accentHover: '#EC4899', bgLight: '#FDF2F8', bgWhite: '#FFFFFF', textDark: '#1E1B4B', textMid: '#6B7280', border: '#E5E7EB' },
-    rosa: { primary: '#BE185D', primaryDark: '#9D174D', primaryLight: '#F472B6', secondary: '#FCE7F3', accent: '#F59E0B', accentHover: '#D97706', bgLight: '#FFF1F2', bgWhite: '#FFFFFF', textDark: '#4A0E2E', textMid: '#6B2147', border: '#E5E7EB' },
     turquesa: { primary: '#0D9488', primaryDark: '#0F766E', primaryLight: '#14B8A6', secondary: '#CCFBF1', accent: '#F97316', accentHover: '#EA580C', bgLight: '#F0FDFA', bgWhite: '#FFFFFF', textDark: '#134E4A', textMid: '#2D6A5E', border: '#E5E7EB' },
     lavanda: { primary: '#7C3AED', primaryDark: '#6D28D9', primaryLight: '#A78BFA', secondary: '#F5F3FF', accent: '#10B981', accentHover: '#059669', bgLight: '#FAF5FF', bgWhite: '#FFFFFF', textDark: '#2E1065', textMid: '#5B21B6', border: '#E5E7EB' },
     laranja: { primary: '#EA580C', primaryDark: '#C2410C', primaryLight: '#F97316', secondary: '#FFF7ED', accent: '#1D4ED8', accentHover: '#1E40AF', bgLight: '#FFF7ED', bgWhite: '#FFFFFF', textDark: '#431407', textMid: '#7C2D12', border: '#E5E7EB' }
@@ -1282,30 +1412,13 @@ function loadData() {
         const saved = localStorage.getItem('edumarket_data');
         if (saved) {
             const parsed = JSON.parse(saved);
-            return {
-                ...DEFAULT_DATA,
-                ...parsed,
-                products: parsed.products || DEFAULT_DATA.products,
-                categories: parsed.categories || DEFAULT_DATA.categories,
-                banners: parsed.banners || DEFAULT_DATA.banners,
-                qa: parsed.qa || DEFAULT_DATA.qa,
-                coupons: parsed.coupons || DEFAULT_DATA.coupons,
-                theme: { ...DEFAULT_DATA.theme, ...(parsed.theme || {}) },
-                contacts: { ...DEFAULT_DATA.contacts, ...(parsed.contacts || {}) },
-                socials: { ...DEFAULT_DATA.socials, ...(parsed.socials || {}) },
-                chatbot: { ...DEFAULT_DATA.chatbot, ...(parsed.chatbot || {}) },
-                storeName: parsed.storeName || DEFAULT_DATA.storeName,
-                storeSlogan: parsed.storeSlogan || DEFAULT_DATA.storeSlogan,
-                activeTheme: parsed.activeTheme || ''
-            };
+            return { ...DEFAULT_DATA, ...parsed, products: parsed.products || DEFAULT_DATA.products, categories: parsed.categories || DEFAULT_DATA.categories, banners: parsed.banners || DEFAULT_DATA.banners, qa: parsed.qa || DEFAULT_DATA.qa, coupons: parsed.coupons || DEFAULT_DATA.coupons, theme: { ...DEFAULT_DATA.theme, ...(parsed.theme || {}) }, contacts: { ...DEFAULT_DATA.contacts, ...(parsed.contacts || {}) }, socials: { ...DEFAULT_DATA.socials, ...(parsed.socials || {}) }, chatbot: { ...DEFAULT_DATA.chatbot, ...(parsed.chatbot || {}) }, storeName: parsed.storeName || DEFAULT_DATA.storeName, storeSlogan: parsed.storeSlogan || DEFAULT_DATA.storeSlogan, activeTheme: parsed.activeTheme || 'rosa', siteContent: { ...DEFAULT_DATA.siteContent, ...(parsed.siteContent || {}) } };
         }
     } catch(e) { console.log('Load error:', e); }
     return JSON.parse(JSON.stringify(DEFAULT_DATA));
 }
 
-function saveData() {
-    try { localStorage.setItem('edumarket_data', JSON.stringify(appData)); } catch(e) { console.log('Save error:', e); }
-}
+function saveData() { try { localStorage.setItem('edumarket_data', JSON.stringify(appData)); } catch(e) { console.log('Save error:', e); } }
 
 let appData = loadData();
 let currentAvatar = appData.avatar;
@@ -1319,7 +1432,144 @@ let registeredEmails = appData.registeredEmails || [];
 let sentCoupons = appData.sentCoupons || [];
 let selectedEmails = new Set();
 
-// Apply theme from localStorage on page load
+// ===== BOT NAME =====
+function saveBotName() {
+    appData.chatbot.name = document.getElementById('chatbotName').value || 'Edu';
+    appData.chatbot.subtitle = document.getElementById('chatbotSubtitle').value || 'Assistente';
+    saveData(); updateBotNameEverywhere(); showToast('Nome do bot atualizado! 🤖');
+}
+
+function updateChatbotName() {
+    const name = document.getElementById('chatbotName').value || 'Edu';
+    const subtitle = document.getElementById('chatbotSubtitle').value || 'Assistente';
+    document.getElementById('chatbotDisplayName').textContent = `${name} - ${subtitle}`;
+    document.getElementById('qaBotDisplayName').textContent = `${name} - ${subtitle}`;
+}
+
+function updateBotNameEverywhere() {
+    const name = appData.chatbot.name || 'Edu';
+    const subtitle = appData.chatbot.subtitle || 'Assistente';
+    const el = document.getElementById('chatbotDisplayName'); if (el) el.textContent = `${name} - ${subtitle}`;
+    const qaEl = document.getElementById('qaBotDisplayName'); if (qaEl) qaEl.textContent = `${name} - ${subtitle}`;
+    const nameInput = document.getElementById('chatbotName'); if (nameInput) nameInput.value = name;
+    const subtitleInput = document.getElementById('chatbotSubtitle'); if (subtitleInput) subtitleInput.value = subtitle;
+    if (chatOpen) initChat();
+}
+
+// ===== CONTENT TABS =====
+function showContentTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    btn.classList.add('active');
+}
+
+// ===== SAVE SITE CONTENT =====
+function saveSiteContent() {
+    const sc = appData.siteContent;
+    sc.topBarText = document.getElementById('topBarText').value;
+    sc.topBarLink1 = document.getElementById('topBarLink1').value;
+    sc.topBarLink2 = document.getElementById('topBarLink2').value;
+    sc.features = [
+        { icon: document.getElementById('feat1Icon').value, title: document.getElementById('feat1Title').value, subtitle: document.getElementById('feat1Subtitle').value },
+        { icon: document.getElementById('feat2Icon').value, title: document.getElementById('feat2Title').value, subtitle: document.getElementById('feat2Subtitle').value },
+        { icon: document.getElementById('feat3Icon').value, title: document.getElementById('feat3Title').value, subtitle: document.getElementById('feat3Subtitle').value },
+        { icon: document.getElementById('feat4Icon').value, title: document.getElementById('feat4Title').value, subtitle: document.getElementById('feat4Subtitle').value }
+    ];
+    sc.newsletter = { title: document.getElementById('newsletterTitle').value, desc: document.getElementById('newsletterDesc').value, placeholder: document.getElementById('newsletterPlaceholder').value, btnText: document.getElementById('newsletterBtnText').value };
+    sc.footer = {
+        desc: document.getElementById('footerDesc').value,
+        copyright: document.getElementById('footerCopyright').value,
+        col1: { title: document.getElementById('footerCol1Title').value, links: [document.getElementById('footerCol1Link1').value, document.getElementById('footerCol1Link2').value, document.getElementById('footerCol1Link3').value] },
+        col2: { title: document.getElementById('footerCol2Title').value, links: [document.getElementById('footerCol2Link1').value, document.getElementById('footerCol2Link2').value, document.getElementById('footerCol2Link3').value] },
+        col3: { title: document.getElementById('footerCol3Title').value, links: [document.getElementById('footerCol3Link1').value, document.getElementById('footerCol3Link2').value, document.getElementById('footerCol3Link3').value] }
+    };
+    sc.infoPages = {
+        about: { title: document.getElementById('infoAboutTitle').value, subtitle: document.getElementById('infoAboutSubtitle').value, card1: { title: document.getElementById('infoAboutCard1Title').value, content: document.getElementById('infoAboutCard1Content').value }, card2: { title: document.getElementById('infoAboutCard2Title').value, content: document.getElementById('infoAboutCard2Content').value } },
+        how: { title: document.getElementById('infoHowTitle').value, cardTitle: document.getElementById('infoHowCardTitle').value, steps: [document.getElementById('infoHowStep1').value, document.getElementById('infoHowStep2').value, document.getElementById('infoHowStep3').value, document.getElementById('infoHowStep4').value] },
+        blog: { title: document.getElementById('infoBlogTitle').value, subtitle: document.getElementById('infoBlogSubtitle').value, cardTitle: document.getElementById('infoBlogCardTitle').value, content: document.getElementById('infoBlogContent').value },
+        policy: { title: document.getElementById('infoPolicyTitle').value, card1: { title: document.getElementById('infoPolicyCard1Title').value, items: [document.getElementById('infoPolicyItem1').value, document.getElementById('infoPolicyItem2').value] }, card2: { title: document.getElementById('infoPolicyCard2Title').value, content: document.getElementById('infoPolicyCard2Content').value } }
+    };
+    sc.sectionTitles = { categories: document.getElementById('sectionCategoriesTitle').value, dealsTitle: document.getElementById('sectionDealsTitle').value, dealsSubtitle: document.getElementById('sectionDealsSubtitle').value, ctaText: document.getElementById('sectionCTAText').value };
+    saveData();
+    showToast('Conteúdo do site salvo! ✅');
+}
+
+function loadContentFields() {
+    const sc = appData.siteContent;
+    document.getElementById('topBarText').value = sc.topBarText || '';
+    document.getElementById('topBarLink1').value = sc.topBarLink1 || '';
+    document.getElementById('topBarLink2').value = sc.topBarLink2 || '';
+    if (sc.features) {
+        document.getElementById('feat1Icon').value = sc.features[0]?.icon || '';
+        document.getElementById('feat1Title').value = sc.features[0]?.title || '';
+        document.getElementById('feat1Subtitle').value = sc.features[0]?.subtitle || '';
+        document.getElementById('feat2Icon').value = sc.features[1]?.icon || '';
+        document.getElementById('feat2Title').value = sc.features[1]?.title || '';
+        document.getElementById('feat2Subtitle').value = sc.features[1]?.subtitle || '';
+        document.getElementById('feat3Icon').value = sc.features[2]?.icon || '';
+        document.getElementById('feat3Title').value = sc.features[2]?.title || '';
+        document.getElementById('feat3Subtitle').value = sc.features[2]?.subtitle || '';
+        document.getElementById('feat4Icon').value = sc.features[3]?.icon || '';
+        document.getElementById('feat4Title').value = sc.features[3]?.title || '';
+        document.getElementById('feat4Subtitle').value = sc.features[3]?.subtitle || '';
+    }
+    if (sc.newsletter) {
+        document.getElementById('newsletterTitle').value = sc.newsletter.title || '';
+        document.getElementById('newsletterDesc').value = sc.newsletter.desc || '';
+        document.getElementById('newsletterPlaceholder').value = sc.newsletter.placeholder || '';
+        document.getElementById('newsletterBtnText').value = sc.newsletter.btnText || '';
+    }
+    if (sc.footer) {
+        document.getElementById('footerDesc').value = sc.footer.desc || '';
+        document.getElementById('footerCopyright').value = sc.footer.copyright || '';
+        document.getElementById('footerCol1Title').value = sc.footer.col1?.title || '';
+        document.getElementById('footerCol1Link1').value = sc.footer.col1?.links?.[0] || '';
+        document.getElementById('footerCol1Link2').value = sc.footer.col1?.links?.[1] || '';
+        document.getElementById('footerCol1Link3').value = sc.footer.col1?.links?.[2] || '';
+        document.getElementById('footerCol2Title').value = sc.footer.col2?.title || '';
+        document.getElementById('footerCol2Link1').value = sc.footer.col2?.links?.[0] || '';
+        document.getElementById('footerCol2Link2').value = sc.footer.col2?.links?.[1] || '';
+        document.getElementById('footerCol2Link3').value = sc.footer.col2?.links?.[2] || '';
+        document.getElementById('footerCol3Title').value = sc.footer.col3?.title || '';
+        document.getElementById('footerCol3Link1').value = sc.footer.col3?.links?.[0] || '';
+        document.getElementById('footerCol3Link2').value = sc.footer.col3?.links?.[1] || '';
+        document.getElementById('footerCol3Link3').value = sc.footer.col3?.links?.[2] || '';
+    }
+    if (sc.infoPages) {
+        const ip = sc.infoPages;
+        document.getElementById('infoAboutTitle').value = ip.about?.title || '';
+        document.getElementById('infoAboutSubtitle').value = ip.about?.subtitle || '';
+        document.getElementById('infoAboutCard1Title').value = ip.about?.card1?.title || '';
+        document.getElementById('infoAboutCard1Content').value = ip.about?.card1?.content || '';
+        document.getElementById('infoAboutCard2Title').value = ip.about?.card2?.title || '';
+        document.getElementById('infoAboutCard2Content').value = ip.about?.card2?.content || '';
+        document.getElementById('infoHowTitle').value = ip.how?.title || '';
+        document.getElementById('infoHowCardTitle').value = ip.how?.cardTitle || '';
+        document.getElementById('infoHowStep1').value = ip.how?.steps?.[0] || '';
+        document.getElementById('infoHowStep2').value = ip.how?.steps?.[1] || '';
+        document.getElementById('infoHowStep3').value = ip.how?.steps?.[2] || '';
+        document.getElementById('infoHowStep4').value = ip.how?.steps?.[3] || '';
+        document.getElementById('infoBlogTitle').value = ip.blog?.title || '';
+        document.getElementById('infoBlogSubtitle').value = ip.blog?.subtitle || '';
+        document.getElementById('infoBlogCardTitle').value = ip.blog?.cardTitle || '';
+        document.getElementById('infoBlogContent').value = ip.blog?.content || '';
+        document.getElementById('infoPolicyTitle').value = ip.policy?.title || '';
+        document.getElementById('infoPolicyCard1Title').value = ip.policy?.card1?.title || '';
+        document.getElementById('infoPolicyItem1').value = ip.policy?.card1?.items?.[0] || '';
+        document.getElementById('infoPolicyItem2').value = ip.policy?.card1?.items?.[1] || '';
+        document.getElementById('infoPolicyCard2Title').value = ip.policy?.card2?.title || '';
+        document.getElementById('infoPolicyCard2Content').value = ip.policy?.card2?.content || '';
+    }
+    if (sc.sectionTitles) {
+        document.getElementById('sectionCategoriesTitle').value = sc.sectionTitles.categories || '';
+        document.getElementById('sectionDealsTitle').value = sc.sectionTitles.dealsTitle || '';
+        document.getElementById('sectionDealsSubtitle').value = sc.sectionTitles.dealsSubtitle || '';
+        document.getElementById('sectionCTAText').value = sc.sectionTitles.ctaText || '';
+    }
+}
+
+// ===== APPLY THEME =====
 function applyTheme() {
     const t = appData.theme;
     const r = document.documentElement.style;
@@ -1334,62 +1584,34 @@ function applyTheme() {
     r.setProperty('--text-dark', t.textDark);
     r.setProperty('--text-mid', t.textMid);
     r.setProperty('--border', t.border);
-    
-    // Update preview
     const preview = document.getElementById('themePreview');
-    if (preview) {
-        preview.querySelector('.theme-preview-header').style.background = t.primary;
-        preview.querySelector('.theme-preview-content').style.background = t.bgLight;
-    }
+    if (preview) { preview.querySelector('.theme-preview-header').style.background = t.primary; preview.querySelector('.theme-preview-content').style.background = t.bgLight; }
 }
 
-function updateAllImages() {
-    document.querySelectorAll('.site-avatar-img, .bot-avatar-img').forEach(img => {
-        if (appData.avatar) img.src = appData.avatar;
-    });
-}
+function updateAllImages() { document.querySelectorAll('.site-avatar-img, .bot-avatar-img').forEach(img => { if (appData.avatar) img.src = appData.avatar; }); }
 
 function updateStoreName() {
     const name = appData.storeName || 'EduMarket';
     const slogan = appData.storeSlogan || 'Materiais Acadêmicos e Pedagógicos';
-    
-    const logoTextHTML = name;
-    
-    const storeLogo = document.getElementById('storeLogoText');
-    const adminLogo = document.getElementById('adminLogoText');
-    const footerLogo = document.getElementById('footerLogoText');
-    const loginLogo = document.getElementById('loginLogoText');
-    const themePreviewName = document.getElementById('themePreviewName');
-    const footerDesc = document.getElementById('footerDescription');
-    const topBarText = document.getElementById('topBarText');
-    const footerCopyright = document.getElementById('footerCopyright');
-    
-    if (storeLogo) storeLogo.innerHTML = logoTextHTML;
-    if (adminLogo) adminLogo.innerHTML = logoTextHTML;
-    if (footerLogo) footerLogo.innerHTML = logoTextHTML;
-    if (loginLogo) loginLogo.innerHTML = logoTextHTML;
-    if (themePreviewName) themePreviewName.textContent = name;
-    if (footerDesc) footerDesc.textContent = slogan;
-    if (topBarText) topBarText.textContent = `📚 Bem-vindo ao ${name}`;
-    if (footerCopyright) footerCopyright.textContent = `© 2025 ${name}. Todos os direitos reservados.`;
-    
+    ['storeLogoText', 'adminLogoText', 'footerLogoText', 'loginLogoText'].forEach(id => { const el = document.getElementById(id); if (el) el.innerHTML = name; });
+    const themePreviewName = document.getElementById('themePreviewName'); if (themePreviewName) themePreviewName.textContent = name;
+    const topBarText = document.getElementById('topBarText'); if (topBarText) topBarText.textContent = appData.siteContent?.topBarText || `📚 Bem-vindo ao ${name}`;
     document.title = name;
 }
 
 function renderStore() {
     updateAllImages();
     updateStoreName();
+    updateBotNameEverywhere();
     applyTheme();
+    renderFeatures();
+    renderSiteContent();
     
     const nav = document.getElementById('navContainer');
-    if (nav) {
-        nav.innerHTML = '<a class="nav-item active" onclick="filterCat(\'all\',this)">Todos</a>' + appData.categories.map(c => `<a class="nav-item" onclick="filterCat('${c.id}',this)">${c.emoji} ${c.name}</a>`).join('');
-    }
+    if (nav) nav.innerHTML = '<a class="nav-item active" onclick="filterCat(\'all\',this)">Todos</a>' + appData.categories.map(c => `<a class="nav-item" onclick="filterCat('${c.id}',this)">${c.emoji} ${c.name}</a>`).join('');
     
     const slides = document.getElementById('heroSlides');
-    if (slides) {
-        slides.innerHTML = appData.banners.map(b => `<div class="hero-slide" style="background:${b.bg}"><div class="hero-content"><div class="hero-badge">${b.badge}</div><h1>${b.title}</h1><p>${b.desc}</p><button class="hero-cta" onclick="document.querySelector('.products-area')?.scrollIntoView({behavior:'smooth'})">Ver Ofertas <i class="ri-arrow-right-line"></i></button></div><div class="hero-visual">${b.emoji}</div></div>`).join('');
-    }
+    if (slides) slides.innerHTML = appData.banners.map(b => `<div class="hero-slide" style="background:${b.bg}"><div class="hero-content"><div class="hero-badge">${b.badge}</div><h1>${b.title}</h1><p>${b.desc}</p><button class="hero-cta" onclick="document.querySelector('.products-area')?.scrollIntoView({behavior:'smooth'})">${appData.siteContent?.sectionTitles?.ctaText || 'Ver Ofertas'} <i class="ri-arrow-right-line"></i></button></div><div class="hero-visual">${b.emoji}</div></div>`).join('');
     
     const dots = document.getElementById('heroDots');
     if (dots) dots.innerHTML = appData.banners.map((_, i) => `<button class="hero-dot${i === 0 ? ' active' : ''}" onclick="goToSlide(${i})"></button>`).join('');
@@ -1401,18 +1623,79 @@ function renderStore() {
     if (filterCats) filterCats.innerHTML = appData.categories.map(c => `<label class="filter-option"><input type="checkbox" checked> ${c.name} <span class="count">${Math.floor(Math.random() * 30 + 5)}</span></label>`).join('');
     
     const socialContainer = document.getElementById('footerSocial');
-    if (socialContainer) {
-        socialContainer.innerHTML = `
-            <a href="${appData.socials.facebook}"><i class="ri-facebook-fill"></i></a>
-            <a href="${appData.socials.instagram}"><i class="ri-instagram-line"></i></a>
-            <a href="${appData.socials.youtube}"><i class="ri-youtube-fill"></i></a>
-            <a href="${appData.socials.whatsapp}"><i class="ri-whatsapp-line"></i></a>
-        `;
-    }
+    if (socialContainer) socialContainer.innerHTML = `<a href="${appData.socials.facebook}"><i class="ri-facebook-fill"></i></a><a href="${appData.socials.instagram}"><i class="ri-instagram-line"></i></a><a href="${appData.socials.youtube}"><i class="ri-youtube-fill"></i></a><a href="${appData.socials.whatsapp}"><i class="ri-whatsapp-line"></i></a>`;
     
     renderProducts(appData.products);
     currentSlide = 0;
     if (slides) slides.style.transform = 'translateX(0)';
+}
+
+function renderFeatures() {
+    const grid = document.getElementById('featuresGrid');
+    if (!grid) return;
+    const features = appData.siteContent?.features || DEFAULT_DATA.siteContent.features;
+    const iconClasses = { green: 'green', orange: 'orange', blue: 'blue', purple: 'purple' };
+    const iconColorClasses = ['green', 'orange', 'blue', 'purple'];
+    grid.innerHTML = features.map((f, i) => `<div class="feature-card"><div class="feature-icon ${iconColorClasses[i]}"><i class="${f.icon}"></i></div><div class="feature-text"><h4>${f.title}</h4><p>${f.subtitle}</p></div></div>`).join('');
+}
+
+function renderSiteContent() {
+    const sc = appData.siteContent;
+    // Newsletter
+    document.getElementById('newsletterTitleDisplay').textContent = sc.newsletter?.title || '';
+    document.getElementById('newsletterDescDisplay').textContent = sc.newsletter?.desc || '';
+    document.getElementById('newsletterInput').placeholder = sc.newsletter?.placeholder || '';
+    document.getElementById('newsletterBtnDisplay').textContent = sc.newsletter?.btnText || '';
+    
+    // Section titles
+    document.getElementById('sectionCategoriesTitleDisplay').textContent = sc.sectionTitles?.categories || '';
+    document.getElementById('sectionDealsTitleDisplay').textContent = sc.sectionTitles?.dealsTitle || '';
+    document.getElementById('sectionDealsSubtitleDisplay').textContent = sc.sectionTitles?.dealsSubtitle || '';
+    
+    // Footer
+    document.getElementById('footerDescDisplay').textContent = sc.footer?.desc || '';
+    document.getElementById('footerCopyrightDisplay').textContent = sc.footer?.copyright || '';
+    document.getElementById('footerCol1TitleDisplay').textContent = sc.footer?.col1?.title || '';
+    document.getElementById('footerCol1Link1Display').textContent = sc.footer?.col1?.links?.[0] || '';
+    document.getElementById('footerCol1Link2Display').textContent = sc.footer?.col1?.links?.[1] || '';
+    document.getElementById('footerCol1Link3Display').textContent = sc.footer?.col1?.links?.[2] || '';
+    document.getElementById('footerCol2TitleDisplay').textContent = sc.footer?.col2?.title || '';
+    document.getElementById('footerCol2Link1Display').textContent = sc.footer?.col2?.links?.[0] || '';
+    document.getElementById('footerCol2Link2Display').textContent = sc.footer?.col2?.links?.[1] || '';
+    document.getElementById('footerCol2Link3Display').textContent = sc.footer?.col2?.links?.[2] || '';
+    document.getElementById('footerCol3TitleDisplay').textContent = sc.footer?.col3?.title || '';
+    document.getElementById('footerCol3Link1Display').textContent = sc.footer?.col3?.links?.[0] || '';
+    document.getElementById('footerCol3Link2Display').textContent = sc.footer?.col3?.links?.[1] || '';
+    document.getElementById('footerCol3Link3Display').textContent = sc.footer?.col3?.links?.[2] || '';
+    
+    // Top bar links
+    document.getElementById('topBarLink1Text').textContent = sc.topBarLink1 || '';
+    document.getElementById('topBarLink2Text').textContent = sc.topBarLink2 || '';
+    
+    // Info pages
+    const ip = sc.infoPages || {};
+    document.getElementById('infoAboutTitleDisplay').textContent = ip.about?.title || '';
+    document.getElementById('infoAboutSubtitleDisplay').textContent = ip.about?.subtitle || '';
+    document.getElementById('infoAboutCard1TitleDisplay').textContent = ip.about?.card1?.title || '';
+    document.getElementById('infoAboutCard1ContentDisplay').textContent = ip.about?.card1?.content || '';
+    document.getElementById('infoAboutCard2TitleDisplay').textContent = ip.about?.card2?.title || '';
+    document.getElementById('infoAboutCard2ContentDisplay').textContent = ip.about?.card2?.content || '';
+    document.getElementById('infoHowTitleDisplay').textContent = ip.how?.title || '';
+    document.getElementById('infoHowCardTitleDisplay').textContent = ip.how?.cardTitle || '';
+    document.getElementById('infoHowStep1Display').textContent = ip.how?.steps?.[0] || '';
+    document.getElementById('infoHowStep2Display').textContent = ip.how?.steps?.[1] || '';
+    document.getElementById('infoHowStep3Display').textContent = ip.how?.steps?.[2] || '';
+    document.getElementById('infoHowStep4Display').textContent = ip.how?.steps?.[3] || '';
+    document.getElementById('infoBlogTitleDisplay').textContent = ip.blog?.title || '';
+    document.getElementById('infoBlogSubtitleDisplay').textContent = ip.blog?.subtitle || '';
+    document.getElementById('infoBlogCardTitleDisplay').textContent = ip.blog?.cardTitle || '';
+    document.getElementById('infoBlogContentDisplay').textContent = ip.blog?.content || '';
+    document.getElementById('infoPolicyTitleDisplay').textContent = ip.policy?.title || '';
+    document.getElementById('infoPolicyCard1TitleDisplay').textContent = ip.policy?.card1?.title || '';
+    document.getElementById('infoPolicyItem1Display').textContent = ip.policy?.card1?.items?.[0] || '';
+    document.getElementById('infoPolicyItem2Display').textContent = ip.policy?.card1?.items?.[1] || '';
+    document.getElementById('infoPolicyCard2TitleDisplay').textContent = ip.policy?.card2?.title || '';
+    document.getElementById('infoPolicyCard2ContentDisplay').textContent = ip.policy?.card2?.content || '';
 }
 
 function renderProducts(list) {
@@ -1485,10 +1768,8 @@ function updateCartUI() {
     document.getElementById('cartCount').textContent = total;
     const items = document.getElementById('cartItems');
     const footer = document.getElementById('cartFooter');
-    if (cart.length === 0) {
-        items.innerHTML = '<div class="cart-empty"><i class="ri-shopping-cart-2-line"></i><p>Carrinho vazio</p></div>';
-        footer.style.display = 'none';
-    } else {
+    if (cart.length === 0) { items.innerHTML = '<div class="cart-empty"><i class="ri-shopping-cart-2-line"></i><p>Carrinho vazio</p></div>'; footer.style.display = 'none'; }
+    else {
         items.innerHTML = cart.map(item => `<div class="cart-item"><div class="cart-item-img"><img src="${item.image}" alt="${item.name}"></div><div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</div><div class="cart-item-qty"><button class="qty-btn" onclick="updateQty(${item.id},-1)">−</button><span>${item.qty}</span><button class="qty-btn" onclick="updateQty(${item.id},1)">+</button></div></div><button class="cart-item-remove" onclick="removeFromCart(${item.id})"><i class="ri-delete-bin-line"></i></button></div>`).join('');
         footer.style.display = 'block';
         document.getElementById('cartTotal').textContent = `R$ ${price.toFixed(2).replace('.', ',')}`;
@@ -1542,9 +1823,8 @@ function generateQR(amount) {
     const ms = 6; const modules = Math.floor(220 / ms);
     for (let i = 0; i < modules; i++) { for (let j = 0; j < modules; j++) {
         let fill = false;
-        if ((i < 7 && j < 7) || (i < 7 && j >= modules - 7) || (i >= modules - 7 && j < 7)) {
-            fill = !((i >= 2 && i <= 4 && j >= 2 && j <= 4) || (i >= 2 && i <= 4 && j >= modules - 5 && j <= modules - 3) || (i >= modules - 5 && i <= modules - 3 && j >= 2 && j <= 4));
-        } else { fill = Math.random() > 0.55; }
+        if ((i < 7 && j < 7) || (i < 7 && j >= modules - 7) || (i >= modules - 7 && j < 7)) { fill = !((i >= 2 && i <= 4 && j >= 2 && j <= 4) || (i >= 2 && i <= 4 && j >= modules - 5 && j <= modules - 3) || (i >= modules - 5 && i <= modules - 3 && j >= 2 && j <= 4)); }
+        else { fill = Math.random() > 0.55; }
         if (fill) { ctx.fillStyle = '#000000'; ctx.fillRect(j * ms, i * ms, ms, ms); }
     }}
     document.getElementById('pixCopyCode').value = `00020126580014br.gov.bcb.pix0136edumarket@email.com520400005303986540${amount.toFixed(2).replace('.','')}5802BR5913EduMarket6009SAO PAULO62070503***6304`;
@@ -1560,10 +1840,8 @@ function processCardPayment() {
 function toggleChat() {
     chatOpen = !chatOpen;
     const box = document.getElementById('chatBox');
-    if (chatOpen) {
-        box.classList.add('open');
-        if (document.getElementById('chatMessages').children.length === 0) initChat();
-    } else { box.classList.remove('open'); }
+    if (chatOpen) { box.classList.add('open'); if (document.getElementById('chatMessages').children.length === 0) initChat(); }
+    else { box.classList.remove('open'); }
 }
 
 function openChat() { if (!chatOpen) toggleChat(); }
@@ -1573,12 +1851,7 @@ function initChat() {
     const name = appData.chatbot?.name || 'Edu';
     const subtitle = appData.chatbot?.subtitle || 'Assistente';
     document.getElementById('chatbotDisplayName').textContent = `${name} - ${subtitle}`;
-    messages.innerHTML = `
-        <div class="chat-msg bot"><strong>${name}:</strong> Olá! 👋 Sou ${name}, assistente do ${appData.storeName}. Como posso ajudar?
-        <div class="time">${getTime()}</div></div>
-        <div class="chat-msg bot">Clique em um tópico ou digite sua pergunta!
-        <div class="time">${getTime()}</div></div>
-    `;
+    messages.innerHTML = `<div class="chat-msg bot"><strong>${name}:</strong> Olá! 👋 Sou ${name}, assistente do ${appData.storeName}. Como posso ajudar?<div class="time">${getTime()}</div></div><div class="chat-msg bot">Clique em um tópico ou digite sua pergunta!<div class="time">${getTime()}</div></div>`;
     const quickActions = document.getElementById('quickActions');
     quickActions.innerHTML = appData.qa.slice(0, 6).map(qa => `<button class="quick-action-btn" onclick="askQA(${qa.id})">${qa.question}</button>`).join('');
 }
@@ -1660,14 +1933,10 @@ function showAdminPanel() {
 
 function handleLogin(e) {
     e.preventDefault();
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-    if (email === 'admin@edumarket.com' && password === 'admin123') {
+    if (document.getElementById('loginEmail').value === 'admin@edumarket.com' && document.getElementById('loginPassword').value === 'admin123') {
         document.getElementById('loginError').style.display = 'none';
         showAdminPanel();
-    } else {
-        document.getElementById('loginError').style.display = 'block';
-    }
+    } else { document.getElementById('loginError').style.display = 'block'; }
 }
 
 function handleLogout() { showStore(); showToast('Logout!'); }
@@ -1677,8 +1946,9 @@ function showSection(section, navItem) {
     document.getElementById(`section-${section}`).classList.add('active');
     document.querySelectorAll('.admin-nav-item').forEach(n => n.classList.remove('active'));
     if (navItem) navItem.classList.add('active');
-    const titles = { dashboard: 'Dashboard', products: 'Produtos', categories: 'Categorias', orders: 'Pedidos', banners: 'Banners', coupons: 'Cupons', emails: 'Emails', payments: 'Pagamentos', contacts: 'Contatos', qa: 'Perguntas', avatar: 'Avatar', theme: 'Temas', settings: 'Configurações' };
+    const titles = { dashboard: 'Dashboard', content: 'Conteúdo do Site', products: 'Produtos', categories: 'Categorias', orders: 'Pedidos', banners: 'Banners', coupons: 'Cupons', emails: 'Emails', payments: 'Pagamentos', contacts: 'Contatos', qa: 'Perguntas', avatar: 'Avatar & Bot', theme: 'Temas', settings: 'Configurações' };
     document.getElementById('adminTitle').textContent = titles[section] || 'Dashboard';
+    if (section === 'content') loadContentFields();
     if (section === 'products') renderAdminProducts();
     if (section === 'categories') renderAdminCategories();
     if (section === 'banners') renderBannersAdmin();
@@ -1692,6 +1962,8 @@ function showSection(section, navItem) {
     if (section === 'avatar') {
         document.getElementById('currentAvatarPreview').src = appData.avatar;
         document.getElementById('avatarUrlInput').value = appData.avatar;
+        document.getElementById('chatbotName').value = appData.chatbot.name;
+        document.getElementById('chatbotSubtitle').value = appData.chatbot.subtitle;
     }
 }
 
@@ -1708,18 +1980,17 @@ function renderAdmin() {
     updateActivePreset();
     loadContactSettings();
     loadStoreInfo();
+    loadContentFields();
     document.getElementById('currentAvatarPreview').src = appData.avatar;
     document.getElementById('avatarUrlInput').value = appData.avatar;
+    document.getElementById('chatbotName').value = appData.chatbot.name;
+    document.getElementById('chatbotSubtitle').value = appData.chatbot.subtitle;
     updateEmailStats();
     renderEmailList();
     renderCouponHistory();
     updateAllImages();
     updateStoreName();
-    
-    const nameInput = document.getElementById('chatbotName');
-    const subtitleInput = document.getElementById('chatbotSubtitle');
-    if (nameInput) nameInput.value = appData.chatbot.name;
-    if (subtitleInput) subtitleInput.value = appData.chatbot.subtitle;
+    updateBotNameEverywhere();
 }
 
 function renderAdminProducts() {
@@ -1733,26 +2004,13 @@ function renderAdminCategories() {
 function renderBannersAdmin() {
     const form = document.getElementById('bannersForm');
     if (!form) return;
-    form.innerHTML = appData.banners.map((b, i) => `
-        <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;background:var(--bg-light);">
-            <h4 style="margin-bottom:12px;">Banner ${i + 1}</h4>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-                <div class="form-group"><label>Badge</label><input type="text" value="${b.badge}" onchange="appData.banners[${i}].badge=this.value; saveData();"></div>
-                <div class="form-group"><label>Emoji</label><input type="text" value="${b.emoji}" onchange="appData.banners[${i}].emoji=this.value; saveData();"></div>
-            </div>
-            <div class="form-group" style="margin-top:12px;"><label>Título</label><input type="text" value="${b.title}" onchange="appData.banners[${i}].title=this.value; saveData();"></div>
-            <div class="form-group" style="margin-top:12px;"><label>Cor</label><input type="text" value="${b.bg}" onchange="appData.banners[${i}].bg=this.value; saveData();"></div>
-            <button class="btn btn-sm btn-outline" style="margin-top:12px;" onclick="showToast('Banner salvo!'); renderStore();"><i class="ri-save-line"></i> Salvar</button>
-        </div>
-    `).join('');
+    form.innerHTML = appData.banners.map((b, i) => `<div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;background:var(--bg-light);"><h4 style="margin-bottom:12px;">Banner ${i + 1}</h4><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"><div class="form-group"><label>Badge</label><input type="text" value="${b.badge}" onchange="appData.banners[${i}].badge=this.value; saveData();"></div><div class="form-group"><label>Emoji</label><input type="text" value="${b.emoji}" onchange="appData.banners[${i}].emoji=this.value; saveData();"></div></div><div class="form-group" style="margin-top:12px;"><label>Título</label><input type="text" value="${b.title}" onchange="appData.banners[${i}].title=this.value; saveData();"></div><div class="form-group" style="margin-top:12px;"><label>Cor</label><input type="text" value="${b.bg}" onchange="appData.banners[${i}].bg=this.value; saveData();"></div><button class="btn btn-sm btn-outline" style="margin-top:12px;" onclick="showToast('Banner salvo!'); renderStore();"><i class="ri-save-line"></i> Salvar</button></div>`).join('');
 }
 
 function renderCouponsTable() {
     const tbody = document.getElementById('couponsTableBody');
     if (!tbody) return;
-    tbody.innerHTML = appData.coupons.map((c, i) => `
-        <tr><td><strong>${c.code}</strong></td><td>${c.discount}</td><td>${c.type}</td><td><span class="status-badge ${c.status === 'active' ? 'status-active' : 'status-inactive'}">${c.status === 'active' ? 'Ativo' : 'Expirado'}</span></td><td class="actions"><button class="btn-edit" onclick="editCoupon(${i})"><i class="ri-edit-line"></i></button><button class="btn-delete" onclick="deleteCoupon(${i})"><i class="ri-delete-bin-line"></i></button></td></tr>
-    `).join('');
+    tbody.innerHTML = appData.coupons.map((c, i) => `<tr><td><strong>${c.code}</strong></td><td>${c.discount}</td><td>${c.type}</td><td><span class="status-badge ${c.status === 'active' ? 'status-active' : 'status-inactive'}">${c.status === 'active' ? 'Ativo' : 'Expirado'}</span></td><td class="actions"><button class="btn-edit" onclick="editCoupon(${i})"><i class="ri-edit-line"></i></button><button class="btn-delete" onclick="deleteCoupon(${i})"><i class="ri-delete-bin-line"></i></button></td></tr>`).join('');
 }
 
 function addCoupon() {
@@ -1761,19 +2019,10 @@ function addCoupon() {
     const type = document.getElementById('couponFormType').value;
     if (!code || !discount) { showToast('Preencha todos os campos!'); return; }
     appData.coupons.push({ code, discount: type === '%' ? `${discount}%` : `R$ ${discount}`, type: type === '%' ? 'Porcentagem' : 'Fixo', uses: `0/100`, status: 'active' });
-    saveData();
-    renderCouponsTable();
-    showToast('Cupom criado!');
+    saveData(); renderCouponsTable(); showToast('Cupom criado!');
 }
 
-function deleteCoupon(index) {
-    if (!confirm('Excluir?')) return;
-    appData.coupons.splice(index, 1);
-    saveData();
-    renderCouponsTable();
-    showToast('Cupom excluído!');
-}
-
+function deleteCoupon(index) { if (!confirm('Excluir?')) return; appData.coupons.splice(index, 1); saveData(); renderCouponsTable(); showToast('Cupom excluído!'); }
 function editCoupon(index) { showToast('Edição de cupom'); }
 
 function renderSalesChart() {
@@ -1817,8 +2066,7 @@ function saveProduct(e) {
     const data = { name: document.getElementById('productName').value, category: catId, categoryLabel: cat ? cat.name : catId, image: document.getElementById('productImage').value || 'https://via.placeholder.com/300x300?text=Produto', price: parseFloat(document.getElementById('productPrice').value), oldPrice: parseFloat(document.getElementById('productOldPrice').value) || null, rating: parseFloat(document.getElementById('productRating').value) || 4.5, badge: document.getElementById('productBadge').value || '', desc: document.getElementById('productDesc').value, shipping: document.getElementById('productShipping').value || 'Frete Grátis', reviews: Math.floor(Math.random() * 200 + 10) };
     if (id) { const idx = appData.products.findIndex(p => p.id === parseInt(id)); appData.products[idx] = { ...appData.products[idx], ...data }; }
     else { data.id = Date.now(); appData.products.push(data); }
-    saveData();
-    closeProductModal(); renderAdmin(); renderStore();
+    saveData(); closeProductModal(); renderAdmin(); renderStore();
     showToast(id ? 'Produto atualizado!' : 'Produto criado!');
 }
 
@@ -1827,7 +2075,7 @@ function deleteProduct(id) { if (confirm('Excluir?')) { appData.products = appDa
 function openCategoryModal(id) {
     document.getElementById('categoryFormModal').classList.add('open');
     document.body.style.overflow = 'hidden';
-    if (id) { const cat = appData.categories.find(c => c.id === id); document.getElementById('categoryFormTitle').textContent = 'Editar Categoria'; document.getElementById('editCategoryId').value = cat.id; document.getElementById('categoryName').value = cat.name; document.getElementById('categoryEmoji').value = cat.emoji; document.getElementById('categoryColor').value = cat.color || '#2D6A4F'; }
+    if (id) { const cat = appData.categories.find(c => c.id === id); document.getElementById('categoryFormTitle').textContent = 'Editar Categoria'; document.getElementById('editCategoryId').value = cat.id; document.getElementById('categoryName').value = cat.name; document.getElementById('categoryEmoji').value = cat.emoji; document.getElementById('categoryColor').value = cat.color || '#E91E63'; }
     else { document.getElementById('categoryFormTitle').textContent = 'Nova Categoria'; document.getElementById('editCategoryId').value = ''; }
 }
 
@@ -1840,8 +2088,7 @@ function saveCategory(e) {
     const data = { name: document.getElementById('categoryName').value, emoji: document.getElementById('categoryEmoji').value, color, gradient: `linear-gradient(135deg, ${color}33, ${color}99)` };
     if (id) { const idx = appData.categories.findIndex(c => c.id === id); appData.categories[idx] = { ...appData.categories[idx], ...data }; }
     else { data.id = data.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); appData.categories.push(data); }
-    saveData();
-    closeCategoryModal(); renderAdmin(); renderStore();
+    saveData(); closeCategoryModal(); renderAdmin(); renderStore();
     showToast('Categoria salva!');
 }
 
@@ -1869,16 +2116,7 @@ function renderQAListAdmin() {
     const list = document.getElementById('qaList');
     if (!list) return;
     const catIcons = { geral: '', envio: '🚚', pagamento: '💳', produtos: '' };
-    list.innerHTML = appData.qa.map(qa => `
-        <div class="qa-item">
-            <div class="qa-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span><span style="margin-right:8px;">${catIcons[qa.category] || '📋'}</span>${qa.question}</span><i class="ri-arrow-down-s-line"></i></div>
-            <div class="qa-answer" style="display:none;">
-                <div class="form-group"><label>Palavras-chave</label><input type="text" value="${qa.keywords}" onchange="appData.qa.find(q=>q.id===${qa.id}).keywords=this.value; saveData();"></div>
-                <div class="form-group" style="margin-top:8px;"><label>Resposta</label><textarea onchange="appData.qa.find(q=>q.id===${qa.id}).answer=this.value; saveData();">${qa.answer}</textarea></div>
-                <div class="qa-actions"><button class="btn btn-sm btn-edit" onclick="openQAModal(${qa.id})"><i class="ri-edit-line"></i> Editar</button><button class="btn btn-sm btn-delete" onclick="deleteQA(${qa.id})"><i class="ri-delete-bin-line"></i> Excluir</button></div>
-            </div>
-        </div>
-    `).join('');
+    list.innerHTML = appData.qa.map(qa => `<div class="qa-item"><div class="qa-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span><span style="margin-right:8px;">${catIcons[qa.category] || '📋'}</span>${qa.question}</span><i class="ri-arrow-down-s-line"></i></div><div class="qa-answer" style="display:none;"><div class="form-group"><label>Palavras-chave</label><input type="text" value="${qa.keywords}" onchange="appData.qa.find(q=>q.id===${qa.id}).keywords=this.value; saveData();"></div><div class="form-group" style="margin-top:8px;"><label>Resposta</label><textarea onchange="appData.qa.find(q=>q.id===${qa.id}).answer=this.value; saveData();">${qa.answer}</textarea></div><div class="qa-actions"><button class="btn btn-sm btn-edit" onclick="openQAModal(${qa.id})"><i class="ri-edit-line"></i> Editar</button><button class="btn btn-sm btn-delete" onclick="deleteQA(${qa.id})"><i class="ri-delete-bin-line"></i> Excluir</button></div></div></div>`).join('');
 }
 
 function openQAModal(id) {
@@ -1896,19 +2134,11 @@ function saveQA(e) {
     const data = { question: document.getElementById('qaQuestion').value, keywords: document.getElementById('qaKeywords').value, answer: document.getElementById('qaAnswer').value, category: document.getElementById('qaCategory').value };
     if (id) { const idx = appData.qa.findIndex(q => q.id === parseInt(id)); appData.qa[idx] = { ...appData.qa[idx], ...data }; }
     else { data.id = Date.now(); appData.qa.push(data); }
-    saveData();
-    closeQAModal(); renderQAListAdmin();
+    saveData(); closeQAModal(); renderQAListAdmin();
     showToast('Pergunta salva!');
 }
 
 function deleteQA(id) { if (confirm('Excluir?')) { appData.qa = appData.qa.filter(q => q.id !== id); saveData(); renderQAListAdmin(); showToast('Pergunta excluída!'); } }
-
-function updateChatbotName() {
-    appData.chatbot.name = document.getElementById('chatbotName').value;
-    appData.chatbot.subtitle = document.getElementById('chatbotSubtitle').value;
-    saveData();
-    document.getElementById('chatbotDisplayName').textContent = `${appData.chatbot.name} - ${appData.chatbot.subtitle}`;
-}
 
 function loadThemeInputs() {
     const t = appData.theme;
@@ -1922,21 +2152,15 @@ function loadThemeInputs() {
     document.getElementById('themeTextDark').value = t.textDark;
     document.getElementById('themeTextMid').value = t.textMid;
     document.getElementById('themeBorder').value = t.border;
-    
-    // Update code displays
     const codes = { Primary: t.primary, PrimaryDark: t.primaryDark, PrimaryLight: t.primaryLight, Secondary: t.secondary, Accent: t.accent, BgLight: t.bgLight, BgWhite: t.bgWhite, TextDark: t.textDark, TextMid: t.textMid, Border: t.border };
-    for (const key in codes) {
-        const el = document.getElementById(`code${key}`);
-        if (el) el.textContent = codes[key];
-    }
+    for (const key in codes) { const el = document.getElementById(`code${key}`); if (el) el.textContent = codes[key]; }
 }
 
 function updateActivePreset() {
     document.querySelectorAll('.theme-preset-card').forEach(card => card.classList.remove('active'));
     if (appData.activeTheme && THEME_PRESETS[appData.activeTheme]) {
         const cards = document.querySelectorAll('.theme-preset-card');
-        const presetNames = Object.keys(THEME_PRESETS);
-        const idx = presetNames.indexOf(appData.activeTheme);
+        const idx = Object.keys(THEME_PRESETS).indexOf(appData.activeTheme);
         if (idx >= 0 && cards[idx]) cards[idx].classList.add('active');
     }
 }
@@ -1946,10 +2170,7 @@ function applyPreset(name) {
     if (!preset) return;
     appData.theme = { ...preset };
     appData.activeTheme = name;
-    saveData();
-    loadThemeInputs();
-    applyTheme();
-    updateActivePreset();
+    saveData(); loadThemeInputs(); applyTheme(); updateActivePreset();
     showToast(`Tema "${name}" aplicado! 🎨`);
 }
 
@@ -1965,41 +2186,21 @@ function updateTheme() {
     r.setProperty('--text-dark', document.getElementById('themeTextDark').value);
     r.setProperty('--text-mid', document.getElementById('themeTextMid').value);
     r.setProperty('--border', document.getElementById('themeBorder').value);
-    
-    // Update code displays
     const codes = { Primary: document.getElementById('themePrimary').value, PrimaryDark: document.getElementById('themePrimaryDark').value, PrimaryLight: document.getElementById('themePrimaryLight').value, Secondary: document.getElementById('themeSecondary').value, Accent: document.getElementById('themeAccent').value, BgLight: document.getElementById('themeBgLight').value, BgWhite: document.getElementById('themeBgWhite').value, TextDark: document.getElementById('themeTextDark').value, TextMid: document.getElementById('themeTextMid').value, Border: document.getElementById('themeBorder').value };
-    for (const key in codes) {
-        const el = document.getElementById(`code${key}`);
-        if (el) el.textContent = codes[key];
-    }
-    
+    for (const key in codes) { const el = document.getElementById(`code${key}`); if (el) el.textContent = codes[key]; }
     const preview = document.getElementById('themePreview');
-    if (preview) {
-        preview.querySelector('.theme-preview-header').style.background = document.getElementById('themePrimary').value;
-        preview.querySelector('.theme-preview-content').style.background = document.getElementById('themeBgLight').value;
-    }
+    if (preview) { preview.querySelector('.theme-preview-header').style.background = document.getElementById('themePrimary').value; preview.querySelector('.theme-preview-content').style.background = document.getElementById('themeBgLight').value; }
 }
 
 function applyTheme() {
     const t = appData.theme;
     const r = document.documentElement.style;
-    r.setProperty('--primary', t.primary);
-    r.setProperty('--primary-dark', t.primaryDark);
-    r.setProperty('--primary-light', t.primaryLight);
-    r.setProperty('--secondary', t.secondary);
-    r.setProperty('--accent', t.accent);
-    r.setProperty('--accent-hover', t.accentHover);
-    r.setProperty('--bg-light', t.bgLight);
-    r.setProperty('--bg-white', t.bgWhite);
-    r.setProperty('--text-dark', t.textDark);
-    r.setProperty('--text-mid', t.textMid);
-    r.setProperty('--border', t.border);
-    
+    r.setProperty('--primary', t.primary); r.setProperty('--primary-dark', t.primaryDark); r.setProperty('--primary-light', t.primaryLight);
+    r.setProperty('--secondary', t.secondary); r.setProperty('--accent', t.accent); r.setProperty('--accent-hover', t.accentHover);
+    r.setProperty('--bg-light', t.bgLight); r.setProperty('--bg-white', t.bgWhite);
+    r.setProperty('--text-dark', t.textDark); r.setProperty('--text-mid', t.textMid); r.setProperty('--border', t.border);
     const preview = document.getElementById('themePreview');
-    if (preview) {
-        preview.querySelector('.theme-preview-header').style.background = t.primary;
-        preview.querySelector('.theme-preview-content').style.background = t.bgLight;
-    }
+    if (preview) { preview.querySelector('.theme-preview-header').style.background = t.primary; preview.querySelector('.theme-preview-content').style.background = t.bgLight; }
     showToast('Tema aplicado e salvo! 🎨');
     saveData();
 }
@@ -2022,8 +2223,7 @@ function saveContactSettings() {
     appData.contacts.email = document.getElementById('contactEmail').value;
     appData.contacts.address = document.getElementById('contactAddress').value;
     appData.contacts.hours = document.getElementById('contactHours').value;
-    saveData();
-    showToast('Contatos salvos!');
+    saveData(); showToast('Contatos salvos!');
 }
 
 function saveSocialSettings() {
@@ -2031,8 +2231,7 @@ function saveSocialSettings() {
     appData.socials.instagram = document.getElementById('socialInstagram').value;
     appData.socials.youtube = document.getElementById('socialYoutube').value;
     appData.socials.whatsapp = document.getElementById('socialWhatsapp').value;
-    saveData();
-    showToast('Redes sociais salvas!');
+    saveData(); showToast('Redes sociais salvas!');
 }
 
 function loadStoreInfo() {
@@ -2043,8 +2242,7 @@ function loadStoreInfo() {
 function saveStoreInfo() {
     appData.storeName = document.getElementById('storeName').value;
     appData.storeSlogan = document.getElementById('storeSlogan').value;
-    saveData();
-    updateStoreName();
+    saveData(); updateStoreName();
     showToast('Informações salvas!');
 }
 
@@ -2060,11 +2258,7 @@ function handleAvatarUpload(event) {
     const file = event.target.files[0];
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = function(e) {
-        pendingAvatar = e.target.result;
-        document.getElementById('currentAvatarPreview').src = e.target.result;
-        showToast('Imagem carregada!');
-    };
+    reader.onload = function(e) { pendingAvatar = e.target.result; document.getElementById('currentAvatarPreview').src = e.target.result; showToast('Imagem carregada!'); };
     reader.readAsDataURL(file);
 }
 
@@ -2072,9 +2266,8 @@ function saveAvatar() {
     if (!pendingAvatar) { showToast('Selecione um avatar!'); return; }
     appData.avatar = pendingAvatar;
     currentAvatar = pendingAvatar;
-    saveData();
-    updateAllImages();
-    showToast('Avatar salvo! ');
+    saveData(); updateAllImages();
+    showToast('Avatar salvo! 🎉');
 }
 
 function registerEmail(form) {
@@ -2083,10 +2276,8 @@ function registerEmail(form) {
     if (registeredEmails.find(e => e.email === email)) { showToast('Email já cadastrado!'); return; }
     registeredEmails.push({ email, date: new Date().toLocaleDateString('pt-BR'), hasCoupon: false, couponCode: null });
     appData.registeredEmails = registeredEmails;
-    saveData();
-    showToast('Cadastro realizado! 🎉');
-    updateEmailStats();
-    renderEmailList();
+    saveData(); showToast('Cadastro realizado! 🎉');
+    updateEmailStats(); renderEmailList();
 }
 
 function updateEmailStats() {
@@ -2103,17 +2294,8 @@ function updateEmailStats() {
 function renderEmailList() {
     const list = document.getElementById('emailList');
     if (!list) return;
-    if (registeredEmails.length === 0) {
-        list.innerHTML = '<div class="cart-empty" style="padding:40px;"><i class="ri-mail-line" style="font-size:3rem;opacity:0.3;"></i><p style="margin-top:12px;">Nenhum email</p></div>';
-        return;
-    }
-    list.innerHTML = registeredEmails.map((item, index) => `
-        <div class="email-item ${selectedEmails.has(index) ? 'selected' : ''}" data-index="${index}">
-            <input type="checkbox" ${selectedEmails.has(index) ? 'checked' : ''} onchange="toggleEmailSelection(${index}, this.checked)">
-            <div class="email-info"><div class="email-addr">${item.email}</div><div class="email-date">${item.date}</div></div>
-            ${item.hasCoupon ? `<span class="email-status status-badge status-sent">${item.couponCode}</span>` : `<span class="email-status status-badge status-inactive">Sem cupom</span>`}
-        </div>
-    `).join('');
+    if (registeredEmails.length === 0) { list.innerHTML = '<div class="cart-empty" style="padding:40px;"><i class="ri-mail-line" style="font-size:3rem;opacity:0.3;"></i><p style="margin-top:12px;">Nenhum email</p></div>'; return; }
+    list.innerHTML = registeredEmails.map((item, index) => `<div class="email-item ${selectedEmails.has(index) ? 'selected' : ''}" data-index="${index}"><input type="checkbox" ${selectedEmails.has(index) ? 'checked' : ''} onchange="toggleEmailSelection(${index}, this.checked)"><div class="email-info"><div class="email-addr">${item.email}</div><div class="email-date">${item.date}</div></div>${item.hasCoupon ? `<span class="email-status status-badge status-sent">${item.couponCode}</span>` : `<span class="email-status status-badge status-inactive">Sem cupom</span>`}</div>`).join('');
 }
 
 function toggleEmailSelection(index, checked) {
@@ -2143,12 +2325,9 @@ function sendCouponToSelected() {
         email.couponCode = code;
         sentCoupons.push({ email: email.email, code, discount: `${discount}${type}`, date: new Date().toLocaleDateString('pt-BR') });
     });
-    appData.registeredEmails = registeredEmails;
-    appData.sentCoupons = sentCoupons;
-    saveData();
-    showToast(`Cupom ${code} enviado!`);
-    selectedEmails.clear();
-    document.getElementById('selectedCount').textContent = '0 selecionados';
+    appData.registeredEmails = registeredEmails; appData.sentCoupons = sentCoupons;
+    saveData(); showToast(`Cupom ${code} enviado!`);
+    selectedEmails.clear(); document.getElementById('selectedCount').textContent = '0 selecionados';
     document.getElementById('selectAllEmails').checked = false;
     updateEmailStats(); renderEmailList(); renderCouponHistory();
 }
@@ -2159,17 +2338,10 @@ function sendCouponToAll() {
     const discount = document.getElementById('couponDiscountInput').value;
     const type = document.getElementById('couponTypeInput').value;
     if (!code || !discount) { showToast('Preencha código e desconto!'); return; }
-    registeredEmails.forEach(item => {
-        item.hasCoupon = true;
-        item.couponCode = code;
-        sentCoupons.push({ email: item.email, code, discount: `${discount}${type}`, date: new Date().toLocaleDateString('pt-BR') });
-    });
-    appData.registeredEmails = registeredEmails;
-    appData.sentCoupons = sentCoupons;
-    saveData();
-    showToast(`Cupom ${code} enviado para todos!`);
-    selectedEmails.clear();
-    document.getElementById('selectedCount').textContent = '0 selecionados';
+    registeredEmails.forEach(item => { item.hasCoupon = true; item.couponCode = code; sentCoupons.push({ email: item.email, code, discount: `${discount}${type}`, date: new Date().toLocaleDateString('pt-BR') }); });
+    appData.registeredEmails = registeredEmails; appData.sentCoupons = sentCoupons;
+    saveData(); showToast(`Cupom ${code} enviado para todos!`);
+    selectedEmails.clear(); document.getElementById('selectedCount').textContent = '0 selecionados';
     document.getElementById('selectAllEmails').checked = false;
     updateEmailStats(); renderEmailList(); renderCouponHistory();
 }
@@ -2180,15 +2352,12 @@ function renderCouponHistory() {
     if (!card || !list) return;
     if (sentCoupons.length === 0) { card.style.display = 'none'; return; }
     card.style.display = 'block';
-    list.innerHTML = sentCoupons.slice().reverse().map(item => `
-        <div class="coupon-item"><span class="coupon-badge">${item.discount}</span><div class="coupon-info"><div class="coupon-email">${item.email}</div><div class="coupon-date">Cupom: ${item.code} — ${item.date}</div></div></div>
-    `).join('');
+    list.innerHTML = sentCoupons.slice().reverse().map(item => `<div class="coupon-item"><span class="coupon-badge">${item.discount}</span><div class="coupon-info"><div class="coupon-email">${item.email}</div><div class="coupon-date">Cupom: ${item.code} — ${item.date}</div></div></div>`).join('');
 }
 
 function startTimer() {
     let h = 8, m = 45, s = 30;
-    setInterval(() => {
-        s--; if (s < 0) { s = 59; m--; if (m < 0) { m = 59; h--; if (h < 0) h = 23; } }
+    setInterval(() => { s--; if (s < 0) { s = 59; m--; if (m < 0) { m = 59; h--; if (h < 0) h = 23; } }
         const he = document.getElementById('timerHours'); const me = document.getElementById('timerMinutes'); const se = document.getElementById('timerSeconds');
         if (he) he.textContent = String(h).padStart(2, '0'); if (me) me.textContent = String(m).padStart(2, '0'); if (se) se.textContent = String(s).padStart(2, '0');
     }, 1000);
@@ -2213,11 +2382,9 @@ document.addEventListener('keydown', (e) => {
     document.getElementById(id)?.addEventListener('click', function(e) { if (e.target === this) this.classList.remove('open'); document.body.style.overflow = ''; });
 });
 
-// Initialize on page load - apply saved theme and store name immediately
 startTimer();
 renderStore();
 slideInterval = setInterval(() => moveSlide(1), 5000);
 </script>
 </body>
 </html>
-
