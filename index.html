@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,28 +10,15 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #2D6A4F;
-            --primary-light: #40916C;
-            --primary-dark: #1B4332;
-            --secondary: #F5E6CA;
-            --accent: #E76F51;
-            --accent-hover: #D4583A;
-            --bg-light: #F7F7F7;
-            --bg-white: #FFFFFF;
-            --text-dark: #1A1A2E;
-            --text-mid: #4A4A68;
-            --text-light: #7B7B96;
-            --border: #E0E0E0;
-            --success: #2D9A6E;
-            --warning: #F4A261;
-            --star: #FFC107;
-            --danger: #EF4444;
-            --info: #3B82F6;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --primary: #2D6A4F; --primary-light: #40916C; --primary-dark: #1B4332;
+            --secondary: #F5E6CA; --accent: #E76F51; --accent-hover: #D4583A;
+            --bg-light: #F7F7F7; --bg-white: #FFFFFF;
+            --text-dark: #1A1A2E; --text-mid: #4A4A68; --text-light: #7B7B96;
+            --border: #E0E0E0; --success: #2D9A6E; --warning: #F4A261;
+            --star: #FFC107; --danger: #EF4444; --info: #3B82F6;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08); --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
             --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
-            --radius: 8px;
-            --radius-lg: 12px;
+            --radius: 8px; --radius-lg: 12px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
@@ -56,7 +44,7 @@
         .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: white; flex-shrink: 0; cursor: pointer; }
         .logo-icon { width: 52px; height: 52px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.3); }
         .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
-        .logo-text { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px; }
+        .logo-text { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; }
         .logo-text span { color: var(--secondary); }
         .search-bar { flex: 1; max-width: 680px; position: relative; min-width: 200px; }
         .search-bar input { width: 100%; padding: 12px 50px 12px 18px; border: none; border-radius: var(--radius); font-size: 0.95rem; background: var(--bg-white); outline: none; font-family: inherit; }
@@ -92,8 +80,7 @@
         .hero-dot.active { background: white; width: 28px; border-radius: 5px; }
         .hero-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border: none; color: white; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; }
         .hero-arrow:hover { background: rgba(255,255,255,0.35); }
-        .hero-arrow.prev { left: 16px; }
-        .hero-arrow.next { right: 16px; }
+        .hero-arrow.prev { left: 16px; } .hero-arrow.next { right: 16px; }
         
         .features-bar { padding: 20px 0; }
         .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -147,9 +134,7 @@
         .product-card { background: var(--bg-white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); cursor: pointer; position: relative; }
         .product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
         .product-badge { position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; z-index: 2; text-transform: uppercase; color: white; }
-        .badge-sale { background: var(--accent); }
-        .badge-new { background: var(--success); }
-        .badge-hot { background: var(--warning); }
+        .badge-sale { background: var(--accent); } .badge-new { background: var(--success); } .badge-hot { background: var(--warning); }
         .product-wishlist { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; background: rgba(255,255,255,0.9); border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--text-light); z-index: 2; }
         .product-wishlist:hover, .product-wishlist.active { color: #EF4444; background: white; }
         .product-image { height: 220px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
@@ -456,22 +441,21 @@
         .coupon-item .coupon-email { font-size: 0.85rem; font-weight: 600; }
         .coupon-item .coupon-date { font-size: 0.75rem; color: var(--text-light); }
         
-        /* Theme presets */
-        .theme-presets { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-top: 20px; }
+        .theme-presets { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-top: 20px; }
         .theme-preset-card { background: white; border: 2px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; transition: var(--transition); }
         .theme-preset-card:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
         .theme-preset-card.active { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary); }
-        .theme-preset-preview { height: 80px; display: flex; }
+        .theme-preset-preview { height: 60px; display: flex; }
         .theme-preset-preview div { flex: 1; }
-        .theme-preset-info { padding: 12px; text-align: center; }
-        .theme-preset-info h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
-        .theme-preset-info p { font-size: 0.75rem; color: var(--text-light); }
-        .theme-preset-emoji { font-size: 1.5rem; margin-bottom: 4px; }
+        .theme-preset-info { padding: 10px; text-align: center; }
+        .theme-preset-info h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 2px; }
+        .theme-preset-info p { font-size: 0.7rem; color: var(--text-light); }
+        .theme-preset-emoji { font-size: 1.3rem; margin-bottom: 2px; }
         
-        .color-option { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; }
-        .color-option input[type="color"] { width: 40px; height: 40px; border: none; border-radius: 8px; cursor: pointer; padding: 0; }
-        .color-option label { font-weight: 600; font-size: 0.9rem; flex: 1; }
-        .color-option code { font-size: 0.8rem; color: var(--text-light); }
+        .color-option { display: flex; align-items: center; gap: 12px; padding: 10px; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; }
+        .color-option input[type="color"] { width: 36px; height: 36px; border: none; border-radius: 6px; cursor: pointer; padding: 0; }
+        .color-option label { font-weight: 600; font-size: 0.85rem; flex: 1; }
+        .color-option code { font-size: 0.75rem; color: var(--text-light); }
         
         @media (max-width: 1024px) {
             .main-content { grid-template-columns: 1fr; }
@@ -508,7 +492,7 @@
             .features-grid { grid-template-columns: 1fr; }
             .header-actions { gap: 4px; }
             .header-btn span { display: none; }
-            .logo-text { font-size: 1rem; }
+            .logo-text { font-size: 0.9rem; }
             .stats-grid { grid-template-columns: 1fr; }
             .form-row { grid-template-columns: 1fr; }
             .chat-box { width: calc(100vw - 48px); }
@@ -523,9 +507,7 @@
         .toast { background: var(--bg-white); padding: 14px 24px; border-radius: var(--radius); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; font-size: 0.9rem; font-weight: 600; border-left: 4px solid var(--success); pointer-events: auto; animation: toastIn 0.4s ease, toastOut 0.4s ease 2.6s forwards; }
         @keyframes toastIn { from { opacity: 0; transform: translateX(100px); } to { opacity: 1; transform: translateX(0); } }
         @keyframes toastOut { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(100px); } }
-        
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -535,7 +517,7 @@
         <div class="login-card">
             <a href="#" class="logo" onclick="showStore(); event.preventDefault();">
                 <div class="logo-icon"><img class="site-avatar-img" src="" alt="Edu"></div>
-                <div class="logo-text" id="loginLogoText">Edu<span>Market</span></div>
+                <div class="logo-text" id="loginLogoText"></div>
             </a>
             <h2>Painel Administrativo</h2>
             <p>Faça login para gerenciar sua loja</p>
@@ -556,7 +538,7 @@
             <div class="admin-sidebar-header">
                 <a href="#" class="logo" onclick="showStore(); event.preventDefault();">
                     <div class="logo-icon"><img class="site-avatar-img" src="" alt="Edu"></div>
-                    <div class="logo-text" id="adminLogoText">Edu<span>Market</span></div>
+                    <div class="logo-text" id="adminLogoText"></div>
                 </a>
             </div>
             <nav class="admin-nav">
@@ -571,10 +553,10 @@
                 <div class="admin-nav-section">Loja</div>
                 <div class="admin-nav-item" onclick="showSection('payments', this)"><i class="ri-qr-code-line"></i> Pagamentos</div>
                 <div class="admin-nav-item" onclick="showSection('contacts', this)"><i class="ri-contacts-line"></i> Contatos</div>
-                <div class="admin-nav-item" onclick="showSection('emails', this)"><i class="ri-mail-line"></i> Emails Cadastrados</div>
-                <div class="admin-nav-item" onclick="showSection('qa', this)"><i class="ri-question-answer-line"></i> Perguntas & Respostas</div>
-                <div class="admin-nav-item" onclick="showSection('avatar', this)"><i class="ri-user-smile-line"></i> Avatar do Bot</div>
-                <div class="admin-nav-item" onclick="showSection('theme', this)"><i class="ri-palette-line"></i> Tema e Cores</div>
+                <div class="admin-nav-item" onclick="showSection('emails', this)"><i class="ri-mail-line"></i> Emails</div>
+                <div class="admin-nav-item" onclick="showSection('qa', this)"><i class="ri-question-answer-line"></i> Perguntas</div>
+                <div class="admin-nav-item" onclick="showSection('avatar', this)"><i class="ri-user-smile-line"></i> Avatar</div>
+                <div class="admin-nav-item" onclick="showSection('theme', this)"><i class="ri-palette-line"></i> Temas</div>
                 <div class="admin-nav-item" onclick="showSection('settings', this)"><i class="ri-settings-3-line"></i> Configurações</div>
                 <div style="margin-top:20px;"></div>
                 <div class="admin-nav-item" onclick="showStore()" style="color: rgba(255,255,255,0.5);"><i class="ri-store-2-line"></i> Ver Loja</div>
@@ -598,19 +580,19 @@
 
             <div class="admin-section active" id="section-dashboard">
                 <div class="stats-grid">
-                    <div class="stat-card"><div class="stat-card-header"><span>Vendas Hoje</span><i class="ri-money-dollar-circle-line" style="color:var(--success)"></i></div><div class="value">R$ 2.458</div><div class="change up">↑ 12% vs ontem</div></div>
-                    <div class="stat-card"><div class="stat-card-header"><span>Pedidos</span><i class="ri-shopping-bag-line" style="color:var(--info)"></i></div><div class="value">47</div><div class="change up">↑ 8% vs ontem</div></div>
-                    <div class="stat-card"><div class="stat-card-header"><span>Produtos</span><i class="ri-book-3-line" style="color:var(--accent)"></i></div><div class="value" id="totalProductsStat">12</div><div class="change up">3 novos esta semana</div></div>
+                    <div class="stat-card"><div class="stat-card-header"><span>Vendas Hoje</span><i class="ri-money-dollar-circle-line" style="color:var(--success)"></i></div><div class="value">R$ 2.458</div><div class="change up">↑ 12%</div></div>
+                    <div class="stat-card"><div class="stat-card-header"><span>Pedidos</span><i class="ri-shopping-bag-line" style="color:var(--info)"></i></div><div class="value">47</div><div class="change up">↑ 8%</div></div>
+                    <div class="stat-card"><div class="stat-card-header"><span>Produtos</span><i class="ri-book-3-line" style="color:var(--accent)"></i></div><div class="value" id="totalProductsStat">12</div></div>
                     <div class="stat-card"><div class="stat-card-header"><span>Emails</span><i class="ri-mail-line" style="color:var(--primary)"></i></div><div class="value" id="emailCountStat">0</div></div>
                 </div>
                 <div style="display:grid;grid-template-columns:2fr 1fr;gap:24px;">
-                    <div class="admin-card"><div class="admin-card-header"><h3>Vendas dos Últimos 7 Dias</h3></div><div class="admin-card-body"><div style="height:250px;background:linear-gradient(135deg, rgba(45,106,79,0.05), rgba(45,106,79,0.15));border-radius:var(--radius);display:flex;align-items:flex-end;padding:0 20px;gap:8px;" id="salesChart"></div></div></div>
-                    <div class="admin-card"><div class="admin-card-header"><h3>Categorias Top</h3></div><div class="admin-card-body" style="padding:0;"><table class="admin-table"><tr><td>Matemática</td><td style="text-align:right;font-weight:700;">32%</td></tr><tr><td>Português</td><td style="text-align:right;font-weight:700;">24%</td></tr><tr><td>Ciências</td><td style="text-align:right;font-weight:700;">18%</td></tr></table></div></div>
+                    <div class="admin-card"><div class="admin-card-header"><h3>Vendas 7 Dias</h3></div><div class="admin-card-body"><div style="height:250px;background:linear-gradient(135deg, rgba(45,106,79,0.05), rgba(45,106,79,0.15));border-radius:var(--radius);display:flex;align-items:flex-end;padding:0 20px;gap:8px;" id="salesChart"></div></div></div>
+                    <div class="admin-card"><div class="admin-card-header"><h3>Categorias</h3></div><div class="admin-card-body" style="padding:0;"><table class="admin-table"><tr><td>Matemática</td><td style="text-align:right;font-weight:700;">32%</td></tr><tr><td>Português</td><td style="text-align:right;font-weight:700;">24%</td></tr><tr><td>Ciências</td><td style="text-align:right;font-weight:700;">18%</td></tr></table></div></div>
                 </div>
             </div>
 
             <div class="admin-section" id="section-products">
-                <div class="admin-card"><div class="admin-card-header"><h3>Gerenciar Produtos</h3><button class="btn btn-primary" onclick="openProductModal()"><i class="ri-add-line"></i> Novo Produto</button></div><div class="admin-card-body" style="padding:0;overflow-x:auto;"><table class="admin-table"><thead><tr><th>Imagem</th><th>Produto</th><th>Categoria</th><th>Preço</th><th>Ações</th></tr></thead><tbody id="adminProductsBody"></tbody></table></div></div>
+                <div class="admin-card"><div class="admin-card-header"><h3>Produtos</h3><button class="btn btn-primary" onclick="openProductModal()"><i class="ri-add-line"></i> Novo</button></div><div class="admin-card-body" style="padding:0;overflow-x:auto;"><table class="admin-table"><thead><tr><th>Img</th><th>Produto</th><th>Categoria</th><th>Preço</th><th>Ações</th></tr></thead><tbody id="adminProductsBody"></tbody></table></div></div>
             </div>
 
             <div class="modal-overlay" id="productFormModal">
@@ -623,7 +605,7 @@
                             <div class="form-group"><label>Nome</label><input type="text" id="productName" required></div>
                             <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                                 <div class="form-group"><label>Categoria</label><select id="productCategory" required></select></div>
-                                <div class="form-group"><label>URL da Imagem</label><input type="text" id="productImage" placeholder="https://..."></div>
+                                <div class="form-group"><label>URL Imagem</label><input type="text" id="productImage" placeholder="https://..."></div>
                             </div>
                             <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                                 <div class="form-group"><label>Preço (R$)</label><input type="number" step="0.01" id="productPrice" required></div>
@@ -631,7 +613,7 @@
                             </div>
                             <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                                 <div class="form-group"><label>Avaliação</label><input type="number" step="0.1" min="1" max="5" id="productRating" value="4.5"></div>
-                                <div class="form-group"><label>Badge</label><select id="productBadge"><option value="">Nenhum</option><option value="sale">️ Oferta</option><option value="new">✨ Novo</option><option value="hot">🔥 Popular</option></select></div>
+                                <div class="form-group"><label>Badge</label><select id="productBadge"><option value="">Nenhum</option><option value="sale">🏷️ Oferta</option><option value="new">✨ Novo</option><option value="hot">🔥 Popular</option></select></div>
                             </div>
                             <div class="form-group"><label>Descrição</label><textarea id="productDesc"></textarea></div>
                             <div class="form-group"><label>Frete</label><select id="productShipping"><option value="Frete Grátis">Frete Grátis</option><option value="">Frete Padrão</option></select></div>
@@ -642,7 +624,7 @@
             </div>
 
             <div class="admin-section" id="section-categories">
-                <div class="admin-card"><div class="admin-card-header"><h3>Categorias</h3><button class="btn btn-primary" onclick="openCategoryModal()"><i class="ri-add-line"></i> Nova Categoria</button></div><div class="admin-card-body"><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;" id="categoriesGrid"></div></div></div>
+                <div class="admin-card"><div class="admin-card-header"><h3>Categorias</h3><button class="btn btn-primary" onclick="openCategoryModal()"><i class="ri-add-line"></i> Nova</button></div><div class="admin-card-body"><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;" id="categoriesGrid"></div></div></div>
             </div>
 
             <div class="modal-overlay" id="categoryFormModal">
@@ -662,15 +644,15 @@
             </div>
 
             <div class="admin-section" id="section-orders">
-                <div class="admin-card"><div class="admin-card-header"><h3>Pedidos</h3></div><div class="admin-card-body" style="padding:0;overflow-x:auto;"><table class="admin-table"><thead><tr><th>Pedido</th><th>Cliente</th><th>Valor</th><th>Pagamento</th><th>Status</th></tr></thead><tbody><tr><td>#1024</td><td>Maria Silva</td><td>R$ 89,90</td><td>PIX</td><td><span class="status-badge status-active">Pago</span></td></tr><tr><td>#1023</td><td>João Santos</td><td>R$ 49,90</td><td>Cartão</td><td><span class="status-badge status-active">Pago</span></td></tr></tbody></table></div></div>
+                <div class="admin-card"><div class="admin-card-header"><h3>Pedidos</h3></div><div class="admin-card-body" style="padding:0;overflow-x:auto;"><table class="admin-table"><thead><tr><th>Pedido</th><th>Cliente</th><th>Valor</th><th>Status</th></tr></thead><tbody><tr><td>#1024</td><td>Maria Silva</td><td>R$ 89,90</td><td><span class="status-badge status-active">Pago</span></td></tr><tr><td>#1023</td><td>João Santos</td><td>R$ 49,90</td><td><span class="status-badge status-active">Pago</span></td></tr></tbody></table></div></div>
             </div>
 
             <div class="admin-section" id="section-banners">
-                <div class="admin-card"><div class="admin-card-header"><h3>Banners do Slider</h3></div><div class="admin-card-body"><div class="admin-form" id="bannersForm"></div></div></div>
+                <div class="admin-card"><div class="admin-card-header"><h3>Banners</h3></div><div class="admin-card-body"><div class="admin-form" id="bannersForm"></div></div></div>
             </div>
 
             <div class="admin-section" id="section-coupons">
-                <div class="admin-card"><div class="admin-card-header"><h3>Cupons de Desconto</h3><button class="btn btn-primary" onclick="openCouponModal()"><i class="ri-add-line"></i> Novo Cupom</button></div><div class="admin-card-body" style="padding:0;overflow-x:auto;"><table class="admin-table"><thead><tr><th>Código</th><th>Desconto</th><th>Tipo</th><th>Usos</th><th>Status</th><th>Ações</th></tr></thead><tbody id="couponsTableBody"></tbody></table></div></div>
+                <div class="admin-card"><div class="admin-card-header"><h3>Cupons</h3><button class="btn btn-primary" onclick="openCouponModal()"><i class="ri-add-line"></i> Novo</button></div><div class="admin-card-body" style="padding:0;overflow-x:auto;"><table class="admin-table"><thead><tr><th>Código</th><th>Desconto</th><th>Tipo</th><th>Status</th><th>Ações</th></tr></thead><tbody id="couponsTableBody"></tbody></table></div></div>
             </div>
 
             <div class="modal-overlay" id="couponFormModal">
@@ -682,9 +664,8 @@
                             <div class="form-group"><label>Código</label><input type="text" id="couponFormCode" placeholder="DESCONTO20" required></div>
                             <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                                 <div class="form-group"><label>Desconto</label><input type="number" id="couponFormDiscount" required></div>
-                                <div class="form-group"><label>Tipo</label><select id="couponFormType"><option value="%">Porcentagem (%)</option><option value="R$">Valor Fixo (R$)</option></select></div>
+                                <div class="form-group"><label>Tipo</label><select id="couponFormType"><option value="%">Porcentagem (%)</option><option value="R$">Fixo (R$)</option></select></div>
                             </div>
-                            <div class="form-group"><label>Validade</label><input type="date" id="couponFormExpiry"></div>
                             <div class="form-actions"><button type="button" class="btn btn-outline" onclick="closeCouponModal()">Cancelar</button><button type="submit" class="btn btn-primary"><i class="ri-save-line"></i> Criar</button></div>
                         </form>
                     </div>
@@ -693,51 +674,50 @@
 
             <div class="admin-section" id="section-emails">
                 <div class="email-stats">
-                    <div class="email-stat"><div class="number" id="totalEmails">0</div><div class="label">Total Cadastrados</div></div>
-                    <div class="email-stat"><div class="number" id="sentCoupons">0</div><div class="label">Cupons Enviados</div></div>
-                    <div class="email-stat"><div class="number" id="pendingEmails">0</div><div class="label">Sem Cupom</div></div>
+                    <div class="email-stat"><div class="number" id="totalEmails">0</div><div class="label">Total</div></div>
+                    <div class="email-stat"><div class="number" id="sentCoupons">0</div><div class="label">Enviados</div></div>
+                    <div class="email-stat"><div class="number" id="pendingEmails">0</div><div class="label">Pendentes</div></div>
                 </div>
                 <div class="admin-card">
-                    <div class="admin-card-header"><h3><i class="ri-mail-line"></i> Enviar Cupom para Emails</h3></div>
+                    <div class="admin-card-header"><h3><i class="ri-mail-line"></i> Enviar Cupom</h3></div>
                     <div class="admin-card-body">
                         <div class="coupon-form">
-                            <h4><i class="ri-ticket-2-line"></i> Criar e Enviar Cupom</h4>
+                            <h4>Criar Cupom</h4>
                             <div class="admin-form">
                                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                                    <div class="form-group"><label>Código do Cupom</label><input type="text" id="couponCodeInput" placeholder="Ex: BEMVINDO15"></div>
+                                    <div class="form-group"><label>Código</label><input type="text" id="couponCodeInput" placeholder="BEMVINDO15"></div>
                                     <div class="form-group"><label>Desconto</label><input type="number" id="couponDiscountInput" placeholder="15"></div>
                                 </div>
                                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                                    <div class="form-group"><label>Tipo</label><select id="couponTypeInput"><option value="%">Porcentagem (%)</option><option value="R$">Valor Fixo (R$)</option></select></div>
+                                    <div class="form-group"><label>Tipo</label><select id="couponTypeInput"><option value="%">Porcentagem</option><option value="R$">Fixo</option></select></div>
                                     <div class="form-group"><label>Validade</label><input type="date" id="couponExpiryInput"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="bulk-actions">
                             <input type="checkbox" id="selectAllEmails" onchange="toggleSelectAllEmails()">
-                            <label for="selectAllEmails" style="font-size:0.85rem;font-weight:600;cursor:pointer;">Selecionar Todos</label>
+                            <label for="selectAllEmails" style="font-size:0.85rem;font-weight:600;cursor:pointer;">Todos</label>
                             <span class="select-info" id="selectedCount">0 selecionados</span>
-                            <button class="btn btn-primary btn-sm" onclick="sendCouponToSelected()"><i class="ri-send-plane-fill"></i> Enviar Cupom</button>
-                            <button class="btn btn-accent btn-sm" onclick="sendCouponToAll()"><i class="ri-mail-send-line"></i> Enviar para Todos</button>
+                            <button class="btn btn-primary btn-sm" onclick="sendCouponToSelected()"><i class="ri-send-plane-fill"></i> Enviar</button>
+                            <button class="btn btn-accent btn-sm" onclick="sendCouponToAll()"><i class="ri-mail-send-line"></i> Enviar Todos</button>
                         </div>
                         <div class="email-list" id="emailList"></div>
                     </div>
                 </div>
                 <div class="admin-card coupon-history" id="couponHistoryCard" style="display:none;">
-                    <div class="admin-card-header"><h3><i class="ri-history-line"></i> Histórico de Cupons Enviados</h3></div>
+                    <div class="admin-card-header"><h3>Histórico</h3></div>
                     <div class="admin-card-body" style="padding:0;" id="couponHistoryList"></div>
                 </div>
             </div>
 
             <div class="admin-section" id="section-payments">
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-                    <div class="admin-card"><div class="admin-card-header"><h3><i class="ri-qr-code-line"></i> Configuração PIX</h3></div><div class="admin-card-body">
+                    <div class="admin-card"><div class="admin-card-header"><h3><i class="ri-qr-code-line"></i> PIX</h3></div><div class="admin-card-body">
                         <div class="admin-form">
                             <div class="form-group"><label>Chave PIX</label><input type="text" id="pixKeyInput" value="edumarket@email.com"></div>
-                            <div class="form-group"><label>Tipo</label><select id="pixKeyType"><option value="email">E-mail</option><option value="cpf">CPF</option><option value="cnpj">CNPJ</option><option value="phone">Telefone</option></select></div>
-                            <div class="form-group"><label>Nome</label><input type="text" value="EduMarket LTDA"></div>
+                            <div class="form-group"><label>Tipo</label><select id="pixKeyType"><option value="email">E-mail</option><option value="cpf">CPF</option><option value="cnpj">CNPJ</option></select></div>
                             <div style="text-align:center;margin-top:12px;"><div style="background:white;border:2px solid var(--border);border-radius:var(--radius);padding:16px;display:inline-block;"><canvas id="pixQRAdmin" width="200" height="200"></canvas></div></div>
-                            <div class="form-actions"><button class="btn btn-primary" onclick="generatePixQRAdmin()"><i class="ri-refresh-line"></i> Gerar QR</button><button class="btn btn-outline" onclick="showToast('Salvo!')"><i class="ri-save-line"></i> Salvar</button></div>
+                            <div class="form-actions"><button class="btn btn-primary" onclick="generatePixQRAdmin()"><i class="ri-refresh-line"></i> Gerar</button><button class="btn btn-outline" onclick="showToast('Salvo!')"><i class="ri-save-line"></i> Salvar</button></div>
                         </div>
                     </div></div>
                     <div class="admin-card"><div class="admin-card-header"><h3><i class="ri-bank-card-line"></i> Cartão</h3></div><div class="admin-card-body">
@@ -758,7 +738,7 @@
                             <div class="form-group"><label>WhatsApp</label><input type="text" id="contactWhatsapp" value="(11) 98888-8888"></div>
                         </div>
                         <div class="form-group"><label>E-mail</label><input type="email" id="contactEmail" value="contato@edumarket.com"></div>
-                        <div class="form-group"><label>Endereço</label><input type="text" id="contactAddress" value="Rua da Educação, 123 - São Paulo, SP"></div>
+                        <div class="form-group"><label>Endereço</label><input type="text" id="contactAddress" value="Rua da Educação, 123 - SP"></div>
                         <div class="form-group"><label>Horário</label><input type="text" id="contactHours" value="Seg a Sex: 8h às 18h"></div>
                         <div class="form-actions"><button class="btn btn-primary" onclick="saveContactSettings()"><i class="ri-save-line"></i> Salvar</button></div>
                     </div>
@@ -776,15 +756,15 @@
 
             <div class="admin-section" id="section-qa">
                 <div class="admin-card">
-                    <div class="admin-card-header"><h3><i class="ri-question-answer-line"></i> Perguntas & Respostas</h3><button class="btn btn-primary" onclick="openQAModal()"><i class="ri-add-line"></i> Nova Pergunta</button></div>
+                    <div class="admin-card-header"><h3><i class="ri-question-answer-line"></i> Perguntas & Respostas</h3><button class="btn btn-primary" onclick="openQAModal()"><i class="ri-add-line"></i> Nova</button></div>
                     <div class="admin-card-body">
                         <div style="background:var(--bg-light);padding:20px;border-radius:var(--radius);margin-bottom:20px;display:flex;align-items:center;gap:16px;">
-                            <div class="edu-avatar-admin"><img class="bot-avatar-img" src="" alt="Edu Bot"></div>
-                            <div><h4>Avatar do Assistente</h4><p style="font-size:0.85rem;color:var(--text-light);">Usado no chat e ícone do site</p></div>
+                            <div class="edu-avatar-admin"><img class="bot-avatar-img" src="" alt="Edu"></div>
+                            <div><h4>Avatar do Assistente</h4><p style="font-size:0.85rem;color:var(--text-light);">Chat e ícone do site</p></div>
                             <button class="btn btn-sm btn-primary" onclick="showSection('avatar', document.querySelector('.admin-nav-item:nth-child(13)'))" style="margin-left:auto;">Alterar</button>
                         </div>
                         <div style="margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:500px;">
-                            <div class="form-group"><label>Nome do Assistente</label><input type="text" id="chatbotName" value="Edu" onchange="updateChatbotName()"></div>
+                            <div class="form-group"><label>Nome</label><input type="text" id="chatbotName" value="Edu" onchange="updateChatbotName()"></div>
                             <div class="form-group"><label>Subtítulo</label><input type="text" id="chatbotSubtitle" value="Assistente" onchange="updateChatbotName()"></div>
                         </div>
                         <div class="qa-list" id="qaList"></div>
@@ -798,23 +778,21 @@
                     <div class="admin-card-body">
                         <div style="text-align:center;margin-bottom:30px;">
                             <h4>Avatar Atual</h4>
-                            <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:16px;">Usado no chat bot e ícone do site</p>
-                            <div class="edu-avatar-admin" style="width:120px;height:120px;margin:0 auto;">
+                            <div class="edu-avatar-admin" style="width:120px;height:120px;margin:16px auto 0;">
                                 <img id="currentAvatarPreview" class="bot-avatar-img" src="" alt="Avatar">
                             </div>
                         </div>
                         <div style="margin-bottom:30px;">
-                            <h4 style="margin-bottom:12px;"><i class="ri-link" style="margin-right:8px;"></i>URL da Imagem</h4>
+                            <h4 style="margin-bottom:12px;">URL da Imagem</h4>
                             <div style="display:flex;gap:12px;">
-                                <input type="text" id="avatarUrlInput" placeholder="https://exemplo.com/imagem.jpg" style="flex:1;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.9rem;outline:none;font-family:inherit;">
+                                <input type="text" id="avatarUrlInput" placeholder="https://..." style="flex:1;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.9rem;outline:none;font-family:inherit;">
                                 <button class="btn btn-primary" onclick="applyAvatarUrl()"><i class="ri-check-line"></i> Aplicar</button>
                             </div>
                         </div>
                         <div style="margin-bottom:30px;">
-                            <h4 style="margin-bottom:12px;"><i class="ri-upload-cloud-2-line" style="margin-right:8px;"></i>Upload</h4>
+                            <h4 style="margin-bottom:12px;">Upload</h4>
                             <div class="upload-area" onclick="document.getElementById('avatarFileInput').click()">
-                                <i class="ri-image-add-line"></i>
-                                <p>Clique para selecionar uma imagem</p>
+                                <i class="ri-image-add-line"></i><p>Clique para selecionar</p>
                             </div>
                             <input type="file" id="avatarFileInput" accept="image/*" style="display:none;" onchange="handleAvatarUpload(event)">
                         </div>
@@ -832,204 +810,103 @@
                         <h2 style="margin-bottom:20px;" id="qaFormTitle">Nova Pergunta</h2>
                         <form class="admin-form" onsubmit="saveQA(event)">
                             <input type="hidden" id="editQAId">
-                            <div class="form-group"><label>Pergunta</label><input type="text" id="qaQuestion" placeholder="Ex: Qual o prazo de entrega?" required></div>
-                            <div class="form-group"><label>Palavras-chave</label><input type="text" id="qaKeywords" placeholder="entrega, prazo, frete" required></div>
-                            <div class="form-group"><label>Resposta</label><textarea id="qaAnswer" placeholder="Digite a resposta..." required></textarea></div>
-                            <div class="form-group"><label>Categoria</label><select id="qaCategory"><option value="geral">📋 Geral</option><option value="envio">🚚 Envio</option><option value="pagamento">💳 Pagamento</option><option value="produtos">📦 Produtos</option></select></div>
+                            <div class="form-group"><label>Pergunta</label><input type="text" id="qaQuestion" placeholder="Ex: Qual o prazo?" required></div>
+                            <div class="form-group"><label>Palavras-chave</label><input type="text" id="qaKeywords" placeholder="entrega, prazo" required></div>
+                            <div class="form-group"><label>Resposta</label><textarea id="qaAnswer" required></textarea></div>
+                            <div class="form-group"><label>Categoria</label><select id="qaCategory"><option value="geral">📋 Geral</option><option value="envio">🚚 Envio</option><option value="pagamento">💳 Pagamento</option><option value="produtos"> Produtos</option></select></div>
                             <div class="form-actions"><button type="button" class="btn btn-outline" onclick="closeQAModal()">Cancelar</button><button type="submit" class="btn btn-primary"><i class="ri-save-line"></i> Salvar</button></div>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <!-- ===== THEME SECTION WITH PRESETS ===== -->
             <div class="admin-section" id="section-theme">
                 <div class="admin-card">
                     <div class="admin-card-header"><h3><i class="ri-palette-line"></i> Temas e Cores</h3></div>
                     <div class="admin-card-body">
                         <h4 style="margin-bottom:16px;">🎨 Temas Prontos</h4>
-                        <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:16px;">Selecione um tema abaixo para aplicar instantaneamente:</p>
+                        <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:16px;">Selecione um tema para aplicar:</p>
                         
                         <div class="theme-presets" id="themePresets">
-                            <!-- Natureza (Verde) -->
                             <div class="theme-preset-card" onclick="applyPreset('natureza')">
-                                <div class="theme-preset-preview">
-                                    <div style="background:#2D6A4F"></div>
-                                    <div style="background:#1B4332"></div>
-                                    <div style="background:#F5E6CA"></div>
-                                    <div style="background:#E76F51"></div>
-                                </div>
-                                <div class="theme-preset-info">
-                                    <div class="theme-preset-emoji">🌿</div>
-                                    <h4>Natureza</h4>
-                                    <p>Verde clássico</p>
-                                </div>
+                                <div class="theme-preset-preview"><div style="background:#2D6A4F"></div><div style="background:#1B4332"></div><div style="background:#F5E6CA"></div><div style="background:#E76F51"></div></div>
+                                <div class="theme-preset-info"><div class="theme-preset-emoji"></div><h4>Natureza</h4><p>Verde clássico</p></div>
                             </div>
-                            <!-- Oceano (Azul) -->
                             <div class="theme-preset-card" onclick="applyPreset('oceano')">
-                                <div class="theme-preset-preview">
-                                    <div style="background:#1E40AF"></div>
-                                    <div style="background:#1E3A8A"></div>
-                                    <div style="background:#DBEAFE"></div>
-                                    <div style="background:#F59E0B"></div>
-                                </div>
-                                <div class="theme-preset-info">
-                                    <div class="theme-preset-emoji">🌊</div>
-                                    <h4>Oceano</h4>
-                                    <p>Azul profundo</p>
-                                </div>
+                                <div class="theme-preset-preview"><div style="background:#1E40AF"></div><div style="background:#1E3A8A"></div><div style="background:#DBEAFE"></div><div style="background:#F59E0B"></div></div>
+                                <div class="theme-preset-info"><div class="theme-preset-emoji">🌊</div><h4>Oceano</h4><p>Azul profundo</p></div>
                             </div>
-                            <!-- Roxo -->
                             <div class="theme-preset-card" onclick="applyPreset('roxo')">
-                                <div class="theme-preset-preview">
-                                    <div style="background:#6D28D9"></div>
-                                    <div style="background:#5B21B6"></div>
-                                    <div style="background:#EDE9FE"></div>
-                                    <div style="background:#EC4899"></div>
-                                </div>
-                                <div class="theme-preset-info">
-                                    <div class="theme-preset-emoji">💜</div>
-                                    <h4>Roxo</h4>
-                                    <p>Violeta elegante</p>
-                                </div>
+                                <div class="theme-preset-preview"><div style="background:#6D28D9"></div><div style="background:#5B21B6"></div><div style="background:#EDE9FE"></div><div style="background:#EC4899"></div></div>
+                                <div class="theme-preset-info"><div class="theme-preset-emoji"></div><h4>Roxo</h4><p>Violeta elegante</p></div>
                             </div>
-                            <!-- Dark Mode -->
                             <div class="theme-preset-card" onclick="applyPreset('dark')">
-                                <div class="theme-preset-preview">
-                                    <div style="background:#3B82F6"></div>
-                                    <div style="background:#1F2937"></div>
-                                    <div style="background:#111827"></div>
-                                    <div style="background:#F97316"></div>
-                                </div>
-                                <div class="theme-preset-info">
-                                    <div class="theme-preset-emoji">🌙</div>
-                                    <h4>Dark Mode</h4>
-                                    <p>Tema escuro</p>
-                                </div>
+                                <div class="theme-preset-preview"><div style="background:#3B82F6"></div><div style="background:#1F2937"></div><div style="background:#111827"></div><div style="background:#F97316"></div></div>
+                                <div class="theme-preset-info"><div class="theme-preset-emoji">🌙</div><h4>Dark</h4><p>Tema escuro</p></div>
                             </div>
-                            <!-- Quente -->
                             <div class="theme-preset-card" onclick="applyPreset('quente')">
-                                <div class="theme-preset-preview">
-                                    <div style="background:#B45309"></div>
-                                    <div style="background:#92400E"></div>
-                                    <div style="background:#FEF3C7"></div>
-                                    <div style="background:#DC2626"></div>
-                                </div>
-                                <div class="theme-preset-info">
-                                    <div class="theme-preset-emoji">🔥</div>
-                                    <h4>Quente</h4>
-                                    <p>Tons de outono</p>
-                                </div>
+                                <div class="theme-preset-preview"><div style="background:#B45309"></div><div style="background:#92400E"></div><div style="background:#FEF3C7"></div><div style="background:#DC2626"></div></div>
+                                <div class="theme-preset-info"><div class="theme-preset-emoji">🔥</div><h4>Quente</h4><p>Tons outono</p></div>
                             </div>
-                            <!-- Pastel -->
                             <div class="theme-preset-card" onclick="applyPreset('pastel')">
-                                <div class="theme-preset-preview">
-                                    <div style="background:#818CF8"></div>
-                                    <div style="background:#6366F1"></div>
-                                    <div style="background:#FDF2F8"></div>
-                                    <div style="background:#F472B6"></div>
-                                </div>
-                                <div class="theme-preset-info">
-                                    <div class="theme-preset-emoji">🌸</div>
-                                    <h4>Pastel</h4>
-                                    <p>Suave e delicado</p>
-                                </div>
+                                <div class="theme-preset-preview"><div style="background:#818CF8"></div><div style="background:#6366F1"></div><div style="background:#FDF2F8"></div><div style="background:#F472B6"></div></div>
+                                <div class="theme-preset-info"><div class="theme-preset-emoji">🌸</div><h4>Pastel</h4><p>Suave delicado</p></div>
                             </div>
-                            <!-- Rosa -->
                             <div class="theme-preset-card" onclick="applyPreset('rosa')">
-                                <div class="theme-preset-preview">
-                                    <div style="background:#BE185D"></div>
-                                    <div style="background:#9D174D"></div>
-                                    <div style="background:#FCE7F3"></div>
-                                    <div style="background:#F59E0B"></div>
-                                </div>
-                                <div class="theme-preset-info">
-                                    <div class="theme-preset-emoji">🌺</div>
-                                    <h4>Rosa</h4>
-                                    <p>Romântico</p>
-                                </div>
+                                <div class="theme-preset-preview"><div style="background:#BE185D"></div><div style="background:#9D174D"></div><div style="background:#FCE7F3"></div><div style="background:#F59E0B"></div></div>
+                                <div class="theme-preset-info"><div class="theme-preset-emoji">🌺</div><h4>Rosa</h4><p>Romântico</p></div>
                             </div>
-                            <!-- Turquesa -->
                             <div class="theme-preset-card" onclick="applyPreset('turquesa')">
-                                <div class="theme-preset-preview">
-                                    <div style="background:#0D9488"></div>
-                                    <div style="background:#0F766E"></div>
-                                    <div style="background:#CCFBF1"></div>
-                                    <div style="background:#F97316"></div>
-                                </div>
-                                <div class="theme-preset-info">
-                                    <div class="theme-preset-emoji">️</div>
-                                    <h4>Turquesa</h4>
-                                    <p>Tropical</p>
-                                </div>
+                                <div class="theme-preset-preview"><div style="background:#0D9488"></div><div style="background:#0F766E"></div><div style="background:#CCFBF1"></div><div style="background:#F97316"></div></div>
+                                <div class="theme-preset-info"><div class="theme-preset-emoji">🐚</div><h4>Turquesa</h4><p>Tropical</p></div>
                             </div>
-                            <!-- Lavanda -->
                             <div class="theme-preset-card" onclick="applyPreset('lavanda')">
-                                <div class="theme-preset-preview">
-                                    <div style="background:#7C3AED"></div>
-                                    <div style="background:#6D28D9"></div>
-                                    <div style="background:#F5F3FF"></div>
-                                    <div style="background:#10B981"></div>
-                                </div>
-                                <div class="theme-preset-info">
-                                    <div class="theme-preset-emoji">💐</div>
-                                    <h4>Lavanda</h4>
-                                    <p>Sofisticado</p>
-                                </div>
+                                <div class="theme-preset-preview"><div style="background:#7C3AED"></div><div style="background:#6D28D9"></div><div style="background:#F5F3FF"></div><div style="background:#10B981"></div></div>
+                                <div class="theme-preset-info"><div class="theme-preset-emoji"></div><h4>Lavanda</h4><p>Sofisticado</p></div>
                             </div>
-                            <!-- Laranja -->
                             <div class="theme-preset-card" onclick="applyPreset('laranja')">
-                                <div class="theme-preset-preview">
-                                    <div style="background:#EA580C"></div>
-                                    <div style="background:#C2410C"></div>
-                                    <div style="background:#FFF7ED"></div>
-                                    <div style="background:#1D4ED8"></div>
-                                </div>
-                                <div class="theme-preset-info">
-                                    <div class="theme-preset-emoji"></div>
-                                    <h4>Laranja</h4>
-                                    <p>Energético</p>
-                                </div>
+                                <div class="theme-preset-preview"><div style="background:#EA580C"></div><div style="background:#C2410C"></div><div style="background:#FFF7ED"></div><div style="background:#1D4ED8"></div></div>
+                                <div class="theme-preset-info"><div class="theme-preset-emoji">🍊</div><h4>Laranja</h4><p>Energético</p></div>
                             </div>
                         </div>
 
                         <h4 style="margin:32px 0 16px;"> Cores Personalizadas</h4>
                         <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
                             <div>
-                                <div style="display:flex;flex-direction:column;gap:12px;">
-                                    <div class="color-option"><input type="color" id="themePrimary" onchange="updateTheme()"><label>Cor Principal</label><code>#2D6A4F</code></div>
-                                    <div class="color-option"><input type="color" id="themePrimaryDark" onchange="updateTheme()"><label>Cor Escura</label><code>#1B4332</code></div>
-                                    <div class="color-option"><input type="color" id="themePrimaryLight" onchange="updateTheme()"><label>Cor Clara</label><code>#40916C</code></div>
-                                    <div class="color-option"><input type="color" id="themeSecondary" onchange="updateTheme()"><label>Secundária</label><code>#F5E6CA</code></div>
-                                    <div class="color-option"><input type="color" id="themeAccent" onchange="updateTheme()"><label>Destaque</label><code>#E76F51</code></div>
+                                <div style="display:flex;flex-direction:column;gap:10px;">
+                                    <div class="color-option"><input type="color" id="themePrimary" onchange="updateTheme()"><label>Principal</label><code id="codePrimary">#2D6A4F</code></div>
+                                    <div class="color-option"><input type="color" id="themePrimaryDark" onchange="updateTheme()"><label>Escura</label><code id="codePrimaryDark">#1B4332</code></div>
+                                    <div class="color-option"><input type="color" id="themePrimaryLight" onchange="updateTheme()"><label>Clara</label><code id="codePrimaryLight">#40916C</code></div>
+                                    <div class="color-option"><input type="color" id="themeSecondary" onchange="updateTheme()"><label>Secundária</label><code id="codeSecondary">#F5E6CA</code></div>
+                                    <div class="color-option"><input type="color" id="themeAccent" onchange="updateTheme()"><label>Destaque</label><code id="codeAccent">#E76F51</code></div>
                                 </div>
                             </div>
                             <div>
-                                <div style="display:flex;flex-direction:column;gap:12px;">
-                                    <div class="color-option"><input type="color" id="themeBgLight" onchange="updateTheme()"><label>Fundo Claro</label><code>#F7F7F7</code></div>
-                                    <div class="color-option"><input type="color" id="themeBgWhite" onchange="updateTheme()"><label>Fundo Branco</label><code>#FFFFFF</code></div>
-                                    <div class="color-option"><input type="color" id="themeTextDark" onchange="updateTheme()"><label>Texto Escuro</label><code>#1A1A2E</code></div>
-                                    <div class="color-option"><input type="color" id="themeTextMid" onchange="updateTheme()"><label>Texto Médio</label><code>#4A4A68</code></div>
-                                    <div class="color-option"><input type="color" id="themeBorder" onchange="updateTheme()"><label>Borda</label><code>#E0E0E0</code></div>
+                                <div style="display:flex;flex-direction:column;gap:10px;">
+                                    <div class="color-option"><input type="color" id="themeBgLight" onchange="updateTheme()"><label>Fundo Claro</label><code id="codeBgLight">#F7F7F7</code></div>
+                                    <div class="color-option"><input type="color" id="themeBgWhite" onchange="updateTheme()"><label>Fundo Branco</label><code id="codeBgWhite">#FFFFFF</code></div>
+                                    <div class="color-option"><input type="color" id="themeTextDark" onchange="updateTheme()"><label>Texto Escuro</label><code id="codeTextDark">#1A1A2E</code></div>
+                                    <div class="color-option"><input type="color" id="themeTextMid" onchange="updateTheme()"><label>Texto Médio</label><code id="codeTextMid">#4A4A68</code></div>
+                                    <div class="color-option"><input type="color" id="themeBorder" onchange="updateTheme()"><label>Borda</label><code id="codeBorder">#E0E0E0</code></div>
                                 </div>
-                                <div style="margin-top:24px;display:flex;gap:8px;flex-wrap:wrap;">
+                                <div style="margin-top:20px;display:flex;gap:8px;flex-wrap:wrap;">
                                     <button class="btn btn-primary" onclick="applyTheme()"><i class="ri-check-line"></i> Aplicar Cores</button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="theme-preview" id="themePreview" style="margin-top:24px;">
-                            <div class="theme-preview-header" style="background:var(--primary);color:white;">
+                            <div class="theme-preview-header" id="themePreviewHeader">
                                 <div style="width:24px;height:24px;border-radius:50%;overflow:hidden;"><img class="site-avatar-img" src="" style="width:100%;height:100%;object-fit:cover;"></div>
                                 <span style="font-weight:800;" id="themePreviewName">EduMarket</span>
                                 <span style="margin-left:auto;font-size:0.8rem;opacity:0.8;">Preview</span>
                             </div>
-                            <div class="theme-preview-content" style="background:var(--bg-light);">
+                            <div class="theme-preview-content" id="themePreviewContent">
                                 <div style="display:flex;gap:12px;flex-wrap:wrap;">
                                     <div style="background:var(--bg-white);padding:16px;border-radius:8px;flex:1;min-width:150px;border:1px solid var(--border);">
                                         <div style="font-size:0.8rem;color:var(--primary);font-weight:600;margin-bottom:4px;">Produto</div>
                                         <div style="height:60px;background:var(--bg-light);border-radius:4px;margin-bottom:8px;"></div>
-                                        <div style="font-weight:700;color:var(--primary);font-size:1.1rem;">R$ 49,90</div>
+                                        <div style="font-weight:700;color:var(--primary);">R$ 49,90</div>
                                     </div>
                                 </div>
                                 <div style="margin-top:16px;display:flex;gap:8px;">
@@ -1070,14 +947,14 @@
     <div class="info-page-content">
         <div class="info-card"><h3><i class="ri-book-open-line"></i> Nossa História</h3><p>O Cantinho da Profª Ana Carolina M. nasceu com o objetivo de democratizar o acesso a materiais educacionais de qualidade no Brasil.</p></div>
         <div class="info-card"><h3><i class="ri-target-line"></i> Missão</h3><p>Conectar educadores e alunos a materiais pedagógicos de alta qualidade com preços acessíveis.</p></div>
-        <button class="btn btn-primary back-btn" onclick="showStore()"><i class="ri-arrow-left-line"></i> Voltar para a Loja</button>
+        <button class="btn btn-primary back-btn" onclick="showStore()"><i class="ri-arrow-left-line"></i> Voltar</button>
     </div>
 </div>
 
 <div class="info-page" id="infoComoFunciona">
     <div class="info-page-header"><div class="container"><h1><i class="ri-lightbulb-line"></i> Como Funciona</h1><p>Entenda nosso processo</p></div></div>
     <div class="info-page-content">
-        <div class="info-card"><h3><i class="ri-shopping-cart-2-line"></i> Como Comprar</h3><ul><li>1. Navegue pelos produtos</li><li>2. Adicione ao carrinho</li><li>3. Finalize o pagamento (PIX, Cartão ou Boleto)</li><li>4. Receba em casa</li></ul></div>
+        <div class="info-card"><h3><i class="ri-shopping-cart-2-line"></i> Como Comprar</h3><ul><li>1. Navegue pelos produtos</li><li>2. Adicione ao carrinho</li><li>3. Finalize o pagamento</li><li>4. Receba em casa</li></ul></div>
         <button class="btn btn-primary back-btn" onclick="showStore()"><i class="ri-arrow-left-line"></i> Voltar</button>
     </div>
 </div>
@@ -1085,7 +962,7 @@
 <div class="info-page" id="infoBlog">
     <div class="info-page-header"><div class="container"><h1><i class="ri-article-line"></i> Blog</h1><p>Novidades e conteúdos</p></div></div>
     <div class="info-page-content">
-        <div class="info-card"><h3><i class="ri-lightbulb-flash-line"></i> Últimas Publicações</h3><p>Em breve teremos conteúdo exclusivo!</p></div>
+        <div class="info-card"><h3><i class="ri-lightbulb-flash-line"></i> Últimas Publicações</h3><p>Em breve conteúdo exclusivo!</p></div>
         <button class="btn btn-primary back-btn" onclick="showStore()"><i class="ri-arrow-left-line"></i> Voltar</button>
     </div>
 </div>
@@ -1093,7 +970,7 @@
 <div class="info-page" id="infoPoliticas">
     <div class="info-page-header"><div class="container"><h1><i class="ri-file-text-line"></i> Políticas</h1><p>Termos, privacidade e LGPD</p></div></div>
     <div class="info-page-content">
-        <div class="info-card"><h3><i class="ri-file-list-3-line"></i> Termos de Uso</h3><ul><li>Materiais para uso pessoal e educacional</li><li>Proibida reprodução sem autorização</li></ul></div>
+        <div class="info-card"><h3><i class="ri-file-list-3-line"></i> Termos</h3><ul><li>Materiais para uso pessoal e educacional</li><li>Proibida reprodução sem autorização</li></ul></div>
         <div class="info-card"><h3><i class="ri-shield-check-line"></i> Privacidade</h3><p>Dados protegidos conforme a LGPD.</p></div>
         <button class="btn btn-primary back-btn" onclick="showStore()"><i class="ri-arrow-left-line"></i> Voltar</button>
     </div>
@@ -1102,7 +979,7 @@
 <div class="store-page" id="storePage">
     <div class="top-bar">
         <div class="container">
-            <span>📚 Bem-vindo ao Cantinho da Profª Ana Carolina M.</span>
+            <span id="topBarText">📚 Bem-vindo</span>
             <div>
                 <a href="#" onclick="event.preventDefault(); openChat();">Central de Ajuda</a>
                 <a href="#" onclick="event.preventDefault(); openChat();">Fale Conosco</a>
@@ -1115,7 +992,7 @@
         <div class="container">
             <a href="#" class="logo" onclick="event.preventDefault(); showStore();">
                 <div class="logo-icon"><img class="site-avatar-img" src="" alt="Edu"></div>
-                <div class="logo-text" id="storeLogoText">Edu<span>Market</span></div>
+                <div class="logo-text" id="storeLogoText"></div>
             </a>
             <div class="search-bar">
                 <input type="text" placeholder="Buscar apostilas, livros, materiais pedagógicos..." id="searchInput" onkeypress="if(event.key==='Enter')searchProducts()">
@@ -1162,7 +1039,7 @@
     <section class="deals-section">
         <div class="container">
             <div class="deals-banner">
-                <div><h2>⚡ Ofertas Relâmpago</h2><p>Descontos exclusivos por tempo limitado!</p></div>
+                <div><h2>⚡ Ofertas Relâmpago</h2><p>Descontos exclusivos!</p></div>
                 <div class="deals-timer">
                     <div class="timer-block"><span class="number" id="timerHours">08</span><span class="label">Horas</span></div>
                     <div class="timer-block"><span class="number" id="timerMinutes">45</span><span class="label">Min</span></div>
@@ -1176,14 +1053,14 @@
         <div class="main-content">
             <aside class="sidebar" id="sidebar">
                 <div class="filter-section"><h3><i class="ri-filter-3-line"></i> Categorias</h3><div id="filterCategories"></div></div>
-                <div class="filter-section"><h3><i class="ri-price-tag-3-line"></i> Preço</h3><div class="price-range"><input type="number" placeholder="Min" id="priceMin" value="0"><span>—</span><input type="number" placeholder="Max" id="priceMax" value="200"></div><button class="filter-btn" onclick="filterProducts()">Aplicar Filtro</button></div>
+                <div class="filter-section"><h3><i class="ri-price-tag-3-line"></i> Preço</h3><div class="price-range"><input type="number" placeholder="Min" id="priceMin" value="0"><span>—</span><input type="number" placeholder="Max" id="priceMax" value="200"></div><button class="filter-btn" onclick="filterProducts()">Aplicar</button></div>
             </aside>
             <div class="products-area">
                 <button class="mobile-filter-btn" onclick="document.getElementById('sidebar').classList.toggle('open')"><i class="ri-filter-3-line"></i> Filtrar</button>
                 <div class="toolbar">
                     <div class="toolbar-left">Mostrando <strong id="productCount">12</strong> resultados</div>
                     <div class="toolbar-right">
-                        <select class="sort-select" id="sortSelect" onchange="sortProducts()"><option value="relevant">Mais Relevantes</option><option value="price-low">Menor Preço</option><option value="price-high">Maior Preço</option></select>
+                        <select class="sort-select" id="sortSelect" onchange="sortProducts()"><option value="relevant">Relevantes</option><option value="price-low">Menor Preço</option><option value="price-high">Maior Preço</option></select>
                         <div class="view-btns"><button class="view-btn active" onclick="setView('grid',this)"><i class="ri-grid-fill"></i></button><button class="view-btn" onclick="setView('list',this)"><i class="ri-list-check-2"></i></button></div>
                     </div>
                 </div>
@@ -1196,8 +1073,8 @@
         <div class="container">
             <div class="newsletter-box">
                 <h2>📬 Receba Novidades</h2>
-                <p>Cadastre-se e ganhe 10% OFF na primeira compra!</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); registerEmail(this); this.reset();"><input type="email" placeholder="Seu melhor e-mail" required><button type="submit">Cadastrar</button></form>
+                <p>Ganhe 10% OFF na primeira compra!</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); registerEmail(this); this.reset();"><input type="email" placeholder="Seu e-mail" required><button type="submit">Cadastrar</button></form>
             </div>
         </div>
     </section>
@@ -1206,8 +1083,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo"><div class="logo-icon"><img class="site-avatar-img" src="" alt="Edu"></div><div class="logo-text" id="footerLogoText">Edu<span>Market</span></div></a>
-                    <p id="footerDescription">Materiais acadêmicos e pedagógicos de qualidade.</p>
+                    <a href="#" class="logo"><div class="logo-icon"><img class="site-avatar-img" src="" alt="Edu"></div><div class="logo-text" id="footerLogoText"></div></a>
+                    <p id="footerDescription"></p>
                     <div class="footer-social" id="footerSocial"></div>
                 </div>
                 <div class="footer-col">
@@ -1224,12 +1101,12 @@
                 </div>
                 <div class="footer-col">
                     <h4>Políticas</h4>
-                    <a onclick="showInfoPage('infoPoliticas')">Termos de Uso</a>
+                    <a onclick="showInfoPage('infoPoliticas')">Termos</a>
                     <a onclick="showInfoPage('infoPoliticas')">Privacidade</a>
                     <a onclick="showInfoPage('infoPoliticas')">LGPD</a>
                 </div>
             </div>
-            <div class="footer-bottom"><p>© 2025 Cantinho da Profª Ana Carolina M. Todos os direitos reservados.</p></div>
+            <div class="footer-bottom"><p id="footerCopyright">© 2025 Todos os direitos reservados.</p></div>
         </div>
     </footer>
 </div>
@@ -1237,11 +1114,11 @@
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 <div class="cart-sidebar" id="cartSidebar">
     <div class="cart-header"><h3><i class="ri-shopping-cart-2-fill"></i> Carrinho (<span id="cartCount">0</span>)</h3><button class="cart-close" onclick="toggleCart()"><i class="ri-close-line"></i></button></div>
-    <div class="cart-items" id="cartItems"><div class="cart-empty"><i class="ri-shopping-cart-2-line"></i><p>Seu carrinho está vazio</p></div></div>
+    <div class="cart-items" id="cartItems"><div class="cart-empty"><i class="ri-shopping-cart-2-line"></i><p>Carrinho vazio</p></div></div>
     <div class="cart-footer" id="cartFooter" style="display:none">
         <div class="cart-total"><span>Total:</span><strong id="cartTotal">R$ 0,00</strong></div>
-        <button class="cart-checkout" onclick="openCheckout()"><i class="ri-lock-line"></i> Finalizar Compra</button>
-        <button class="cart-continue" onclick="toggleCart()">Continuar Comprando</button>
+        <button class="cart-checkout" onclick="openCheckout()"><i class="ri-lock-line"></i> Finalizar</button>
+        <button class="cart-continue" onclick="toggleCart()">Continuar</button>
     </div>
 </div>
 
@@ -1256,7 +1133,7 @@
                 <div class="modal-rating"><div class="stars" id="modalStars"></div><span class="rating-count" id="modalRatingCount"></span></div>
                 <div class="modal-price-box"><div class="modal-price-old" id="modalPriceOld"></div><div class="modal-price-current" id="modalPriceCurrent"></div><div class="modal-price-installment" id="modalInstallment"></div></div>
                 <p class="modal-desc" id="modalDesc"></p>
-                <ul class="modal-features"><li><i class="ri-check-line"></i> Material alinhado à BNCC</li><li><i class="ri-check-line"></i> Ilustrações coloridas</li><li><i class="ri-check-line"></i> Atividades práticas</li></ul>
+                <ul class="modal-features"><li><i class="ri-check-line"></i> Material BNCC</li><li><i class="ri-check-line"></i> Ilustrações</li><li><i class="ri-check-line"></i> Atividades práticas</li></ul>
                 <div class="modal-actions">
                     <button class="modal-add-cart" id="modalAddCart"><i class="ri-shopping-cart-2-line"></i> Adicionar</button>
                     <button class="modal-buy-now" onclick="addToCart(currentProductId); toggleCart();">Comprar</button>
@@ -1277,17 +1154,17 @@
                 <button class="payment-tab" onclick="switchPayment('boleto',this)"><i class="ri-barcode-line"></i> Boleto</button>
             </div>
             <div class="payment-content active" id="payment-pix">
-                <div class="pix-timer">️ Pague em até 30 minutos</div>
+                <div class="pix-timer">Pague em até 30 minutos</div>
                 <div class="qr-container">
                     <div class="qr-code"><canvas id="checkoutQRCode" width="220" height="220"></canvas></div>
                     <p style="font-size:0.9rem;font-weight:600;margin-bottom:8px;">Escaneie o QR Code</p>
-                    <div class="pix-code"><input type="text" id="pixCopyCode" readonly><button onclick="navigator.clipboard.writeText(document.getElementById('pixCopyCode').value); showToast('Código copiado!');"><i class="ri-file-copy-line"></i> Copiar</button></div>
+                    <div class="pix-code"><input type="text" id="pixCopyCode" readonly><button onclick="navigator.clipboard.writeText(document.getElementById('pixCopyCode').value); showToast('Copiado!');"><i class="ri-file-copy-line"></i> Copiar</button></div>
                 </div>
-                <div class="pix-success" id="pixSuccess"><i class="ri-checkbox-circle-line"></i><h3>Pagamento Confirmado! ✅</h3><p>Seu pedido foi processado.</p></div>
+                <div class="pix-success" id="pixSuccess"><i class="ri-checkbox-circle-line"></i><h3>Pagamento Confirmado! ✅</h3><p>Pedido processado.</p></div>
             </div>
             <div class="payment-content" id="payment-card">
                 <form class="card-form" onsubmit="event.preventDefault(); processCardPayment();">
-                    <div class="form-group"><label>Nome no Cartão</label><input type="text" required></div>
+                    <div class="form-group"><label>Nome</label><input type="text" required></div>
                     <div class="form-group"><label>Número</label><input type="text" placeholder="0000 0000 0000 0000" maxlength="19" oninput="this.value=this.value.replace(/\D/g,'').replace(/(\d{4})(?=\d)/g,'$1 ')" required></div>
                     <div class="form-row"><div class="form-group"><label>Validade</label><input type="text" placeholder="MM/AA" maxlength="5" required></div><div class="form-group"><label>CVV</label><input type="text" placeholder="000" maxlength="4" required></div></div>
                     <div class="form-group"><label>CPF</label><input type="text" placeholder="000.000.000-00" required></div>
@@ -1299,7 +1176,6 @@
                 <div style="text-align:center;padding:20px;">
                     <i class="ri-barcode-line" style="font-size:3rem;color:var(--text-mid);margin-bottom:16px;"></i>
                     <h3 style="margin-bottom:8px;">Boleto Bancário</h3>
-                    <p style="color:var(--text-mid);margin-bottom:20px;">O boleto será gerado para pagamento em qualquer banco.</p>
                     <button class="btn btn-lg btn-accent" style="width:100%;justify-content:center;" onclick="showToast('Boleto gerado!')"><i class="ri-download-2-line"></i> Gerar Boleto</button>
                 </div>
             </div>
@@ -1339,33 +1215,33 @@ const DEFAULT_DATA = {
     storeName: "Cantinho da Profª Ana Carolina M.",
     storeSlogan: "Materiais Acadêmicos e Pedagógicos",
     banners: [
-        { badge: '🔥 OFERTAS DA SEMANA', title: 'Materiais Pedagógicos com até 40% OFF', desc: 'Apostilas, livros e materiais didáticos de qualidade.', bg: 'linear-gradient(135deg, #2D6A4F 0%, #40916C 50%, #52B788 100%)', emoji: '📚' },
-        { badge: '✨ NOVIDADES', title: 'Nova Coleção 2025 — BNCC Alinhada', desc: 'Materiais atualizados conforme a BNCC.', bg: 'linear-gradient(135deg, #E76F51 0%, #F4A261 50%, #F5E6CA 100%)', emoji: '🎓' },
+        { badge: '🔥 OFERTAS', title: 'Materiais Pedagógicos com até 40% OFF', desc: 'Apostilas, livros e materiais didáticos.', bg: 'linear-gradient(135deg, #2D6A4F 0%, #40916C 50%, #52B788 100%)', emoji: '📚' },
+        { badge: '✨ NOVIDADES', title: 'Nova Coleção 2025 — BNCC', desc: 'Materiais atualizados conforme a BNCC.', bg: 'linear-gradient(135deg, #E76F51 0%, #F4A261 50%, #F5E6CA 100%)', emoji: '🎓' },
         { badge: '🚚 FRETE GRÁTIS', title: 'Frete Grátis para todo o Brasil', desc: 'Em compras acima de R$ 99,00.', bg: 'linear-gradient(135deg, #1B4332 0%, #2D6A4F 50%, #40916C 100%)', emoji: '📦' }
     ],
     categories: [
-        { id: 'matematica', name: 'Matemática', emoji: '', color: '#DBEAFE', gradient: 'linear-gradient(135deg,#DBEAFE,#93C5FD)' },
+        { id: 'matematica', name: 'Matemática', emoji: '📐', color: '#DBEAFE', gradient: 'linear-gradient(135deg,#DBEAFE,#93C5FD)' },
         { id: 'portugues', name: 'Português', emoji: '📝', color: '#D1FAE5', gradient: 'linear-gradient(135deg,#D1FAE5,#6EE7B7)' },
-        { id: 'ciencias', name: 'Ciências', emoji: '', color: '#EDE9FE', gradient: 'linear-gradient(135deg,#EDE9FE,#A78BFA)' },
+        { id: 'ciencias', name: 'Ciências', emoji: '🔬', color: '#EDE9FE', gradient: 'linear-gradient(135deg,#EDE9FE,#A78BFA)' },
         { id: 'historia', name: 'História', emoji: '📜', color: '#FEF3C7', gradient: 'linear-gradient(135deg,#FEF3C7,#F59E0B)' },
-        { id: 'geografia', name: 'Geografia', emoji: '', color: '#CCFBF1', gradient: 'linear-gradient(135deg,#CCFBF1,#2DD4BF)' },
-        { id: 'ingles', name: 'Inglês', emoji: '🇬🇧', color: '#FEE2E2', gradient: 'linear-gradient(135deg,#FEE2E2,#F87171)' },
+        { id: 'geografia', name: 'Geografia', emoji: '🌍', color: '#CCFBF1', gradient: 'linear-gradient(135deg,#CCFBF1,#2DD4BF)' },
+        { id: 'ingles', name: 'Inglês', emoji: '🇬', color: '#FEE2E2', gradient: 'linear-gradient(135deg,#FEE2E2,#F87171)' },
         { id: 'artes', name: 'Artes', emoji: '🎨', color: '#FCE7F3', gradient: 'linear-gradient(135deg,#FCE7F3,#F472B6)' },
-        { id: 'pedagogia', name: 'Pedagogia', emoji: '', color: '#E0E7FF', gradient: 'linear-gradient(135deg,#E0E7FF,#818CF8)' }
+        { id: 'pedagogia', name: 'Pedagogia', emoji: '🧠', color: '#E0E7FF', gradient: 'linear-gradient(135deg,#E0E7FF,#818CF8)' }
     ],
     products: [
-        { id: 1, name: 'Apostila Completa de Matemática — 1º ao 5º Ano', category: 'matematica', categoryLabel: 'Matemática', price: 49.90, oldPrice: 79.90, rating: 4.8, reviews: 234, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/12c0c35d2-7c2f-4f59-b505-05c33025d244.png', shipping: 'Frete Grátis', desc: 'Apostila completa para o Ensino Fundamental I.' },
-        { id: 2, name: 'Apostila de Português — Gramática e Interpretação', category: 'portugues', categoryLabel: 'Português', price: 39.90, oldPrice: 59.90, rating: 4.7, reviews: 189, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1cdebafff-2a2d-45fd-bff6-7f5b16e443cf.png', shipping: 'Frete Grátis', desc: 'Material didático de Português.' },
+        { id: 1, name: 'Apostila Matemática — 1º ao 5º Ano', category: 'matematica', categoryLabel: 'Matemática', price: 49.90, oldPrice: 79.90, rating: 4.8, reviews: 234, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/12c0c35d2-7c2f-4f59-b505-05c33025d244.png', shipping: 'Frete Grátis', desc: 'Apostila completa para o Ensino Fundamental I.' },
+        { id: 2, name: 'Apostila Português — Gramática', category: 'portugues', categoryLabel: 'Português', price: 39.90, oldPrice: 59.90, rating: 4.7, reviews: 189, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1cdebafff-2a2d-45fd-bff6-7f5b16e443cf.png', shipping: 'Frete Grátis', desc: 'Material didático de Português.' },
         { id: 3, name: 'Ciências Naturais — Kit Completo', category: 'ciencias', categoryLabel: 'Ciências', price: 54.90, oldPrice: null, rating: 4.9, reviews: 312, badge: 'hot', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1495d1962-4496-4deb-aa9f-eb354f0163f1.png', shipping: 'Frete Grátis', desc: 'Kit com experimentos práticos.' },
-        { id: 4, name: 'História do Brasil — Apostila Ilustrada', category: 'historia', categoryLabel: 'História', price: 44.90, oldPrice: 64.90, rating: 4.6, reviews: 156, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/132146e6f-5ac4-4450-886d-ed72f06ce9c4.png', shipping: 'Frete Grátis', desc: 'Apostila ilustrada de História.' },
-        { id: 5, name: 'Geografia — Atlas Interativo', category: 'geografia', categoryLabel: 'Geografia', price: 59.90, oldPrice: null, rating: 4.8, reviews: 201, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1cb8690c4-f33e-4179-9966-3c9c2cf21fc2.png', shipping: 'Frete Grátis', desc: 'Atlas interativo de Geografia.' },
+        { id: 4, name: 'História do Brasil — Ilustrada', category: 'historia', categoryLabel: 'História', price: 44.90, oldPrice: 64.90, rating: 4.6, reviews: 156, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/132146e6f-5ac4-4450-886d-ed72f06ce9c4.png', shipping: 'Frete Grátis', desc: 'Apostila ilustrada de História.' },
+        { id: 5, name: 'Geografia — Atlas Interativo', category: 'geografia', categoryLabel: 'Geografia', price: 59.90, oldPrice: null, rating: 4.8, reviews: 201, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1cb8690c4-f33e-4179-9966-3c9c2cf21fc2.png', shipping: 'Frete Grátis', desc: 'Atlas interativo.' },
         { id: 6, name: 'Inglês para Crianças', category: 'ingles', categoryLabel: 'Inglês', price: 34.90, oldPrice: 49.90, rating: 4.5, reviews: 178, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/16f2811fe-7a32-4184-9bcf-314272bd0e08.png', shipping: 'Frete Grátis', desc: 'Inglês para crianças.' },
-        { id: 7, name: 'Artes e Música — Material Criativo', category: 'artes', categoryLabel: 'Artes', price: 29.90, oldPrice: null, rating: 4.7, reviews: 143, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1858df6bb-ff05-4f83-812d-31dc28686b0f.png', shipping: 'Frete Grátis', desc: 'Material criativo de Artes.' },
-        { id: 8, name: 'Kit Alfabetização', category: 'pedagogia', categoryLabel: 'Pedagogia', price: 89.90, oldPrice: 129.90, rating: 4.9, reviews: 456, badge: 'hot', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/12c0c35d2-7c2f-4f59-b505-05c33025d244.png', shipping: 'Frete Grátis', desc: 'Kit completo de alfabetização.' },
-        { id: 9, name: 'Matemática Divertida — Jogos', category: 'matematica', categoryLabel: 'Matemática', price: 42.90, oldPrice: null, rating: 4.6, reviews: 98, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1cdebafff-2a2d-45fd-bff6-7f5b16e443cf.png', shipping: 'Frete Grátis', desc: 'Jogos educativos de Matemática.' },
-        { id: 10, name: 'Redação — Guia do Professor', category: 'portugues', categoryLabel: 'Português', price: 52.90, oldPrice: 74.90, rating: 4.8, reviews: 267, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/132146e6f-5ac4-4450-886d-ed72f06ce9c4.png', shipping: 'Frete Grátis', desc: 'Guia de redação.' },
-        { id: 11, name: 'Projeto Meio Ambiente', category: 'ciencias', categoryLabel: 'Ciências', price: 37.90, oldPrice: null, rating: 4.7, reviews: 134, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1495d1962-4496-4deb-aa9f-eb354f0163f1.png', shipping: 'Frete Grátis', desc: 'Projeto sobre Meio Ambiente.' },
-        { id: 12, name: 'Caderno Multidisciplinar 3º Ano', category: 'pedagogia', categoryLabel: 'Pedagogia', price: 24.90, oldPrice: 34.90, rating: 4.5, reviews: 89, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1858df6bb-ff05-4f83-812d-31dc28686b0f.png', shipping: 'Frete Grátis', desc: 'Caderno multidisciplinar.' }
+        { id: 7, name: 'Artes e Música — Criativo', category: 'artes', categoryLabel: 'Artes', price: 29.90, oldPrice: null, rating: 4.7, reviews: 143, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1858df6bb-ff05-4f83-812d-31dc28686b0f.png', shipping: 'Frete Grátis', desc: 'Material criativo.' },
+        { id: 8, name: 'Kit Alfabetização', category: 'pedagogia', categoryLabel: 'Pedagogia', price: 89.90, oldPrice: 129.90, rating: 4.9, reviews: 456, badge: 'hot', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/12c0c35d2-7c2f-4f59-b505-05c33025d244.png', shipping: 'Frete Grátis', desc: 'Kit completo.' },
+        { id: 9, name: 'Matemática Divertida', category: 'matematica', categoryLabel: 'Matemática', price: 42.90, oldPrice: null, rating: 4.6, reviews: 98, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1cdebafff-2a2d-45fd-bff6-7f5b16e443cf.png', shipping: 'Frete Grátis', desc: 'Jogos educativos.' },
+        { id: 10, name: 'Redação — Guia', category: 'portugues', categoryLabel: 'Português', price: 52.90, oldPrice: 74.90, rating: 4.8, reviews: 267, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/132146e6f-5ac4-4450-886d-ed72f06ce9c4.png', shipping: 'Frete Grátis', desc: 'Guia de redação.' },
+        { id: 11, name: 'Projeto Meio Ambiente', category: 'ciencias', categoryLabel: 'Ciências', price: 37.90, oldPrice: null, rating: 4.7, reviews: 134, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1495d1962-4496-4deb-aa9f-eb354f0163f1.png', shipping: 'Frete Grátis', desc: 'Projeto Meio Ambiente.' },
+        { id: 12, name: 'Caderno Multidisciplinar', category: 'pedagogia', categoryLabel: 'Pedagogia', price: 24.90, oldPrice: 34.90, rating: 4.5, reviews: 89, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1858df6bb-ff05-4f83-812d-31dc28686b0f.png', shipping: 'Frete Grátis', desc: 'Caderno multidisciplinar.' }
     ],
     qa: [
         { id: 1, question: 'Qual o prazo de entrega?', keywords: 'entrega, prazo, frete, envio', answer: 'O prazo varia de 3 a 10 dias úteis. Frete grátis acima de R$ 99!', category: 'envio' },
@@ -1384,7 +1260,9 @@ const DEFAULT_DATA = {
     activeTheme: '',
     chatbot: { name: 'Edu', subtitle: 'Assistente' },
     contacts: { phone: '(11) 99999-9999', whatsapp: '(11) 98888-8888', email: 'contato@edumarket.com', address: 'Rua da Educação, 123 - SP', hours: 'Seg a Sex: 8h às 18h' },
-    socials: { facebook: 'https://facebook.com/edumarket', instagram: 'https://instagram.com/edumarket', youtube: 'https://youtube.com/@edumarket', whatsapp: 'https://wa.me/5511988888888' }
+    socials: { facebook: 'https://facebook.com/edumarket', instagram: 'https://instagram.com/edumarket', youtube: 'https://youtube.com/@edumarket', whatsapp: 'https://wa.me/5511988888888' },
+    registeredEmails: [],
+    sentCoupons: []
 };
 
 const THEME_PRESETS = {
@@ -1442,30 +1320,61 @@ let registeredEmails = appData.registeredEmails || [];
 let sentCoupons = appData.sentCoupons || [];
 let selectedEmails = new Set();
 
-function applyAllAvatars(src) {
-    document.querySelectorAll('.site-avatar-img, .bot-avatar-img').forEach(img => { if (src) img.src = src; });
+// Apply theme from localStorage on page load
+function applyTheme() {
+    const t = appData.theme;
+    const r = document.documentElement.style;
+    r.setProperty('--primary', t.primary);
+    r.setProperty('--primary-dark', t.primaryDark);
+    r.setProperty('--primary-light', t.primaryLight);
+    r.setProperty('--secondary', t.secondary);
+    r.setProperty('--accent', t.accent);
+    r.setProperty('--accent-hover', t.accentHover);
+    r.setProperty('--bg-light', t.bgLight);
+    r.setProperty('--bg-white', t.bgWhite);
+    r.setProperty('--text-dark', t.textDark);
+    r.setProperty('--text-mid', t.textMid);
+    r.setProperty('--border', t.border);
+    
+    // Update preview
+    const preview = document.getElementById('themePreview');
+    if (preview) {
+        preview.querySelector('.theme-preview-header').style.background = t.primary;
+        preview.querySelector('.theme-preview-content').style.background = t.bgLight;
+    }
 }
 
-function updateAllImages() { applyAllAvatars(appData.avatar); }
+function updateAllImages() {
+    document.querySelectorAll('.site-avatar-img, .bot-avatar-img').forEach(img => {
+        if (appData.avatar) img.src = appData.avatar;
+    });
+}
 
 function updateStoreName() {
-    const name = appData.storeName;
-    const nameParts = name.split(' ');
-    let displayName = name;
+    const name = appData.storeName || 'EduMarket';
+    const slogan = appData.storeSlogan || 'Materiais Acadêmicos e Pedagógicos';
     
-    document.getElementById('storeLogoText').innerHTML = displayName;
-    document.getElementById('adminLogoText').innerHTML = displayName;
-    document.getElementById('footerLogoText').innerHTML = displayName;
-    document.getElementById('loginLogoText').innerHTML = displayName;
-    document.getElementById('themePreviewName').textContent = name;
-    document.getElementById('footerDescription').textContent = appData.storeSlogan || 'Materiais acadêmicos e pedagógicos de qualidade.';
+    const logoTextHTML = name;
     
-    // Update document title
+    const storeLogo = document.getElementById('storeLogoText');
+    const adminLogo = document.getElementById('adminLogoText');
+    const footerLogo = document.getElementById('footerLogoText');
+    const loginLogo = document.getElementById('loginLogoText');
+    const themePreviewName = document.getElementById('themePreviewName');
+    const footerDesc = document.getElementById('footerDescription');
+    const topBarText = document.getElementById('topBarText');
+    const footerCopyright = document.getElementById('footerCopyright');
+    
+    if (storeLogo) storeLogo.innerHTML = logoTextHTML;
+    if (adminLogo) adminLogo.innerHTML = logoTextHTML;
+    if (footerLogo) footerLogo.innerHTML = logoTextHTML;
+    if (loginLogo) loginLogo.innerHTML = logoTextHTML;
+    if (themePreviewName) themePreviewName.textContent = name;
+    if (footerDesc) footerDesc.textContent = slogan;
+    if (topBarText) topBarText.textContent = `📚 Bem-vindo ao ${name}`;
+    if (footerCopyright) footerCopyright.textContent = `© 2025 ${name}. Todos os direitos reservados.`;
+    
     document.title = name;
-    
-    // Update top bar
-    const topBar = document.querySelector('.top-bar span');
-    if (topBar) topBar.textContent = `📚 Bem-vindo ao ${name}`;
 }
 
 function renderStore() {
@@ -1512,7 +1421,7 @@ function renderProducts(list) {
     const countEl = document.getElementById('productCount');
     if (!grid) return;
     if (countEl) countEl.textContent = list.length;
-    grid.innerHTML = list.map((p, i) => `<div class="product-card" style="animation-delay:${i * 0.05}s">${p.badge ? `<span class="product-badge badge-${p.badge}">${p.badge === 'sale' ? '️ Oferta' : p.badge === 'new' ? '✨ Novo' : '🔥 Popular'}</span>` : ''}<button class="product-wishlist" onclick="event.stopPropagation(); toggleWishlist(this)"><i class="ri-heart-line"></i></button><div class="product-image" onclick="openModal(${p.id})"><img src="${p.image}" alt="${p.name}"><div class="product-quick-actions"><button class="quick-btn" onclick="event.stopPropagation(); openModal(${p.id})"><i class="ri-eye-line"></i></button><button class="quick-btn" onclick="event.stopPropagation(); addToCart(${p.id})"><i class="ri-shopping-cart-2-line"></i></button></div></div><div class="product-info"><div class="product-category">${p.categoryLabel}</div><div class="product-name" onclick="openModal(${p.id})">${p.name}</div><div class="product-rating"><div class="stars">${genStars(p.rating)}</div><span class="rating-count">(${p.reviews})</span></div><div class="product-price">${p.oldPrice ? `<span class="price-old">R$ ${p.oldPrice.toFixed(2).replace('.', ',')}</span>` : ''}<span class="price-current">R$ ${p.price.toFixed(2).replace('.', ',')}</span><span class="price-installment">em até 3x de R$ ${(p.price / 3).toFixed(2).replace('.', ',')} sem juros</span></div>${p.shipping ? `<div class="product-shipping"><i class="ri-truck-line"></i> ${p.shipping}</div>` : ''}<button class="product-add-cart" onclick="addToCart(${p.id})"><i class="ri-shopping-cart-2-line"></i> Adicionar</button></div></div>`).join('');
+    grid.innerHTML = list.map((p, i) => `<div class="product-card" style="animation-delay:${i * 0.05}s">${p.badge ? `<span class="product-badge badge-${p.badge}">${p.badge === 'sale' ? '🏷️ Oferta' : p.badge === 'new' ? '✨ Novo' : '🔥 Popular'}</span>` : ''}<button class="product-wishlist" onclick="event.stopPropagation(); toggleWishlist(this)"><i class="ri-heart-line"></i></button><div class="product-image" onclick="openModal(${p.id})"><img src="${p.image}" alt="${p.name}"><div class="product-quick-actions"><button class="quick-btn" onclick="event.stopPropagation(); openModal(${p.id})"><i class="ri-eye-line"></i></button><button class="quick-btn" onclick="event.stopPropagation(); addToCart(${p.id})"><i class="ri-shopping-cart-2-line"></i></button></div></div><div class="product-info"><div class="product-category">${p.categoryLabel}</div><div class="product-name" onclick="openModal(${p.id})">${p.name}</div><div class="product-rating"><div class="stars">${genStars(p.rating)}</div><span class="rating-count">(${p.reviews})</span></div><div class="product-price">${p.oldPrice ? `<span class="price-old">R$ ${p.oldPrice.toFixed(2).replace('.', ',')}</span>` : ''}<span class="price-current">R$ ${p.price.toFixed(2).replace('.', ',')}</span><span class="price-installment">em até 3x de R$ ${(p.price / 3).toFixed(2).replace('.', ',')} sem juros</span></div>${p.shipping ? `<div class="product-shipping"><i class="ri-truck-line"></i> ${p.shipping}</div>` : ''}<button class="product-add-cart" onclick="addToCart(${p.id})"><i class="ri-shopping-cart-2-line"></i> Adicionar</button></div></div>`).join('');
 }
 
 function genStars(r) { let h = ''; for (let i = 1; i <= 5; i++) h += i <= Math.floor(r) ? '<i class="ri-star-fill"></i>' : (i - 0.5 <= r ? '<i class="ri-star-half-fill"></i>' : '<i class="ri-star-line"></i>'); return h; }
@@ -1551,7 +1460,7 @@ function setView(v, btn) {
     document.getElementById('productsGrid').classList.toggle('list-view', v === 'list');
 }
 
-function toggleWishlist(btn) { btn.classList.toggle('active'); btn.querySelector('i').className = btn.classList.contains('active') ? 'ri-heart-fill' : 'ri-heart-line'; showToast(btn.classList.contains('active') ? 'Adicionado aos favoritos!' : 'Removido dos favoritos'); }
+function toggleWishlist(btn) { btn.classList.toggle('active'); btn.querySelector('i').className = btn.classList.contains('active') ? 'ri-heart-fill' : 'ri-heart-line'; showToast(btn.classList.contains('active') ? 'Favorito!' : 'Removido'); }
 
 function moveSlide(d) { currentSlide = (currentSlide + d + appData.banners.length) % appData.banners.length; updateSlider(); resetSlideInterval(); }
 function goToSlide(i) { currentSlide = i; updateSlider(); resetSlideInterval(); }
@@ -1578,7 +1487,7 @@ function updateCartUI() {
     const items = document.getElementById('cartItems');
     const footer = document.getElementById('cartFooter');
     if (cart.length === 0) {
-        items.innerHTML = '<div class="cart-empty"><i class="ri-shopping-cart-2-line"></i><p>Seu carrinho está vazio</p></div>';
+        items.innerHTML = '<div class="cart-empty"><i class="ri-shopping-cart-2-line"></i><p>Carrinho vazio</p></div>';
         footer.style.display = 'none';
     } else {
         items.innerHTML = cart.map(item => `<div class="cart-item"><div class="cart-item-img"><img src="${item.image}" alt="${item.name}"></div><div class="cart-item-info"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</div><div class="cart-item-qty"><button class="qty-btn" onclick="updateQty(${item.id},-1)">−</button><span>${item.qty}</span><button class="qty-btn" onclick="updateQty(${item.id},1)">+</button></div></div><button class="cart-item-remove" onclick="removeFromCart(${item.id})"><i class="ri-delete-bin-line"></i></button></div>`).join('');
@@ -1597,10 +1506,10 @@ function openModal(id) {
     document.getElementById('modalCategory').textContent = p.categoryLabel;
     document.getElementById('modalName').textContent = p.name;
     document.getElementById('modalStars').innerHTML = genStars(p.rating);
-    document.getElementById('modalRatingCount').textContent = `${p.rating} (${p.reviews} avaliações)`;
+    document.getElementById('modalRatingCount').textContent = `${p.rating} (${p.reviews})`;
     document.getElementById('modalPriceOld').textContent = p.oldPrice ? `R$ ${p.oldPrice.toFixed(2).replace('.', ',')}` : '';
     document.getElementById('modalPriceCurrent').textContent = `R$ ${p.price.toFixed(2).replace('.', ',')}`;
-    document.getElementById('modalInstallment').textContent = `em até 3x de R$ ${(p.price / 3).toFixed(2).replace('.', ',')} sem juros`;
+    document.getElementById('modalInstallment').textContent = `em até 3x de R$ ${(p.price / 3).toFixed(2).replace('.', ',')}`;
     document.getElementById('modalDesc').textContent = p.desc;
     document.getElementById('modalAddCart').onclick = () => { addToCart(id); closeModal(); };
     document.getElementById('productModal').classList.add('open');
@@ -1646,7 +1555,7 @@ function generateQR(amount) {
 function processCardPayment() {
     const btn = event.target.querySelector('button[type="submit"]');
     btn.innerHTML = '<i class="ri-loader-4-line" style="animation:spin 1s linear infinite;"></i> Processando...'; btn.disabled = true;
-    setTimeout(() => { btn.innerHTML = '<i class="ri-checkbox-circle-line"></i> Pago com Sucesso!'; btn.style.background = 'var(--success)'; showToast('Pagamento aprovado!'); setTimeout(() => { cart = []; updateCartUI(); closeCheckout(); btn.innerHTML = '<i class="ri-lock-line"></i> Pagar'; btn.style.background = ''; btn.disabled = false; }, 2000); }, 3000);
+    setTimeout(() => { btn.innerHTML = '<i class="ri-checkbox-circle-line"></i> Pago!'; btn.style.background = 'var(--success)'; showToast('Pagamento aprovado!'); setTimeout(() => { cart = []; updateCartUI(); closeCheckout(); btn.innerHTML = '<i class="ri-lock-line"></i> Pagar'; btn.style.background = ''; btn.disabled = false; }, 2000); }, 3000);
 }
 
 function toggleChat() {
@@ -1762,14 +1671,14 @@ function handleLogin(e) {
     }
 }
 
-function handleLogout() { showStore(); showToast('Logout realizado!'); }
+function handleLogout() { showStore(); showToast('Logout!'); }
 
 function showSection(section, navItem) {
     document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
     document.getElementById(`section-${section}`).classList.add('active');
     document.querySelectorAll('.admin-nav-item').forEach(n => n.classList.remove('active'));
     if (navItem) navItem.classList.add('active');
-    const titles = { dashboard: 'Dashboard', products: 'Produtos', categories: 'Categorias', orders: 'Pedidos', banners: 'Banners', coupons: 'Cupons', emails: 'Emails', payments: 'Pagamentos', contacts: 'Contatos', qa: 'Perguntas & Respostas', avatar: 'Avatar', theme: 'Temas e Cores', settings: 'Configurações' };
+    const titles = { dashboard: 'Dashboard', products: 'Produtos', categories: 'Categorias', orders: 'Pedidos', banners: 'Banners', coupons: 'Cupons', emails: 'Emails', payments: 'Pagamentos', contacts: 'Contatos', qa: 'Perguntas', avatar: 'Avatar', theme: 'Temas', settings: 'Configurações' };
     document.getElementById('adminTitle').textContent = titles[section] || 'Dashboard';
     if (section === 'products') renderAdminProducts();
     if (section === 'categories') renderAdminCategories();
@@ -1805,7 +1714,7 @@ function renderAdmin() {
     updateEmailStats();
     renderEmailList();
     renderCouponHistory();
-    applyAllAvatars(appData.avatar);
+    updateAllImages();
     updateStoreName();
     
     const nameInput = document.getElementById('chatbotName');
@@ -1833,8 +1742,8 @@ function renderBannersAdmin() {
                 <div class="form-group"><label>Emoji</label><input type="text" value="${b.emoji}" onchange="appData.banners[${i}].emoji=this.value; saveData();"></div>
             </div>
             <div class="form-group" style="margin-top:12px;"><label>Título</label><input type="text" value="${b.title}" onchange="appData.banners[${i}].title=this.value; saveData();"></div>
-            <div class="form-group" style="margin-top:12px;"><label>Cor de Fundo</label><input type="text" value="${b.bg}" onchange="appData.banners[${i}].bg=this.value; saveData();"></div>
-            <button class="btn btn-sm btn-outline" style="margin-top:12px;" onclick="showToast('Banner atualizado!'); renderStore();"><i class="ri-save-line"></i> Salvar</button>
+            <div class="form-group" style="margin-top:12px;"><label>Cor</label><input type="text" value="${b.bg}" onchange="appData.banners[${i}].bg=this.value; saveData();"></div>
+            <button class="btn btn-sm btn-outline" style="margin-top:12px;" onclick="showToast('Banner salvo!'); renderStore();"><i class="ri-save-line"></i> Salvar</button>
         </div>
     `).join('');
 }
@@ -1843,7 +1752,7 @@ function renderCouponsTable() {
     const tbody = document.getElementById('couponsTableBody');
     if (!tbody) return;
     tbody.innerHTML = appData.coupons.map((c, i) => `
-        <tr><td><strong>${c.code}</strong></td><td>${c.discount}</td><td>${c.type}</td><td>${c.uses}</td><td><span class="status-badge ${c.status === 'active' ? 'status-active' : 'status-inactive'}">${c.status === 'active' ? 'Ativo' : 'Expirado'}</span></td><td class="actions"><button class="btn-edit" onclick="editCoupon(${i})"><i class="ri-edit-line"></i></button><button class="btn-delete" onclick="deleteCoupon(${i})"><i class="ri-delete-bin-line"></i></button></td></tr>
+        <tr><td><strong>${c.code}</strong></td><td>${c.discount}</td><td>${c.type}</td><td><span class="status-badge ${c.status === 'active' ? 'status-active' : 'status-inactive'}">${c.status === 'active' ? 'Ativo' : 'Expirado'}</span></td><td class="actions"><button class="btn-edit" onclick="editCoupon(${i})"><i class="ri-edit-line"></i></button><button class="btn-delete" onclick="deleteCoupon(${i})"><i class="ri-delete-bin-line"></i></button></td></tr>
     `).join('');
 }
 
@@ -1859,7 +1768,7 @@ function addCoupon() {
 }
 
 function deleteCoupon(index) {
-    if (!confirm('Excluir este cupom?')) return;
+    if (!confirm('Excluir?')) return;
     appData.coupons.splice(index, 1);
     saveData();
     renderCouponsTable();
@@ -1960,7 +1869,7 @@ function generatePixQRAdmin() {
 function renderQAListAdmin() {
     const list = document.getElementById('qaList');
     if (!list) return;
-    const catIcons = { geral: '', envio: '', pagamento: '💳', produtos: '📦' };
+    const catIcons = { geral: '', envio: '🚚', pagamento: '💳', produtos: '' };
     list.innerHTML = appData.qa.map(qa => `
         <div class="qa-item">
             <div class="qa-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span><span style="margin-right:8px;">${catIcons[qa.category] || '📋'}</span>${qa.question}</span><i class="ri-arrow-down-s-line"></i></div>
@@ -2014,6 +1923,13 @@ function loadThemeInputs() {
     document.getElementById('themeTextDark').value = t.textDark;
     document.getElementById('themeTextMid').value = t.textMid;
     document.getElementById('themeBorder').value = t.border;
+    
+    // Update code displays
+    const codes = { Primary: t.primary, PrimaryDark: t.primaryDark, PrimaryLight: t.primaryLight, Secondary: t.secondary, Accent: t.accent, BgLight: t.bgLight, BgWhite: t.bgWhite, TextDark: t.textDark, TextMid: t.textMid, Border: t.border };
+    for (const key in codes) {
+        const el = document.getElementById(`code${key}`);
+        if (el) el.textContent = codes[key];
+    }
 }
 
 function updateActivePreset() {
@@ -2051,10 +1967,12 @@ function updateTheme() {
     r.setProperty('--text-mid', document.getElementById('themeTextMid').value);
     r.setProperty('--border', document.getElementById('themeBorder').value);
     
-    document.querySelectorAll('.color-option code').forEach(code => {
-        const input = code.parentElement.querySelector('input[type="color"]');
-        if (input) code.textContent = input.value;
-    });
+    // Update code displays
+    const codes = { Primary: document.getElementById('themePrimary').value, PrimaryDark: document.getElementById('themePrimaryDark').value, PrimaryLight: document.getElementById('themePrimaryLight').value, Secondary: document.getElementById('themeSecondary').value, Accent: document.getElementById('themeAccent').value, BgLight: document.getElementById('themeBgLight').value, BgWhite: document.getElementById('themeBgWhite').value, TextDark: document.getElementById('themeTextDark').value, TextMid: document.getElementById('themeTextMid').value, Border: document.getElementById('themeBorder').value };
+    for (const key in codes) {
+        const el = document.getElementById(`code${key}`);
+        if (el) el.textContent = codes[key];
+    }
     
     const preview = document.getElementById('themePreview');
     if (preview) {
@@ -2064,8 +1982,8 @@ function updateTheme() {
 }
 
 function applyTheme() {
-    const r = document.documentElement.style;
     const t = appData.theme;
+    const r = document.documentElement.style;
     r.setProperty('--primary', t.primary);
     r.setProperty('--primary-dark', t.primaryDark);
     r.setProperty('--primary-light', t.primaryLight);
@@ -2078,12 +1996,13 @@ function applyTheme() {
     r.setProperty('--text-mid', t.textMid);
     r.setProperty('--border', t.border);
     
-    // Update preview
     const preview = document.getElementById('themePreview');
     if (preview) {
         preview.querySelector('.theme-preview-header').style.background = t.primary;
         preview.querySelector('.theme-preview-content').style.background = t.bgLight;
     }
+    showToast('Tema aplicado e salvo! 🎨');
+    saveData();
 }
 
 function loadContactSettings() {
@@ -2127,7 +2046,7 @@ function saveStoreInfo() {
     appData.storeSlogan = document.getElementById('storeSlogan').value;
     saveData();
     updateStoreName();
-    showToast('Informações da loja salvas!');
+    showToast('Informações salvas!');
 }
 
 function applyAvatarUrl() {
@@ -2155,8 +2074,8 @@ function saveAvatar() {
     appData.avatar = pendingAvatar;
     currentAvatar = pendingAvatar;
     saveData();
-    applyAllAvatars(appData.avatar);
-    showToast('Avatar salvo! 🎉');
+    updateAllImages();
+    showToast('Avatar salvo! ');
 }
 
 function registerEmail(form) {
@@ -2186,14 +2105,14 @@ function renderEmailList() {
     const list = document.getElementById('emailList');
     if (!list) return;
     if (registeredEmails.length === 0) {
-        list.innerHTML = '<div class="cart-empty" style="padding:40px;"><i class="ri-mail-line" style="font-size:3rem;opacity:0.3;"></i><p style="margin-top:12px;">Nenhum email cadastrado</p></div>';
+        list.innerHTML = '<div class="cart-empty" style="padding:40px;"><i class="ri-mail-line" style="font-size:3rem;opacity:0.3;"></i><p style="margin-top:12px;">Nenhum email</p></div>';
         return;
     }
     list.innerHTML = registeredEmails.map((item, index) => `
         <div class="email-item ${selectedEmails.has(index) ? 'selected' : ''}" data-index="${index}">
             <input type="checkbox" ${selectedEmails.has(index) ? 'checked' : ''} onchange="toggleEmailSelection(${index}, this.checked)">
-            <div class="email-info"><div class="email-addr">${item.email}</div><div class="email-date">Cadastrado em: ${item.date}</div></div>
-            ${item.hasCoupon ? `<span class="email-status status-badge status-sent">Cupom: ${item.couponCode}</span>` : `<span class="email-status status-badge status-inactive">Sem cupom</span>`}
+            <div class="email-info"><div class="email-addr">${item.email}</div><div class="email-date">${item.date}</div></div>
+            ${item.hasCoupon ? `<span class="email-status status-badge status-sent">${item.couponCode}</span>` : `<span class="email-status status-badge status-inactive">Sem cupom</span>`}
         </div>
     `).join('');
 }
@@ -2228,7 +2147,7 @@ function sendCouponToSelected() {
     appData.registeredEmails = registeredEmails;
     appData.sentCoupons = sentCoupons;
     saveData();
-    showToast(`Cupom ${code} enviado para ${selectedEmails.size} email(s)! `);
+    showToast(`Cupom ${code} enviado!`);
     selectedEmails.clear();
     document.getElementById('selectedCount').textContent = '0 selecionados';
     document.getElementById('selectAllEmails').checked = false;
@@ -2249,7 +2168,7 @@ function sendCouponToAll() {
     appData.registeredEmails = registeredEmails;
     appData.sentCoupons = sentCoupons;
     saveData();
-    showToast(`Cupom ${code} enviado para todos! `);
+    showToast(`Cupom ${code} enviado para todos!`);
     selectedEmails.clear();
     document.getElementById('selectedCount').textContent = '0 selecionados';
     document.getElementById('selectAllEmails').checked = false;
@@ -2295,9 +2214,11 @@ document.addEventListener('keydown', (e) => {
     document.getElementById(id)?.addEventListener('click', function(e) { if (e.target === this) this.classList.remove('open'); document.body.style.overflow = ''; });
 });
 
+// Initialize on page load - apply saved theme and store name immediately
 startTimer();
 renderStore();
 slideInterval = setInterval(() => moveSlide(1), 5000);
 </script>
 </body>
 </html>
+```
