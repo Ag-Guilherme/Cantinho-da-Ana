@@ -6,7 +6,6 @@
 <title>Cantinho da Profª Ana Carolina M.</title>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/fontsource-inter@5.0.18/index.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -20,8 +19,48 @@
   --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
   --radius: 8px; --radius-lg: 12px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --base-font-size: 16px;
 }
-body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; overflow-x: hidden; background: var(--bg-light); }
+
+/* --- ACESSIBILIDADE --- */
+body.accessibility-high-contrast {
+  --primary: #FFFF00 !important; --primary-light: #FFFF00 !important; --primary-dark: #FFFF00 !important;
+  --secondary: #000000 !important; --accent: #FFFF00 !important; --accent-hover: #FFFF00 !important;
+  --bg-light: #000000 !important; --bg-white: #000000 !important;
+  --text-dark: #FFFF00 !important; --text-mid: #FFFF00 !important; --text-light: #FFFF00 !important;
+  --border: #FFFF00 !important; --success: #00FF00 !important; --warning: #FFFF00 !important;
+  --star: #FFFF00 !important; --danger: #FF0000 !important; --info: #00FFFF !important;
+  background-color: #000 !important; color: #FF0 !important;
+}
+body.accessibility-high-contrast * { border-color: #FF0 !important; color: #FF0 !important; background-color: #000 !important; }
+body.accessibility-high-contrast img { filter: grayscale(100%) contrast(120%); }
+body.accessibility-high-contrast .btn, body.accessibility-high-contrast input, body.accessibility-high-contrast select, body.accessibility-high-contrast textarea { border: 2px solid #FF0 !important; font-weight: bold; }
+
+body.accessibility-large-text { font-size: 18px; }
+body.accessibility-xlarge-text { font-size: 20px; }
+body.accessibility-dyslexia { font-family: 'Open Dyslexic', sans-serif !important; letter-spacing: 0.05em; line-height: 1.8; }
+body.accessibility-grayscale { filter: grayscale(100%); }
+
+/* Barra de Acessibilidade */
+.accessibility-bar {
+  position: fixed; top: 0; left: 0; width: 100%; background: var(--text-dark); color: white;
+  z-index: 9999; display: flex; justify-content: center; align-items: center; gap: 12px;
+  padding: 8px; font-size: 0.8rem; transform: translateY(-100%); transition: transform 0.3s ease;
+}
+.accessibility-bar.visible { transform: translateY(0); }
+.accessibility-bar button {
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white;
+  padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; display: flex; align-items: center; gap: 4px;
+}
+.accessibility-bar button:hover { background: rgba(255,255,255,0.2); }
+.accessibility-toggle {
+  position: fixed; bottom: 100px; left: 24px; z-index: 9998; width: 50px; height: 50px;
+  background: var(--text-dark); color: white; border: none; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: var(--shadow-lg);
+}
+.accessibility-toggle:hover { transform: scale(1.1); }
+
+body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; overflow-x: hidden; background: var(--bg-light); font-size: var(--base-font-size); }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
 .btn { padding: 10px 20px; border: none; border-radius: var(--radius); font-weight: 600; cursor: pointer; transition: var(--transition); font-family: inherit; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px; }
 .btn-primary { background: var(--primary); color: white; }
@@ -499,12 +538,22 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 </style>
 </head>
 <body>
+<!-- BARRA DE ACESSIBILIDADE -->
+<div class="accessibility-bar" id="accessibilityBar">
+  <button onclick="window.changeFontSize(-1)" title="Diminuir Fonte"><i class="ri-font-size"></i> A-</button>
+  <button onclick="window.changeFontSize(1)" title="Aumentar Fonte"><i class="ri-font-size-2"></i> A+</button>
+  <button onclick="window.toggleHighContrast()" title="Alto Contraste"><i class="ri-contrast-drop-2-line"></i> Contraste</button>
+  <button onclick="window.toggleGrayscale()" title="Escala de Cinza"><i class="ri-image-circle-line"></i> Cinza</button>
+  <button onclick="window.resetAccessibility()" title="Resetar"><i class="ri-refresh-line"></i> Resetar</button>
+</div>
+<button class="accessibility-toggle" onclick="window.toggleAccessibilityBar()" title="Acessibilidade"><i class="ri-universal-access-line"></i></button>
+
 <div class="admin-page" id="adminLoginPage">
 <div class="admin-login">
 <div class="login-card">
 <a href="#" class="logo" onclick="window.showStore(); event.preventDefault();">
-<div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png" alt="Avatar"></div>
-<div class="logo-text" id="loginLogoText">Cantinho da Profª Ana</div>
+<div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Aninha"></div>
+<div class="logo-text" id="loginLogoText"></div>
 </a>
 <h2>Painel Administrativo</h2>
 <p>Faça login para gerenciar sua loja</p>
@@ -523,8 +572,8 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <aside class="admin-sidebar" id="adminSidebar">
 <div class="admin-sidebar-header">
 <a href="#" class="logo" onclick="window.showStore(); event.preventDefault();">
-<div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png" alt="Avatar"></div>
-<div class="logo-text" id="adminLogoText">Cantinho da Profª Ana</div>
+<div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Aninha"></div>
+<div class="logo-text" id="adminLogoText"></div>
 </a>
 </div>
 <nav class="admin-nav">
@@ -560,7 +609,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <div class="sync-indicator"><i class="ri-refresh-line"></i> Sincronizado em Nuvem</div>
 <button class="btn btn-outline btn-sm" onclick="window.showStore()"><i class="ri-store-2-line"></i> Ver Loja</button>
 <div class="admin-user">
-<div class="admin-avatar"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png" alt="Admin"></div>
+<div class="admin-avatar"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Admin"></div>
 <div><div style="font-size:0.9rem;font-weight:600;">Admin</div><div style="font-size:0.75rem;color:var(--text-light);">admin@edumarket.com</div></div>
 </div>
 </div>
@@ -592,7 +641,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <div class="tab-content active" id="tab-topbar">
 <div class="content-editor">
 <h4>Barra Superior</h4>
-<div class="form-group"><label>Texto da Top Bar</label><input type="text" id="topBarText" value=" Bem-vindo ao Cantinho da Profª Ana Carolina M." onchange="window.saveSiteContent()"></div>
+<div class="form-group"><label>Texto da Top Bar</label><input type="text" id="topBarText" value="📚 Bem-vindo ao Cantinho da Profª Ana Carolina M." onchange="window.saveSiteContent()"></div>
 <div class="form-group"><label>Link 1 Texto</label><input type="text" id="topBarLink1" value="Central de Ajuda"></div>
 <div class="form-group"><label>Link 2 Texto</label><input type="text" id="topBarLink2" value="Fale Conosco"></div>
 <div class="form-actions"><button class="btn btn-primary" onclick="window.saveSiteContent()"><i class="ri-save-line"></i> Salvar</button></div>
@@ -602,10 +651,30 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <div class="content-editor">
 <h4>Cards de Features</h4>
 <div class="feature-edit-grid">
-<div class="feature-edit-card"><h5>Card 1</h5><div class="form-group"><label>Ícone</label><input type="text" id="feat1Icon" value="ri-download-cloud-line"></div><div class="form-group"><label>Título</label><input type="text" id="feat1Title" value="Acesso Imediato"></div><div class="form-group"><label>Subtítulo</label><input type="text" id="feat1Subtitle" value="Receba na hora"></div></div>
-<div class="feature-edit-card"><h5>Card 2</h5><div class="form-group"><label>Ícone</label><input type="text" id="feat2Icon" value="ri-shield-check-line"></div><div class="form-group"><label>Título</label><input type="text" id="feat2Title" value="Compra Segura"></div><div class="form-group"><label>Subtítulo</label><input type="text" id="feat2Subtitle" value="Proteção total"></div></div>
-<div class="feature-edit-card"><h5>Card 3</h5><div class="form-group"><label>Ícone</label><input type="text" id="feat3Icon" value="ri-refresh-line"></div><div class="form-group"><label>Título</label><input type="text" id="feat3Title" value="Garantia de 7 dias"></div><div class="form-group"><label>Subtítulo</label><input type="text" id="feat3Subtitle" value="Satisfação garantida"></div></div>
-<div class="feature-edit-card"><h5>Card 4</h5><div class="form-group"><label>Ícone</label><input type="text" id="feat4Icon" value="ri-customer-service-2-line"></div><div class="form-group"><label>Título</label><input type="text" id="feat4Title" value="Suporte 24h"></div><div class="form-group"><label>Subtítulo</label><input type="text" id="feat4Subtitle" value="Estamos aqui"></div></div>
+<div class="feature-edit-card">
+<h5>Card 1</h5>
+<div class="form-group"><label>Ícone</label><input type="text" id="feat1Icon" value="ri-download-cloud-line"></div>
+<div class="form-group"><label>Título</label><input type="text" id="feat1Title" value="Acesso Imediato"></div>
+<div class="form-group"><label>Subtítulo</label><input type="text" id="feat1Subtitle" value="Receba na hora"></div>
+</div>
+<div class="feature-edit-card">
+<h5>Card 2</h5>
+<div class="form-group"><label>Ícone</label><input type="text" id="feat2Icon" value="ri-shield-check-line"></div>
+<div class="form-group"><label>Título</label><input type="text" id="feat2Title" value="Compra Segura"></div>
+<div class="form-group"><label>Subtítulo</label><input type="text" id="feat2Subtitle" value="Proteção total"></div>
+</div>
+<div class="feature-edit-card">
+<h5>Card 3</h5>
+<div class="form-group"><label>Ícone</label><input type="text" id="feat3Icon" value="ri-refresh-line"></div>
+<div class="form-group"><label>Título</label><input type="text" id="feat3Title" value="Garantia de 7 dias"></div>
+<div class="form-group"><label>Subtítulo</label><input type="text" id="feat3Subtitle" value="Satisfação garantida"></div>
+</div>
+<div class="feature-edit-card">
+<h5>Card 4</h5>
+<div class="form-group"><label>Ícone</label><input type="text" id="feat4Icon" value="ri-customer-service-2-line"></div>
+<div class="form-group"><label>Título</label><input type="text" id="feat4Title" value="Suporte 24h"></div>
+<div class="form-group"><label>Subtítulo</label><input type="text" id="feat4Subtitle" value="Estamos aqui"></div>
+</div>
 </div>
 <div class="form-actions"><button class="btn btn-primary" onclick="window.saveSiteContent()"><i class="ri-save-line"></i> Salvar</button></div>
 </div>
@@ -708,7 +777,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
 <div class="form-group"><label>Avaliação</label><input type="number" step="0.1" min="1" max="5" id="productRating" value="4.5"></div>
-<div class="form-group"><label>Badge</label><select id="productBadge"><option value="">Nenhum</option><option value="sale">️ Oferta</option><option value="new">✨ Novo</option><option value="hot"> Popular</option></select></div>
+<div class="form-group"><label>Badge</label><select id="productBadge"><option value="">Nenhum</option><option value="sale">🏷️ Oferta</option><option value="new">✨ Novo</option><option value="hot">🔥 Popular</option></select></div>
 </div>
 <div class="form-group"><label>Descrição</label><textarea id="productDesc"></textarea></div>
 <div class="form-actions"><button type="button" class="btn btn-outline" onclick="window.closeProductModal()">Cancelar</button><button type="submit" class="btn btn-primary"><i class="ri-save-line"></i> Salvar</button></div>
@@ -843,8 +912,8 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <div class="admin-card-header"><h3><i class="ri-question-answer-line"></i> Perguntas & Respostas</h3><button class="btn btn-primary" onclick="window.openQAModal()"><i class="ri-add-line"></i> Nova</button></div>
 <div class="admin-card-body">
 <div style="background:var(--bg-light);padding:20px;border-radius:var(--radius);margin-bottom:20px;display:flex;align-items:center;gap:16px;">
-<div class="edu-avatar-admin"><img class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png" alt="Edu"></div>
-<div><h4 id="qaBotDisplayName">Edu - Assistente</h4><p style="font-size:0.85rem;color:var(--text-light);">Chat e ícone do site</p></div>
+<div class="edu-avatar-admin"><img class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Aninha"></div>
+<div><h4 id="qaBotDisplayName">Aninha - Assistente</h4><p style="font-size:0.85rem;color:var(--text-light);">Chat e ícone do site</p></div>
 <button class="btn btn-sm btn-primary" onclick="window.showSection('avatar', document.querySelector('.admin-nav-item:nth-child(14)'))" style="margin-left:auto;">Alterar</button>
 </div>
 <div class="qa-list" id="qaList"></div>
@@ -859,7 +928,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <h4><i class="ri-user-edit-line"></i> Nome do Assistente Virtual</h4>
 <p style="font-size:0.85rem;color:var(--text-mid);margin-bottom:16px;">Altere o nome que aparece no chat e em toda a loja.</p>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-<div class="form-group"><label>Nome do Bot</label><input type="text" id="chatbotName" value="Edu" placeholder="Ex: Ana, Edu, Maria" onchange="window.updateChatbotName()"></div>
+<div class="form-group"><label>Nome do Bot</label><input type="text" id="chatbotName" value="Aninha" placeholder="Ex: Ana, Edu, Maria" onchange="window.updateChatbotName()"></div>
 <div class="form-group"><label>Subtítulo</label><input type="text" id="chatbotSubtitle" value="Assistente" placeholder="Ex: Assistente, Atendente" onchange="window.updateChatbotName()"></div>
 </div>
 <div class="form-actions" style="justify-content:flex-start;"><button class="btn btn-primary" onclick="window.saveBotName()"><i class="ri-save-line"></i> Salvar Nome do Bot</button></div>
@@ -867,7 +936,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <h4 style="margin-bottom:16px;"><i class="ri-image-line"></i> Avatar do Bot</h4>
 <div style="text-align:center;margin-bottom:30px;">
 <h4>Avatar Atual</h4>
-<div class="edu-avatar-admin" style="width:120px;height:120px;margin:16px auto 0;"><img id="currentAvatarPreview" class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png" alt="Avatar"></div>
+<div class="edu-avatar-admin" style="width:120px;height:120px;margin:16px auto 0;"><img id="currentAvatarPreview" class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Avatar"></div>
 </div>
 <div style="margin-bottom:30px;"><h4 style="margin-bottom:12px;">URL da Imagem</h4><div style="display:flex;gap:12px;"><input type="text" id="avatarUrlInput" placeholder="https://..." style="flex:1;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);font-size:0.9rem;outline:none;font-family:inherit;"><button class="btn btn-primary" onclick="window.applyAvatarUrl()"><i class="ri-check-line"></i> Aplicar</button></div></div>
 <div style="margin-bottom:30px;"><h4 style="margin-bottom:12px;">Upload</h4><div class="upload-area" onclick="document.getElementById('avatarFileInput').click()"><i class="ri-image-add-line"></i><p>Clique para selecionar</p></div><input type="file" id="avatarFileInput" accept="image/*" style="display:none;" onchange="window.handleAvatarUpload(event)"></div>
@@ -903,6 +972,8 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <div class="theme-preset-card" onclick="window.applyPreset('oceano')"><div class="theme-preset-preview"><div style="background:#1E40AF"></div><div style="background:#1E3A8A"></div><div style="background:#DBEAFE"></div><div style="background:#F59E0B"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">🌊</div><h4>Oceano</h4><p>Azul</p></div></div>
 <div class="theme-preset-card" onclick="window.applyPreset('roxo')"><div class="theme-preset-preview"><div style="background:#6D28D9"></div><div style="background:#5B21B6"></div><div style="background:#EDE9FE"></div><div style="background:#EC4899"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">👑</div><h4>Roxo</h4><p>Elegante</p></div></div>
 <div class="theme-preset-card" onclick="window.applyPreset('dark')"><div class="theme-preset-preview"><div style="background:#3B82F6"></div><div style="background:#1F2937"></div><div style="background:#111827"></div><div style="background:#F97316"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">🌙</div><h4>Dark</h4><p>Escuro</p></div></div>
+<!-- TEMA COPA DO MUNDO -->
+<div class="theme-preset-card" onclick="window.applyPreset('copa')"><div class="theme-preset-preview"><div style="background:#009c3b"></div><div style="background:#006325"></div><div style="background:#ffdf00"></div><div style="background:#002776"></div></div><div class="theme-preset-info"><div class="theme-preset-emoji">⚽</div><h4>Copa do Mundo</h4><p>Brasil</p></div></div>
 </div>
 <h4 style="margin:32px 0 16px;">🎨 Cores Personalizadas</h4>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
@@ -922,7 +993,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 </div><div style="margin-top:20px;"><button class="btn btn-primary" onclick="window.applyTheme()"><i class="ri-check-line"></i> Aplicar Cores</button></div></div>
 </div>
 <div class="theme-preview" id="themePreview" style="margin-top:24px;">
-<div class="theme-preview-header" id="themePreviewHeader"><div style="width:24px;height:24px;border-radius:50%;overflow:hidden;background:white;"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png" style="width:100%;height:100%;object-fit:cover;"></div><span style="font-weight:800;" id="themePreviewName">Cantinho da Profª Ana</span><span style="margin-left:auto;font-size:0.8rem;opacity:0.8;">Preview</span></div>
+<div class="theme-preview-header" id="themePreviewHeader"><div style="width:24px;height:24px;border-radius:50%;overflow:hidden;background:white;"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" style="width:100%;height:100%;object-fit:cover;"></div><span style="font-weight:800;" id="themePreviewName">Cantinho da Profª Ana</span><span style="margin-left:auto;font-size:0.8rem;opacity:0.8;">Preview</span></div>
 <div class="theme-preview-content" id="themePreviewContent"><div style="display:flex;gap:12px;flex-wrap:wrap;"><div style="background:var(--bg-white);padding:16px;border-radius:8px;flex:1;min-width:150px;border:1px solid var(--border);"><div style="font-size:0.8rem;color:var(--primary);font-weight:600;margin-bottom:4px;">Produto</div><div style="height:60px;background:var(--bg-light);border-radius:4px;margin-bottom:8px;"></div><div style="font-weight:700;color:var(--primary);">R$ 49,90</div></div></div><div style="margin-top:16px;display:flex;gap:8px;"><button class="btn btn-primary" style="font-size:0.85rem;padding:8px 16px;">Adicionar</button><button class="btn btn-accent" style="font-size:0.85rem;padding:8px 16px;">Comprar</button></div></div>
 </div>
 </div>
@@ -994,7 +1065,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <header class="header">
 <div class="container">
 <a href="#" class="logo" onclick="event.preventDefault(); window.showStore();">
-<div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png" alt="Avatar"></div>
+<div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Aninha"></div>
 <div class="logo-text" id="storeLogoText">Cantinho da Profª Ana</div>
 </a>
 <div class="search-bar">
@@ -1073,7 +1144,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <div class="container">
 <div class="footer-grid">
 <div class="footer-brand">
-<a href="#" class="logo"><div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png" alt="Avatar"></div><div class="logo-text" id="footerLogoText">Cantinho da Profª Ana</div></a>
+<a href="#" class="logo"><div class="logo-icon"><img class="site-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Aninha"></div><div class="logo-text" id="footerLogoText">Cantinho da Profª Ana</div></a>
 <p id="footerDescDisplay"></p>
 <div class="footer-social" id="footerSocial"></div>
 </div>
@@ -1169,8 +1240,8 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 <div class="chat-widget">
 <div class="chat-box" id="chatBox">
 <div class="chat-header">
-<div class="chat-avatar"><img class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png" alt="Edu"></div>
-<div class="chat-header-info"><h4 id="chatbotDisplayName">Edu - Assistente</h4><span>Online agora</span></div>
+<div class="chat-avatar"><img class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Aninha"></div>
+<div class="chat-header-info"><h4 id="chatbotDisplayName">Aninha - Assistente</h4><span>Online agora</span></div>
 <button class="chat-header-close" onclick="window.toggleChat()"><i class="ri-close-line"></i></button>
 </div>
 <div class="chat-messages" id="chatMessages"></div>
@@ -1181,7 +1252,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 </div>
 </div>
 <button class="chat-toggle" onclick="window.toggleChat()">
-<img class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png" alt="Edu Bot">
+<img class="bot-avatar-img" src="https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png" alt="Aninha Bot">
 <span class="chat-notif" id="chatNotif">1</span>
 </button>
 </div>
@@ -1189,7 +1260,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getFirestore, collection, doc, getDoc, setDoc, onSnapshot, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { getFirestore, collection, doc, getDoc, setDoc, onSnapshot, addDoc, updateDoc, deleteDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 
 const firebaseConfig = {
@@ -1206,38 +1277,38 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
 
-const DEFAULT_AVATAR = 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/181dc5f8e-8e37-4256-b767-49fd8f0fdf42.png';
+const DEFAULT_AVATAR = 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png';
 const DEFAULT_DATA = {
 storeName: "Cantinho da Profª Ana Carolina M.",
 storeSlogan: "Materiais Acadêmicos e Pedagógicos",
 banners: [
-{ badge: ' OFERTAS', title: 'Materiais Pedagógicos com até 40% OFF', desc: 'Apostilas, livros e materiais didáticos.', bg: 'linear-gradient(135deg, #E91E63 0%, #F06292 50%, #FCE4EC 100%)', emoji: '📚' },
+{ badge: '🔥 OFERTAS', title: 'Materiais Pedagógicos com até 40% OFF', desc: 'Apostilas, livros e materiais didáticos.', bg: 'linear-gradient(135deg, #E91E63 0%, #F06292 50%, #FCE4EC 100%)', emoji: '📚' },
 { badge: '✨ NOVIDADES', title: 'Nova Coleção 2025 — BNCC', desc: 'Materiais atualizados conforme a BNCC.', bg: 'linear-gradient(135deg, #FF6F00 0%, #F5E6CA 50%, #FFF5F8 100%)', emoji: '🎓' },
-{ badge: ' ACESSO IMEDIATO', title: 'Receba seu conteúdo na hora!', desc: 'Após o pagamento, acesso instantâneo ao material.', bg: 'linear-gradient(135deg, #AD1457 0%, #E91E63 50%, #F06292 100%)', emoji: '💻' }
+{ badge: '⚡ ACESSO IMEDIATO', title: 'Receba seu conteúdo na hora!', desc: 'Após o pagamento, acesso instantâneo ao material.', bg: 'linear-gradient(135deg, #AD1457 0%, #E91E63 50%, #F06292 100%)', emoji: '💻' }
 ],
 categories: [
 { id: 'matematica', name: 'Matemática', emoji: '📐', color: '#DBEAFE', gradient: 'linear-gradient(135deg,#DBEAFE,#93C5FD)' },
 { id: 'portugues', name: 'Português', emoji: '📝', color: '#D1FAE5', gradient: 'linear-gradient(135deg,#D1FAE5,#6EE7B7)' },
 { id: 'ciencias', name: 'Ciências', emoji: '🔬', color: '#EDE9FE', gradient: 'linear-gradient(135deg,#EDE9FE,#A78BFA)' },
 { id: 'historia', name: 'História', emoji: '📜', color: '#FEF3C7', gradient: 'linear-gradient(135deg,#FEF3C7,#F59E0B)' },
-{ id: 'geografia', name: 'Geografia', emoji: '', color: '#CCFBF1', gradient: 'linear-gradient(135deg,#CCFBF1,#2DD4BF)' },
+{ id: 'geografia', name: 'Geografia', emoji: '🌍', color: '#CCFBF1', gradient: 'linear-gradient(135deg,#CCFBF1,#2DD4BF)' },
 { id: 'ingles', name: 'Inglês', emoji: '🇬🇧', color: '#FEE2E2', gradient: 'linear-gradient(135deg,#FEE2E2,#F87171)' },
 { id: 'artes', name: 'Artes', emoji: '🎨', color: '#FCE7F3', gradient: 'linear-gradient(135deg,#FCE7F3,#F472B6)' },
-{ id: 'pedagogia', name: 'Pedagogia', emoji: '', color: '#E0E7FF', gradient: 'linear-gradient(135deg,#E0E7FF,#818CF8)' }
+{ id: 'pedagogia', name: 'Pedagogia', emoji: '🧠', color: '#E0E7FF', gradient: 'linear-gradient(135deg,#E0E7FF,#818CF8)' }
 ],
 products: [
-{ id: 1, name: 'Apostila Matemática — 1º ao 5º Ano', category: 'matematica', categoryLabel: 'Matemática', price: 49.90, oldPrice: 79.90, rating: 4.8, reviews: 234, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/1f45145cf-25fc-4129-b742-4751184c8522.png', shipping: 'Acesso Imediato', desc: 'Apostila completa para o Ensino Fundamental I.' },
-{ id: 2, name: 'Apostila Português — Gramática', category: 'portugues', categoryLabel: 'Português', price: 39.90, oldPrice: 59.90, rating: 4.7, reviews: 189, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/15777511e-3be8-4501-993f-f316769dda2d.png', shipping: 'Acesso Imediato', desc: 'Material didático de Português.' },
-{ id: 3, name: 'Ciências Naturais — Kit Completo', category: 'ciencias', categoryLabel: 'Ciências', price: 54.90, oldPrice: null, rating: 4.9, reviews: 312, badge: 'hot', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/1f45145cf-25fc-4129-b742-4751184c8522.png', shipping: 'Acesso Imediato', desc: 'Kit com experimentos práticos.' },
-{ id: 4, name: 'História do Brasil — Ilustrada', category: 'historia', categoryLabel: 'História', price: 44.90, oldPrice: 64.90, rating: 4.6, reviews: 156, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/15777511e-3be8-4501-993f-f316769dda2d.png', shipping: 'Acesso Imediato', desc: 'Apostila ilustrada de História.' },
-{ id: 5, name: 'Geografia — Atlas Interativo', category: 'geografia', categoryLabel: 'Geografia', price: 59.90, oldPrice: null, rating: 4.8, reviews: 201, badge: 'new', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/1f45145cf-25fc-4129-b742-4751184c8522.png', shipping: 'Acesso Imediato', desc: 'Atlas interativo.' },
-{ id: 6, name: 'Inglês para Crianças', category: 'ingles', categoryLabel: 'Inglês', price: 34.90, oldPrice: 49.90, rating: 4.5, reviews: 178, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/15777511e-3be8-4501-993f-f316769dda2d.png', shipping: 'Acesso Imediato', desc: 'Inglês para crianças.' },
-{ id: 7, name: 'Artes e Música — Criativo', category: 'artes', categoryLabel: 'Artes', price: 29.90, oldPrice: null, rating: 4.7, reviews: 143, badge: 'new', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/1f45145cf-25fc-4129-b742-4751184c8522.png', shipping: 'Acesso Imediato', desc: 'Material criativo.' },
-{ id: 8, name: 'Kit Alfabetização', category: 'pedagogia', categoryLabel: 'Pedagogia', price: 89.90, oldPrice: 129.90, rating: 4.9, reviews: 456, badge: 'hot', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/15777511e-3be8-4501-993f-f316769dda2d.png', shipping: 'Acesso Imediato', desc: 'Kit completo.' },
-{ id: 9, name: 'Matemática Divertida', category: 'matematica', categoryLabel: 'Matemática', price: 42.90, oldPrice: null, rating: 4.6, reviews: 98, badge: 'new', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/1f45145cf-25fc-4129-b742-4751184c8522.png', shipping: 'Acesso Imediato', desc: 'Jogos educativos.' },
-{ id: 10, name: 'Redação — Guia', category: 'portugues', categoryLabel: 'Português', price: 52.90, oldPrice: 74.90, rating: 4.8, reviews: 267, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/15777511e-3be8-4501-993f-f316769dda2d.png', shipping: 'Acesso Imediato', desc: 'Guia de redação.' },
-{ id: 11, name: 'Projeto Meio Ambiente', category: 'ciencias', categoryLabel: 'Ciências', price: 37.90, oldPrice: null, rating: 4.7, reviews: 134, badge: 'new', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/1f45145cf-25fc-4129-b742-4751184c8522.png', shipping: 'Acesso Imediato', desc: 'Projeto Meio Ambiente.' },
-{ id: 12, name: 'Caderno Multidisciplinar', category: 'pedagogia', categoryLabel: 'Pedagogia', price: 0, oldPrice: 34.90, rating: 4.5, reviews: 89, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/7771dd6b-a2b6-4881-aa23-6ccc72b61052/15777511e-3be8-4501-993f-f316769dda2d.png', shipping: 'Acesso Imediato', desc: 'Promoção especial: Caderno multidisciplinar gratuito!' }
+{ id: 1, name: 'Apostila Matemática — 1º ao 5º Ano', category: 'matematica', categoryLabel: 'Matemática', price: 49.90, oldPrice: 79.90, rating: 4.8, reviews: 234, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/12c0c35d2-7c2f-4f59-b505-05c33025d244.png', shipping: 'Acesso Imediato', desc: 'Apostila completa para o Ensino Fundamental I.' },
+{ id: 2, name: 'Apostila Português — Gramática', category: 'portugues', categoryLabel: 'Português', price: 39.90, oldPrice: 59.90, rating: 4.7, reviews: 189, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1cdebafff-2a2d-45fd-bff6-7f5b16e443cf.png', shipping: 'Acesso Imediato', desc: 'Material didático de Português.' },
+{ id: 3, name: 'Ciências Naturais — Kit Completo', category: 'ciencias', categoryLabel: 'Ciências', price: 54.90, oldPrice: null, rating: 4.9, reviews: 312, badge: 'hot', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1495d1962-4496-4deb-aa9f-eb354f0163f1.png', shipping: 'Acesso Imediato', desc: 'Kit com experimentos práticos.' },
+{ id: 4, name: 'História do Brasil — Ilustrada', category: 'historia', categoryLabel: 'História', price: 44.90, oldPrice: 64.90, rating: 4.6, reviews: 156, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/132146e6f-5ac4-4450-886d-ed72f06ce9c4.png', shipping: 'Acesso Imediato', desc: 'Apostila ilustrada de História.' },
+{ id: 5, name: 'Geografia — Atlas Interativo', category: 'geografia', categoryLabel: 'Geografia', price: 59.90, oldPrice: null, rating: 4.8, reviews: 201, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1cb8690c4-f33e-4179-9966-3c9c2cf21fc2.png', shipping: 'Acesso Imediato', desc: 'Atlas interativo.' },
+{ id: 6, name: 'Inglês para Crianças', category: 'ingles', categoryLabel: 'Inglês', price: 34.90, oldPrice: 49.90, rating: 4.5, reviews: 178, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/16f2811fe-7a32-4184-9bcf-314272bd0e08.png', shipping: 'Acesso Imediato', desc: 'Inglês para crianças.' },
+{ id: 7, name: 'Artes e Música — Criativo', category: 'artes', categoryLabel: 'Artes', price: 29.90, oldPrice: null, rating: 4.7, reviews: 143, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1858df6bb-ff05-4f83-812d-31dc28686b0f.png', shipping: 'Acesso Imediato', desc: 'Material criativo.' },
+{ id: 8, name: 'Kit Alfabetização', category: 'pedagogia', categoryLabel: 'Pedagogia', price: 89.90, oldPrice: 129.90, rating: 4.9, reviews: 456, badge: 'hot', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/12c0c35d2-7c2f-4f59-b505-05c33025d244.png', shipping: 'Acesso Imediato', desc: 'Kit completo.' },
+{ id: 9, name: 'Matemática Divertida', category: 'matematica', categoryLabel: 'Matemática', price: 42.90, oldPrice: null, rating: 4.6, reviews: 98, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1cdebafff-2a2d-45fd-bff6-7f5b16e443cf.png', shipping: 'Acesso Imediato', desc: 'Jogos educativos.' },
+{ id: 10, name: 'Redação — Guia', category: 'portugues', categoryLabel: 'Português', price: 52.90, oldPrice: 74.90, rating: 4.8, reviews: 267, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/132146e6f-5ac4-4450-886d-ed72f06ce9c4.png', shipping: 'Acesso Imediato', desc: 'Guia de redação.' },
+{ id: 11, name: 'Projeto Meio Ambiente', category: 'ciencias', categoryLabel: 'Ciências', price: 37.90, oldPrice: null, rating: 4.7, reviews: 134, badge: 'new', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1495d1962-4496-4deb-aa9f-eb354f0163f1.png', shipping: 'Acesso Imediato', desc: 'Projeto Meio Ambiente.' },
+{ id: 12, name: 'Caderno Multidisciplinar', category: 'pedagogia', categoryLabel: 'Pedagogia', price: 0, oldPrice: 34.90, rating: 4.5, reviews: 89, badge: 'sale', image: 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/1858df6bb-ff05-4f83-812d-31dc28686b0f.png', shipping: 'Acesso Imediato', desc: 'Promoção especial: Caderno multidisciplinar gratuito!' }
 ],
 qa: [
 { id: 1, question: 'Como recebo o conteúdo?', keywords: 'receber, acesso, download, entrega, prazo', answer: 'Após a confirmação do pagamento, você recebe o acesso imediatamente! O conteúdo digital é disponibilizado na sua conta.', category: 'envio' },
@@ -1254,7 +1325,7 @@ coupons: [
 avatar: DEFAULT_AVATAR,
 theme: { primary: '#E91E63', primaryDark: '#AD1457', primaryLight: '#F06292', secondary: '#FCE4EC', accent: '#FF6F00', accentHover: '#E65100', bgLight: '#FFF5F8', bgWhite: '#FFFFFF', textDark: '#1A1A2E', textMid: '#4A4A68', border: '#E0E0E0' },
 activeTheme: 'rosa',
-chatbot: { name: 'Edu', subtitle: 'Assistente' },
+chatbot: { name: 'Aninha', subtitle: 'Assistente' },
 contacts: { phone: '(11) 99999-9999', whatsapp: '(11) 98888-8888', email: 'contato@edumarket.com', address: 'Rua da Educação, 123 - SP', hours: 'Seg a Sex: 8h às 18h' },
 socials: { facebook: 'https://facebook.com/edumarket', instagram: 'https://instagram.com/edumarket', youtube: 'https://youtube.com/@edumarket', whatsapp: 'https://wa.me/5511988888888' },
 registeredEmails: [],
@@ -1293,10 +1364,12 @@ vermelho: { primary: '#D32F2F', primaryDark: '#B71C1C', primaryLight: '#EF5350',
 natureza: { primary: '#2D6A4F', primaryDark: '#1B4332', primaryLight: '#40916C', secondary: '#F5E6CA', accent: '#E76F51', accentHover: '#D4583A', bgLight: '#F7F7F7', bgWhite: '#FFFFFF', textDark: '#1A1A2E', textMid: '#4A4A68', border: '#E0E0E0' },
 oceano: { primary: '#1E40AF', primaryDark: '#1E3A8A', primaryLight: '#3B82F6', secondary: '#DBEAFE', accent: '#F59E0B', accentHover: '#D97706', bgLight: '#F8FAFC', bgWhite: '#FFFFFF', textDark: '#0F172A', textMid: '#475569', border: '#E2E8F0' },
 roxo: { primary: '#6D28D9', primaryDark: '#5B21B6', primaryLight: '#8B5CF6', secondary: '#EDE9FE', accent: '#EC4899', accentHover: '#DB2777', bgLight: '#FAF5FF', bgWhite: '#FFFFFF', textDark: '#1E1B4B', textMid: '#5B21B6', border: '#E5E7EB' },
-dark: { primary: '#3B82F6', primaryDark: '#1F2937', primaryLight: '#60A5FA', secondary: '#374151', accent: '#F97316', accentHover: '#EA580C', bgLight: '#111827', bgWhite: '#1F2937', textDark: '#F9FAFB', textMid: '#D1D5DB', border: '#374151' }
+dark: { primary: '#3B82F6', primaryDark: '#1F2937', primaryLight: '#60A5FA', secondary: '#374151', accent: '#F97316', accentHover: '#EA580C', bgLight: '#111827', bgWhite: '#1F2937', textDark: '#F9FAFB', textMid: '#D1D5DB', border: '#374151' },
+// TEMA COPA DO MUNDO
+copa: { primary: '#009c3b', primaryDark: '#006325', primaryLight: '#00c74c', secondary: '#ffdf00', accent: '#002776', accentHover: '#001a52', bgLight: '#f0fff4', bgWhite: '#FFFFFF', textDark: '#002776', textMid: '#004d99', border: '#ffdf00' }
 };
 
-let appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
+let appData = { ...DEFAULT_DATA };
 let cart = [];
 let currentSlide = 0;
 let slideInterval;
@@ -1308,33 +1381,46 @@ let currentCartTotal = 0;
 async function initFirebase() {
   try {
     const docRef = doc(db, 'app_settings', 'main');
-    onSnapshot(docRef, (docSnap) => {
-      if (docSnap.exists()) {
-        const data = docSnap.data();
+    
+    // Tenta obter dados iniciais
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      appData = { ...DEFAULT_DATA, ...docSnap.data() };
+    } else {
+      // Se não existir, cria com os dados padrão
+      await setDoc(docRef, DEFAULT_DATA);
+      appData = { ...DEFAULT_DATA };
+    }
+    
+    // Configura listener em tempo real para sincronização
+    onSnapshot(docRef, (snap) => {
+      if (snap.exists()) {
+        const newData = snap.data();
+        // Mescla profundamente para evitar perda de arrays aninhados se a estrutura mudar
         appData = {
           ...DEFAULT_DATA,
-          ...data,
-          theme: { ...DEFAULT_DATA.theme, ...(data.theme || {}) },
-          chatbot: { ...DEFAULT_DATA.chatbot, ...(data.chatbot || {}) },
-          contacts: { ...DEFAULT_DATA.contacts, ...(data.contacts || {}) },
-          socials: { ...DEFAULT_DATA.socials, ...(data.socials || {}) },
-          siteContent: { ...DEFAULT_DATA.siteContent, ...(data.siteContent || {}) }
+          ...newData,
+          theme: { ...DEFAULT_DATA.theme, ...(newData.theme || {}) },
+          chatbot: { ...DEFAULT_DATA.chatbot, ...(newData.chatbot || {}) },
+          contacts: { ...DEFAULT_DATA.contacts, ...(newData.contacts || {}) },
+          socials: { ...DEFAULT_DATA.socials, ...(newData.socials || {}) },
+          siteContent: { ...DEFAULT_DATA.siteContent, ...(newData.siteContent || {}) }
         };
-        window.renderStore();
+        
+        // Atualiza UI apenas se estiver visível
+        if (!document.getElementById('storePage').classList.contains('hidden')) {
+           window.renderStore();
+        }
         window.updateAllImages();
         window.updateStoreName();
         window.updateBotNameEverywhere();
         window.applyTheme();
         window.updateDashboardStats();
-      } else {
-        setDoc(docRef, DEFAULT_DATA).then(() => {
-          appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
-          window.renderStore();
-        });
       }
     });
-  } catch (error) {
-    console.error("Firebase init error:", error);
+  } catch (e) {
+    console.error("Erro ao inicializar Firebase:", e);
+    // Fallback para localStorage se Firebase falhar
     const saved = localStorage.getItem('edumarket_data');
     if (saved) appData = { ...DEFAULT_DATA, ...JSON.parse(saved) };
     window.renderStore();
@@ -1346,13 +1432,22 @@ window.saveData = async function() {
     await setDoc(doc(db, 'app_settings', 'main'), appData, { merge: true });
     window.showToast('Salvo e sincronizado na nuvem! ☁️');
   } catch (e) {
+    console.error("Erro ao salvar:", e);
+    // Fallback local
     localStorage.setItem('edumarket_data', JSON.stringify(appData));
     window.showToast('Salvo localmente (erro na nuvem)');
   }
 };
 
 window.finalizeOrder = async function(total, isPromo = false) {
-  const order = { items: cart, total: total, isPromo: isPromo, status: 'paid', date: new Date().toISOString(), customer: 'Cliente Web' };
+  const order = {
+    items: cart,
+    total: total,
+    isPromo: isPromo,
+    status: 'paid',
+    date: new Date().toISOString(),
+    customer: 'Cliente Web'
+  };
   try {
     await addDoc(collection(db, 'orders'), order);
     cart = [];
@@ -1433,7 +1528,7 @@ window.updateStoreName = function() {
 };
 
 window.updateBotNameEverywhere = function() {
-  const name = appData.chatbot.name || 'Edu';
+  const name = appData.chatbot.name || 'Aninha';
   const subtitle = appData.chatbot.subtitle || 'Assistente';
   const el = document.getElementById('chatbotDisplayName'); if (el) el.textContent = `${name} - ${subtitle}`;
   const qaEl = document.getElementById('qaBotDisplayName'); if (qaEl) qaEl.textContent = `${name} - ${subtitle}`;
@@ -1529,7 +1624,7 @@ window.renderProducts = function(list) {
   const countEl = document.getElementById('productCount');
   if (!grid) return;
   if (countEl) countEl.textContent = list.length;
-  grid.innerHTML = list.map((p, i) => `<div class="product-card" style="animation-delay:${i * 0.05}s">${p.price === 0 ? `<span class="product-badge badge-free">🎁 Grátis</span>` : (p.badge ? `<span class="product-badge badge-${p.badge}">${p.badge === 'sale' ? '🏷️ Oferta' : p.badge === 'new' ? '✨ Novo' : ' Popular'}</span>` : '')}<button class="product-wishlist" onclick="event.stopPropagation(); window.toggleWishlist(this)"><i class="ri-heart-line"></i></button><div class="product-image" onclick="window.openModal(${p.id})"><img src="${p.image}" alt="${p.name}"><div class="product-quick-actions"><button class="quick-btn" onclick="event.stopPropagation(); window.openModal(${p.id})"><i class="ri-eye-line"></i></button><button class="quick-btn" onclick="event.stopPropagation(); window.addToCart(${p.id})"><i class="ri-shopping-cart-2-line"></i></button></div></div><div class="product-info"><div class="product-category">${p.categoryLabel}</div><div class="product-name" onclick="window.openModal(${p.id})">${p.name}</div><div class="product-rating"><div class="stars">${window.genStars(p.rating)}</div><span class="rating-count">(${p.reviews})</span></div><div class="product-price">${p.oldPrice ? `<span class="price-old">R$ ${p.oldPrice.toFixed(2).replace('.', ',')}</span>` : ''}${p.price === 0 ? `<span class="price-current" style="color:var(--success)">Grátis</span>` : `<span class="price-current">R$ ${p.price.toFixed(2).replace('.', ',')}</span><span class="price-installment">em até 3x de R$ ${(p.price / 3).toFixed(2).replace('.', ',')} sem juros</span>`}</div><div class="product-instant"><i class="ri-download-cloud-line"></i> ${p.shipping || 'Acesso Imediato'}</div><button class="product-add-cart" onclick="window.addToCart(${p.id})"><i class="ri-shopping-cart-2-line"></i> Adicionar</button></div></div>`).join('');
+  grid.innerHTML = list.map((p, i) => `<div class="product-card" style="animation-delay:${i * 0.05}s">${p.price === 0 ? `<span class="product-badge" style="background:var(--success)">🎁 Grátis</span>` : (p.badge ? `<span class="product-badge badge-${p.badge}">${p.badge === 'sale' ? '🏷️ Oferta' : p.badge === 'new' ? '✨ Novo' : '🔥 Popular'}</span>` : '')}<button class="product-wishlist" onclick="event.stopPropagation(); window.toggleWishlist(this)"><i class="ri-heart-line"></i></button><div class="product-image" onclick="window.openModal(${p.id})"><img src="${p.image}" alt="${p.name}"><div class="product-quick-actions"><button class="quick-btn" onclick="event.stopPropagation(); window.openModal(${p.id})"><i class="ri-eye-line"></i></button><button class="quick-btn" onclick="event.stopPropagation(); window.addToCart(${p.id})"><i class="ri-shopping-cart-2-line"></i></button></div></div><div class="product-info"><div class="product-category">${p.categoryLabel}</div><div class="product-name" onclick="window.openModal(${p.id})">${p.name}</div><div class="product-rating"><div class="stars">${window.genStars(p.rating)}</div><span class="rating-count">(${p.reviews})</span></div><div class="product-price">${p.oldPrice ? `<span class="price-old">R$ ${p.oldPrice.toFixed(2).replace('.', ',')}</span>` : ''}${p.price === 0 ? `<span class="price-current" style="color:var(--success)">Grátis</span>` : `<span class="price-current">R$ ${p.price.toFixed(2).replace('.', ',')}</span><span class="price-installment">em até 3x de R$ ${(p.price / 3).toFixed(2).replace('.', ',')} sem juros</span>`}</div><div class="product-instant"><i class="ri-download-cloud-line"></i> ${p.shipping || 'Acesso Imediato'}</div><button class="product-add-cart" onclick="window.addToCart(${p.id})"><i class="ri-shopping-cart-2-line"></i> Adicionar</button></div></div>`).join('');
 };
 
 window.genStars = function(r) { let h = ''; for (let i = 1; i <= 5; i++) h += i <= Math.floor(r) ? '<i class="ri-star-fill"></i>' : (i - 0.5 <= r ? '<i class="ri-star-half-fill"></i>' : '<i class="ri-star-line"></i>'); return h; };
@@ -1682,7 +1777,7 @@ window.openChat = function() { if (!chatOpen) window.toggleChat(); };
 
 window.initChat = function() {
   const messages = document.getElementById('chatMessages');
-  const name = appData.chatbot?.name || 'Edu';
+  const name = appData.chatbot?.name || 'Aninha';
   const subtitle = appData.chatbot?.subtitle || 'Assistente';
   document.getElementById('chatbotDisplayName').textContent = `${name} - ${subtitle}`;
   messages.innerHTML = `<div class="chat-msg bot"><strong>${name}:</strong> Olá! 👋 Sou ${name}, assistente do ${appData.storeName}. Como posso ajudar?<div class="time">${window.getTime()}</div></div><div class="chat-msg bot">Clique em um tópico ou digite sua pergunta!<div class="time">${window.getTime()}</div></div>`;
@@ -1696,7 +1791,7 @@ window.sendChatMessage = function() {
   if (!msg) return;
   input.value = '';
   const messages = document.getElementById('chatMessages');
-  const name = appData.chatbot?.name || 'Edu';
+  const name = appData.chatbot?.name || 'Aninha';
   messages.innerHTML += `<div class="chat-msg user">${msg}<div class="time">${window.getTime()}</div></div>`;
   messages.scrollTop = messages.scrollHeight;
   messages.innerHTML += `<div class="typing-indicator" id="typingIndicator"><span></span><span></span><span></span></div>`;
@@ -1944,7 +2039,7 @@ window.renderQAListAdmin = function() {
   const list = document.getElementById('qaList');
   if (!list) return;
   const catIcons = { geral: '📋', envio: '🚚', pagamento: '💳', produtos: '📦' };
-  list.innerHTML = appData.qa.map(qa => `<div class="qa-item"><div class="qa-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span><span style="margin-right:8px;">${catIcons[qa.category] || '📋'}</span>${qa.question}</span><i class="ri-arrow-down-s-line"></i></div><div class="qa-answer" style="display:none;"><div class="form-group"><label>Palavras-chave</label><input type="text" value="${qa.keywords}" onchange="appData.qa.find(q=>q.id===${qa.id}).keywords=this.value; window.saveData();"></div><div class="form-group" style="margin-top:8px;"><label>Resposta</label><textarea onchange="appData.qa.find(q=>q.id===${qa.id}).answer=this.value; window.saveData();">${qa.answer}</textarea></div><div class="qa-actions"><button class="btn btn-sm btn-edit" onclick="window.openQAModal(${qa.id})"><i class="ri-edit-line"></i> Editar</button><button class="btn btn-sm btn-delete" onclick="window.deleteQA(${qa.id})"><i class="ri-delete-bin-line"></i> Excluir</button></div></div></div>`).join('');
+  list.innerHTML = appData.qa.map(qa => `<div class="qa-item"><div class="qa-question" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><span><span style="margin-right:8px;">${catIcons[qa.category] || '📋'}</span>${qa.question}</span><i class="ri-arrow-down-s-line"></i></div><div class="qa-answer" style="display:none;"><p style="font-size:0.8rem;color:var(--primary);font-weight:600;margin-bottom:8px;">✏️ Corrija a resposta abaixo:</p><div class="form-group"><label>Palavras-chave (separadas por vírgula)</label><input type="text" value="${qa.keywords}" onchange="appData.qa.find(q=>q.id===${qa.id}).keywords=this.value; window.saveData();"></div><div class="form-group" style="margin-top:8px;"><label>Resposta do Bot</label><textarea onchange="appData.qa.find(q=>q.id===${qa.id}).answer=this.value; window.saveData(); showToast('Resposta atualizada!');">${qa.answer}</textarea></div><div class="qa-actions"><button class="btn btn-sm btn-edit" onclick="window.openQAModal(${qa.id})"><i class="ri-edit-line"></i> Editar Completo</button><button class="btn btn-sm btn-delete" onclick="window.deleteQA(${qa.id})"><i class="ri-delete-bin-line"></i> Excluir</button></div></div></div>`).join('');
 };
 
 window.openQAModal = function(id) {
@@ -2097,13 +2192,13 @@ window.saveAvatar = function() {
 };
 
 window.saveBotName = function() {
-  appData.chatbot.name = document.getElementById('chatbotName').value || 'Edu';
+  appData.chatbot.name = document.getElementById('chatbotName').value || 'Aninha';
   appData.chatbot.subtitle = document.getElementById('chatbotSubtitle').value || 'Assistente';
   window.saveData(); window.updateBotNameEverywhere(); window.showToast('Nome do bot atualizado! 🤖');
 };
 
 window.updateChatbotName = function() {
-  const name = document.getElementById('chatbotName').value || 'Edu';
+  const name = document.getElementById('chatbotName').value || 'Aninha';
   const subtitle = document.getElementById('chatbotSubtitle').value || 'Assistente';
   document.getElementById('chatbotDisplayName').textContent = `${name} - ${subtitle}`;
   document.getElementById('qaBotDisplayName').textContent = `${name} - ${subtitle}`;
@@ -2339,6 +2434,37 @@ window.showToast = function(msg) {
   const t = document.createElement('div');
   t.className = 'toast'; t.innerHTML = `<i class="ri-check-double-line"></i> ${msg}`;
   c.appendChild(t); setTimeout(() => t.remove(), 3000);
+};
+
+// --- FUNÇÕES DE ACESSIBILIDADE ---
+window.toggleAccessibilityBar = function() {
+  document.getElementById('accessibilityBar').classList.toggle('visible');
+};
+
+window.changeFontSize = function(direction) {
+  const body = document.body;
+  const currentSize = parseInt(getComputedStyle(body).fontSize);
+  if (direction > 0 && currentSize < 24) {
+    document.documentElement.style.setProperty('--base-font-size', (currentSize + 2) + 'px');
+  } else if (direction < 0 && currentSize > 12) {
+    document.documentElement.style.setProperty('--base-font-size', (currentSize - 2) + 'px');
+  }
+};
+
+window.toggleHighContrast = function() {
+  document.body.classList.toggle('accessibility-high-contrast');
+  window.showToast(document.body.classList.contains('accessibility-high-contrast') ? 'Alto contraste ativado' : 'Alto contraste desativado');
+};
+
+window.toggleGrayscale = function() {
+  document.body.classList.toggle('accessibility-grayscale');
+  window.showToast(document.body.classList.contains('accessibility-grayscale') ? 'Escala de cinza ativada' : 'Escala de cinza desativada');
+};
+
+window.resetAccessibility = function() {
+  document.body.classList.remove('accessibility-high-contrast', 'accessibility-grayscale', 'accessibility-large-text', 'accessibility-xlarge-text', 'accessibility-dyslexia');
+  document.documentElement.style.setProperty('--base-font-size', '16px');
+  window.showToast('Acessibilidade resetada');
 };
 
 document.addEventListener('keydown', (e) => {
