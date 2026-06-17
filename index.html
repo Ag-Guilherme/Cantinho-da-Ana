@@ -6,6 +6,9 @@
 <title>Cantinho da Profª Ana Carolina M.</title>
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/fontsource-inter@5.0.18/index.css" rel="stylesheet">
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -38,7 +41,6 @@ body.accessibility-xlarge-text { font-size: 20px; }
 body.accessibility-dyslexia { font-family: 'Open Dyslexic', sans-serif !important; letter-spacing: 0.05em; line-height: 1.8; }
 body.accessibility-grayscale { filter: grayscale(100%); }
 body.accessibility-readable { font-family: Georgia, serif !important; line-height: 1.8; letter-spacing: 0.02em; }
-
 body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; overflow-x: hidden; background: var(--bg-light); font-size: var(--base-font-size); }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
 .btn { padding: 10px 20px; border: none; border-radius: var(--radius); font-weight: 600; cursor: pointer; transition: var(--transition); font-family: inherit; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px; }
@@ -551,7 +553,6 @@ Acessibilidade
 </div>
 </div>
 </div>
-
 <div class="admin-page" id="adminLoginPage">
 <div class="admin-login">
 <div class="login-card">
@@ -1274,6 +1275,23 @@ Acessibilidade
 <div class="toast-container" id="toastContainer"></div>
 
 <script>
+// --- FIREBASE CONFIGURATION ---
+const firebaseConfig = {
+  apiKey: "AIzaSyBL59wvf4kb4Xv2dk7Qahzl9qjEE0X9f_s",
+  authDomain: "cantinho-da-ana.firebaseapp.com",
+  databaseURL: "https://cantinho-da-ana-default-rtdb.firebaseio.com", // IMPORTANTE: Verifique esta URL no console do Firebase
+  projectId: "cantinho-da-ana",
+  storageBucket: "cantinho-da-ana.firebasestorage.app",
+  messagingSenderId: "751716980273",
+  appId: "1:751716980273:web:2ce27844a9600d60b5e710",
+  measurementId: "G-0Z20T9PHHY"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+// ------------------------------
+
 const DEFAULT_AVATAR = 'https://image.qwenlm.ai/public_source/8c5b0df1-e376-48a9-a7c1-6372352ac84a/107ad0f6f-7aba-479a-beab-0fa7e3544415.png';
 const DEFAULT_DATA = {
 storeName: "Cantinho da Profª Ana Carolina M.",
@@ -1367,18 +1385,57 @@ turquesa: { primary: '#0D9488', primaryDark: '#0F766E', primaryLight: '#14B8A6',
 lavanda: { primary: '#7C3AED', primaryDark: '#6D28D9', primaryLight: '#A78BFA', secondary: '#F5F3FF', accent: '#10B981', accentHover: '#059669', bgLight: '#FAF5FF', bgWhite: '#FFFFFF', textDark: '#2E1065', textMid: '#5B21B6', border: '#E5E7EB' },
 laranja: { primary: '#EA580C', primaryDark: '#C2410C', primaryLight: '#F97316', secondary: '#FFF7ED', accent: '#1D4ED8', accentHover: '#1E40AF', bgLight: '#FFF7ED', bgWhite: '#FFFFFF', textDark: '#431407', textMid: '#7C2D12', border: '#E5E7EB' }
 };
-function loadData() {
-try {
-const saved = localStorage.getItem('edumarket_data');
-if (saved) {
-const parsed = JSON.parse(saved);
-return { ...DEFAULT_DATA, ...parsed, products: parsed.products || DEFAULT_DATA.products, categories: parsed.categories || DEFAULT_DATA.categories, banners: parsed.banners || DEFAULT_DATA.banners, qa: parsed.qa || DEFAULT_DATA.qa, coupons: parsed.coupons || DEFAULT_DATA.coupons, theme: { ...DEFAULT_DATA.theme, ...(parsed.theme || {}) }, contacts: { ...DEFAULT_DATA.contacts, ...(parsed.contacts || {}) }, socials: { ...DEFAULT_DATA.socials, ...(parsed.socials || {}) }, chatbot: { ...DEFAULT_DATA.chatbot, ...(parsed.chatbot || {}) }, storeName: parsed.storeName || DEFAULT_DATA.storeName, storeSlogan: parsed.storeSlogan || DEFAULT_DATA.storeSlogan, activeTheme: parsed.activeTheme || 'rosa', siteContent: { ...DEFAULT_DATA.siteContent, ...(parsed.siteContent || {}) } };
+
+// --- DATA MANAGEMENT WITH FIREBASE ---
+let appData = JSON.parse(JSON.stringify(DEFAULT_DATA));
+let isRemoteDataLoaded = false;
+
+function loadRemoteData() {
+    const dataRef = db.ref('edumarket_data');
+    dataRef.on('value', (snapshot) => {
+        const remoteData = snapshot.val();
+        
+        // Reset appData to defaults before merging
+        Object.keys(appData).forEach(key => delete appData[key]);
+        Object.assign(appData, JSON.parse(JSON.stringify(DEFAULT_DATA)));
+        
+        if (remoteData) {
+            // Merge remote data with defaults to ensure all properties exist
+            Object.assign(appData, remoteData);
+            // Deep merge for nested objects to preserve default structure if remote is incomplete
+            if(remoteData.theme) appData.theme = { ...DEFAULT_DATA.theme, ...remoteData.theme };
+            if(remoteData.contacts) appData.contacts = { ...DEFAULT_DATA.contacts, ...remoteData.contacts };
+            if(remoteData.socials) appData.socials = { ...DEFAULT_DATA.socials, ...remoteData.socials };
+            if(remoteData.chatbot) appData.chatbot = { ...DEFAULT_DATA.chatbot, ...remoteData.chatbot };
+            if(remoteData.siteContent) appData.siteContent = { ...DEFAULT_DATA.siteContent, ...remoteData.siteContent };
+        } else {
+            // If no data in Firebase, save defaults
+            saveData(); 
+        }
+        
+        isRemoteDataLoaded = true;
+        
+        // Render UI
+        renderStore();
+        if(document.getElementById('adminPanel').classList.contains('active')) {
+            renderAdmin();
+        }
+    }, (error) => {
+        console.error("Erro ao carregar dados do Firebase: ", error);
+        showToast("Erro ao sincronizar dados. Verifique a conexão.");
+    });
 }
-} catch(e) { console.log('Load error:', e); }
-return JSON.parse(JSON.stringify(DEFAULT_DATA));
+
+function saveData() {
+    if (!isRemoteDataLoaded) return; // Prevent saving before initial load
+    const dataRef = db.ref('edumarket_data');
+    dataRef.set(appData).catch((error) => {
+        console.error("Erro ao salvar no Firebase: ", error);
+        showToast("Erro ao salvar dados. Tente novamente.");
+    });
 }
-function saveData() { try { localStorage.setItem('edumarket_data', JSON.stringify(appData)); } catch(e) { console.log('Save error:', e); } }
-let appData = loadData();
+// ------------------------------------
+
 let currentAvatar = appData.avatar;
 let pendingAvatar = appData.avatar;
 let cart = [];
@@ -1392,60 +1449,59 @@ let selectedEmails = new Set();
 let currentFontSize = 16;
 
 function toggleAccessibilityPanel() {
-  const panel = document.getElementById('accessibilityPanel');
-  panel.classList.toggle('open');
+const panel = document.getElementById('accessibilityPanel');
+panel.classList.toggle('open');
 }
 function changeFontSize(delta) {
-  currentFontSize = Math.max(12, Math.min(24, currentFontSize + delta * 2));
-  document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
-  const fsDisplay = document.getElementById('fontSizeDisplay');
-  if (fsDisplay) fsDisplay.textContent = currentFontSize + 'px';
-  localStorage.setItem('accessibility_fontSize', currentFontSize);
-  showToast('Fonte: ' + currentFontSize + 'px');
+currentFontSize = Math.max(12, Math.min(24, currentFontSize + delta * 2));
+document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
+const fsDisplay = document.getElementById('fontSizeDisplay');
+if (fsDisplay) fsDisplay.textContent = currentFontSize + 'px';
+localStorage.setItem('accessibility_fontSize', currentFontSize);
+showToast('Fonte: ' + currentFontSize + 'px');
 }
 function toggleHighContrast() {
-  document.body.classList.toggle('accessibility-high-contrast');
-  const active = document.body.classList.contains('accessibility-high-contrast');
-  localStorage.setItem('accessibility_highContrast', active);
-  showToast(active ? 'Alto contraste ativado' : 'Alto contraste desativado');
+document.body.classList.toggle('accessibility-high-contrast');
+const active = document.body.classList.contains('accessibility-high-contrast');
+localStorage.setItem('accessibility_highContrast', active);
+showToast(active ? 'Alto contraste ativado' : 'Alto contraste desativado');
 }
 function toggleGrayscale() {
-  document.body.classList.toggle('accessibility-grayscale');
-  const active = document.body.classList.contains('accessibility-grayscale');
-  localStorage.setItem('accessibility_grayscale', active);
-  showToast(active ? 'Escala de cinza ativada' : 'Escala de cinza desativada');
+document.body.classList.toggle('accessibility-grayscale');
+const active = document.body.classList.contains('accessibility-grayscale');
+localStorage.setItem('accessibility_grayscale', active);
+showToast(active ? 'Escala de cinza ativada' : 'Escala de cinza desativada');
 }
 function toggleReadable() {
-  document.body.classList.toggle('accessibility-readable');
-  const active = document.body.classList.contains('accessibility-readable');
-  localStorage.setItem('accessibility_readable', active);
-  showToast(active ? 'Modo leitura ativado' : 'Modo leitura desativado');
+document.body.classList.toggle('accessibility-readable');
+const active = document.body.classList.contains('accessibility-readable');
+localStorage.setItem('accessibility_readable', active);
+showToast(active ? 'Modo leitura ativado' : 'Modo leitura desativado');
 }
 function resetAccessibility() {
-  document.body.classList.remove('accessibility-high-contrast', 'accessibility-grayscale', 'accessibility-readable');
-  currentFontSize = 16;
-  document.documentElement.style.setProperty('--base-font-size', '16px');
-  const fsDisplay = document.getElementById('fontSizeDisplay');
-  if (fsDisplay) fsDisplay.textContent = '16px';
-  localStorage.removeItem('accessibility_fontSize');
-  localStorage.removeItem('accessibility_highContrast');
-  localStorage.removeItem('accessibility_grayscale');
-  localStorage.removeItem('accessibility_readable');
-  showToast('Acessibilidade resetada');
+document.body.classList.remove('accessibility-high-contrast', 'accessibility-grayscale', 'accessibility-readable');
+currentFontSize = 16;
+document.documentElement.style.setProperty('--base-font-size', '16px');
+const fsDisplay = document.getElementById('fontSizeDisplay');
+if (fsDisplay) fsDisplay.textContent = '16px';
+localStorage.removeItem('accessibility_fontSize');
+localStorage.removeItem('accessibility_highContrast');
+localStorage.removeItem('accessibility_grayscale');
+localStorage.removeItem('accessibility_readable');
+showToast('Acessibilidade resetada');
 }
 function loadAccessibilitySettings() {
-  const fs = localStorage.getItem('accessibility_fontSize');
-  if (fs) {
-    currentFontSize = parseInt(fs);
-    document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
-    const fsDisplay = document.getElementById('fontSizeDisplay');
-    if (fsDisplay) fsDisplay.textContent = currentFontSize + 'px';
-  }
-  if (localStorage.getItem('accessibility_highContrast') === 'true') document.body.classList.add('accessibility-high-contrast');
-  if (localStorage.getItem('accessibility_grayscale') === 'true') document.body.classList.add('accessibility-grayscale');
-  if (localStorage.getItem('accessibility_readable') === 'true') document.body.classList.add('accessibility-readable');
+const fs = localStorage.getItem('accessibility_fontSize');
+if (fs) {
+currentFontSize = parseInt(fs);
+document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
+const fsDisplay = document.getElementById('fontSizeDisplay');
+if (fsDisplay) fsDisplay.textContent = currentFontSize + 'px';
 }
-
+if (localStorage.getItem('accessibility_highContrast') === 'true') document.body.classList.add('accessibility-high-contrast');
+if (localStorage.getItem('accessibility_grayscale') === 'true') document.body.classList.add('accessibility-grayscale');
+if (localStorage.getItem('accessibility_readable') === 'true') document.body.classList.add('accessibility-readable');
+}
 function saveBotName() {
 appData.chatbot.name = document.getElementById('chatbotName').value || 'Edu';
 appData.chatbot.subtitle = document.getElementById('chatbotSubtitle').value || 'Assistente';
@@ -2166,13 +2222,39 @@ pendingAvatar = url;
 document.getElementById('currentAvatarPreview').src = url;
 showToast('Pré-visualizado!');
 }
+// --- OTIMIZAÇÃO DE IMAGEM PARA FIREBASE ---
 function handleAvatarUpload(event) {
-const file = event.target.files[0];
-if (!file) return;
-const reader = new FileReader();
-reader.onload = function(e) { pendingAvatar = e.target.result; document.getElementById('currentAvatarPreview').src = e.target.result; showToast('Imagem carregada!'); };
-reader.readAsDataURL(file);
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+            const MAX_WIDTH = 300;
+            const MAX_HEIGHT = 300;
+            let width = img.width;
+            let height = img.height;
+            
+            if (width > height) {
+                if (width > MAX_WIDTH) { height *= MAX_WIDTH / width; width = MAX_WIDTH; }
+            } else {
+                if (height > MAX_HEIGHT) { width *= MAX_HEIGHT / height; height = MAX_HEIGHT; }
+            }
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+            
+            pendingAvatar = canvas.toDataURL('image/jpeg', 0.7); // Comprime como JPEG
+            document.getElementById('currentAvatarPreview').src = pendingAvatar;
+            showToast('Imagem carregada e otimizada!');
+        };
+        img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
 }
+// ----------------------------------------
 function saveAvatar() {
 if (!pendingAvatar) { showToast('Selecione um avatar!'); return; }
 appData.avatar = pendingAvatar;
@@ -2282,11 +2364,13 @@ if (chatOpen) toggleChat();
 ['productFormModal', 'categoryFormModal', 'qaFormModal', 'couponFormModal', 'accessibilityPanel'].forEach(id => {
 document.getElementById(id)?.addEventListener('click', function(e) { if (e.target === this) this.classList.remove('open'); document.body.style.overflow = ''; });
 });
+
+// --- INICIALIZAÇÃO ---
 startTimer();
-renderStore();
 slideInterval = setInterval(() => moveSlide(1), 5000);
 loadAccessibilitySettings();
+loadRemoteData(); // Carrega dados do Firebase e renderiza a loja
+// -------------------
 </script>
 </body>
 </html>
-
